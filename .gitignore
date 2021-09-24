@@ -68,6 +68,8 @@ Unity_KBI_IM/Unity_KBI_IM_WWiseProject/*.prof
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/*_WwiseProject.*.validationcache
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/*_WwiseProject.*.wsettings
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/**/*.akd
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/SoundBanks/Windows/PluginInfo.xml
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/SoundBanks/Windows/SoundbanksInfo.xml
 
 # build stuff (unsure?)
 # Assets/Wwise/Deployment/Plugins/Windows/**/*.meta
