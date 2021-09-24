@@ -70,6 +70,12 @@ Unity_KBI_IM/Unity_KBI_IM_WwiseProject/*_WwiseProject.*.wsettings
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/**/*.akd
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/SoundBanks/Windows/PluginInfo.xml
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/SoundBanks/Windows/SoundbanksInfo.xml
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/Android/PluginInfo.xml
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/Android/SoundbanksInfo.xml
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/iOS/PluginInfo.xml
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/iOS/SoundbanksInfo.xml
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/Windows/PluginInfo.xml
+Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/Windows/SoundbanksInfo.xml
 
 # build stuff (unsure?)
 # Assets/Wwise/Deployment/Plugins/Windows/**/*.meta
