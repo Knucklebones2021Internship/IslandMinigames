@@ -27,7 +27,9 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
 
     public GameObject hotPotato;
 
-    // Update is called once per frame
+    // <summary> 
+    // Start the player timer when they are holding the hot potato 
+    // </summary>
     void Update()
     {
         // Start the player time when the player holds the potato 
