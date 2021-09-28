@@ -65,11 +65,30 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
             timerCountdown = false;
         }
         // ==================================
-*/
+        */
+
+        // Detect whether the user has clicked on a player 
+        if (Input.GetMouseButtonDown(0)) {
+             RaycastHit raycastHit;
+             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+             if (Physics.Raycast(ray, out raycastHit, 100f)) {
+                 if (raycastHit.transform != null) {
+                     PlayerUpdate(raycastHit.transform.gameObject);
+                 }
+             }
+         }
+
         currTime -= 1 * Time.deltaTime; 
         playerTimer.SetActive(true);
         playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");            
         
+        }
+    }
+
+    void PlayerUpdate(GameObject gameObject) {
+        if (gameObject.tag == "Player") {
+            Scripts_Player_HotPotato_Brian pScript = gameObject.GetComponent<Scripts_Player_HotPotato_Brian>();
+            Debug.Log(pScript.playerID);
         }
     }
 }
