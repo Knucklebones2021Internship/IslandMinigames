@@ -14,7 +14,10 @@ public class Scripts_GlobalTimer_HotPotato_Brian : MonoBehaviour {
         currTime = startingTime; 
     }
 
-    // Update is called once per frame
+    // <summary> 
+    // Decrement the global timer for the game by changing the text. The color
+    // of the text becomes red when it reaches a specific number 
+    // </summary>
     void Update()
     {
         currTime -= 1 * Time.deltaTime; 
