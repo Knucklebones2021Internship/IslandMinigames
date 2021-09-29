@@ -29,6 +29,7 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
 
     // <summary> 
     // Start the player timer when they are holding the hot potato 
+    // Determine whether the user has decided to pass the potato to another player 
     // </summary>
     void Update()
     {
@@ -38,58 +39,58 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
                 currTime = pTime; 
                 timerCountdown = true; 
             }
-        /*
-        // ======= Tossing the Potato =======
-        // Press A --> Pass to the left player 
-        if (Input.GetKeyDown(KeyCode.A)) {
-            Scripts_Player_HotPotato_Brian pScript = leftPlayer.GetComponent<Scripts_Player_HotPotato_Brian>();
-            pScript.isHoldingPotato = true; 
-            hotPotato.transform.position = pScript.guide.transform.position;
-            hotPotato.transform.rotation = pScript.guide.transform.rotation;            
-            isHoldingPotato = false;
-            timerCountdown = false;
-        }
-        // Press W --> Pass to the opposite player 
-        else if (Input.GetKeyDown(KeyCode.W)) {
-            Scripts_Player_HotPotato_Brian pScript = oppPlayer.GetComponent<Scripts_Player_HotPotato_Brian>();
-            pScript.isHoldingPotato = true; 
-            hotPotato.transform.position = pScript.guide.transform.position;
-            hotPotato.transform.rotation = pScript.guide.transform.rotation;             
-            isHoldingPotato = false;
-            timerCountdown = false;
-        }
-        // Press D --> Pass to the right player 
-        else if (Input.GetKeyDown(KeyCode.D)) {
-            Scripts_Player_HotPotato_Brian pScript = rightPlayer.GetComponent<Scripts_Player_HotPotato_Brian>();
-            pScript.isHoldingPotato = true; 
-            hotPotato.transform.position = pScript.guide.transform.position;
-            hotPotato.transform.rotation = pScript.guide.transform.rotation;             
-            isHoldingPotato = false;
-            timerCountdown = false;
-        }
-        // ==================================
-        */
 
-        // Detect whether the user has touched a player 
-        /*
-        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) {
-             RaycastHit raycastHit;
-             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-             if (Physics.Raycast(ray, out raycastHit, 100f)) {
-                 if (raycastHit.transform != null) {
-                     PlayerUpdate(raycastHit.transform.gameObject);
-                 }
-             }
-         }
-         */
+            /*
+            if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) {
+                RaycastHit raycastHit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                if (Physics.Raycast(ray, out raycastHit, 100f)) {
+                    if (raycastHit.transform != null) {
+                        PlayerUpdate(raycastHit.transform.gameObject);
+                    }
+                }
+            }
+            */
 
-        currTime -= 1 * Time.deltaTime; 
-        playerTimer.SetActive(true);
-        playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");  
-        if (currTime <= 0) {
-            currTime = 0;
-        }          
+            // Detect whether the user has touched a player 
+            if (Mouse.current.leftButton.isPressed) {
+                Vector3 mousePos = Mouse.current.position.ReadValue();
+                RaycastHit raycastHit;
+                Ray ray = Camera.main.ScreenPointToRay(mousePos);
+                if (Physics.Raycast(ray, out raycastHit, 100f)) {
+                    if (raycastHit.transform != null) {
+                        PlayerUpdate(raycastHit.transform.gameObject);
+                    }
+                }            
+            }
+
+            currTime -= 1 * Time.deltaTime; 
+            playerTimer.SetActive(true);
+            playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");  
+            if (currTime <= 0) {
+                currTime = 0;
+            }          
         
         }
     }
+
+    // <summary> 
+    // Pass the potato to the clicked player if they are not holding the potato 
+    // </summary>
+    // <param name="gameObject"></param>
+    void PlayerUpdate(GameObject gameObject) {
+        if (gameObject.tag == "Player") {
+            GameObject p = gameObject.transform.parent.gameObject; 
+            Scripts_Player_HotPotato_Brian pScript = p.GetComponent<Scripts_Player_HotPotato_Brian>();
+
+            // If the user presses another player that doesn't have the hot potato 
+            if (pScript.playerID != playerID) {
+                pScript.isHoldingPotato = true; 
+                hotPotato.transform.position = pScript.guide.transform.position;
+                hotPotato.transform.rotation = pScript.guide.transform.rotation; 
+                isHoldingPotato = false;
+                timerCountdown = false;
+            }
+        }
+    }     
 }
