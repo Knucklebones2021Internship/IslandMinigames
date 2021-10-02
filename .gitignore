@@ -77,6 +77,9 @@ Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/iOS/SoundbanksInfo.xm
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/Windows/PluginInfo.xml
 Unity_KBI_IM/Unity_KBI_IM_WwiseProject/GeneratedSoundBanks/Windows/SoundbanksInfo.xml
 
+Unity_KBI_IM/Assets/Wwise/**
+# Unity_KBI_IM/Assets/Wwise
+
 # build stuff (unsure?)
 # Assets/Wwise/Deployment/Plugins/Windows/**/*.meta
 
