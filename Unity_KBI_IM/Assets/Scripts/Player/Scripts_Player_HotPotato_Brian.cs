@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem; 
 
 public class Scripts_Player_HotPotato_Brian : MonoBehaviour
 {
@@ -68,26 +67,28 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
         // ==================================
         */
 
-        // Detect whether the user has touched a player 
-        /*
-        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) {
+        // Detect whether the user has clicked on a player 
+        if (Input.GetMouseButtonDown(0)) {
              RaycastHit raycastHit;
-             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
              if (Physics.Raycast(ray, out raycastHit, 100f)) {
                  if (raycastHit.transform != null) {
                      PlayerUpdate(raycastHit.transform.gameObject);
                  }
              }
          }
-         */
 
         currTime -= 1 * Time.deltaTime; 
         playerTimer.SetActive(true);
-        playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");  
-        if (currTime <= 0) {
-            currTime = 0;
-        }          
+        playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");            
         
+        }
+    }
+
+    void PlayerUpdate(GameObject gameObject) {
+        if (gameObject.tag == "Player") {
+            Scripts_Player_HotPotato_Brian pScript = gameObject.GetComponent<Scripts_Player_HotPotato_Brian>();
+            Debug.Log(pScript.playerID);
         }
     }
 }
