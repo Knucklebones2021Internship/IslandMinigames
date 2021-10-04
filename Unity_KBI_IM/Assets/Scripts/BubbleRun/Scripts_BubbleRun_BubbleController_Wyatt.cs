@@ -8,25 +8,24 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 
     Vector2 input;
 
+    void pw(object message) {
+        print("wyatt + " + message.ToString());
+	}
+
 	private void Awake() {
         rb = GetComponent<Rigidbody>();
 
         Screen.orientation = ScreenOrientation.LandscapeLeft;
 
-        print("hello");
-
-        print(AttitudeSensor.current);
+        pw(AttitudeSensor.current);
 
         if (AttitudeSensor.current != null) {
-            print("one");
             InputSystem.EnableDevice(AttitudeSensor.current);
-            print(UnityEngine.InputSystem.Gyroscope.current.enabled);
         }
-
-        print("two");
 	}
 
 	private void Update() {
+        pw(AttitudeSensor.current.attitude.ReadValue());
 
         if (Keyboard.current[Key.W].wasPressedThisFrame) {
             input.y += 1;
