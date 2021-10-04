@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TestLabs/TestLab_BubbleController.unity
+    guid: 2fc6c29c499b29c4dbcd50b57c66913f
+  - enabled: 0
     path: Assets/Scenes/Final/Final_Lv1.unity
     guid: ff5e84d0f4c62614e9d3aa758dce8dcc
   - enabled: 0
