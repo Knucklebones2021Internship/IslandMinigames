@@ -65,9 +65,6 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
             }
 
             currTime -= 1 * Time.deltaTime; 
-            if (currTime <= 3) {
-                playerTimer.GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
-            }             
             playerTimer.SetActive(true);
             playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");               
             if (currTime <= 0) {
