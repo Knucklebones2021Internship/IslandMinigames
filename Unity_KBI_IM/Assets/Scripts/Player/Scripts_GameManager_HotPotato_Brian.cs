@@ -64,9 +64,6 @@ public class Scripts_GameManager_HotPotato_Brian : MonoBehaviour
         globalTimer.SetActive(false);
         playerTimer.SetActive(false); 
 
-        // Player number of the player holding the potato after time ran out 
-        int loserNum = 1; 
-
         for (int i = 1; i < 5; i++) {
             Scripts_Player_HotPotato_Brian pScript = playerList[i-1].GetComponent<Scripts_Player_HotPotato_Brian>();
             // Change the UI for the losing player number 

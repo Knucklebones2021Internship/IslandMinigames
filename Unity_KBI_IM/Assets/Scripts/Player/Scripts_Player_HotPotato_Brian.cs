@@ -64,6 +64,22 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
                 }            
             }
 
+            // +++ Mobile Touch Input +++
+            if (Input.touchCount > 0) 
+            {
+                for (int i = 0; i < Input.touchCount; ++i) {
+                    Touch touch = Input.GetTouch(i);
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                    RaycastHit raycastHit;
+                    if (Physics.Raycast(ray, out raycastHit, 100f)) {
+                        if (raycastHit.transform != null) {
+                            PlayerUpdate(raycastHit.transform.gameObject);
+                        }
+                    } 
+                }
+               
+            }
+
             currTime -= 1 * Time.deltaTime; 
             playerTimer.SetActive(true);
             playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");               
