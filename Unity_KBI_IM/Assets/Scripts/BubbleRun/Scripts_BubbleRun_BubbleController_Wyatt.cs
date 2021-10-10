@@ -7,48 +7,27 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
     Rigidbody rb;
     Vector2 input;
 
-    void pw(object message) {
-        print("wyatt + " + message.ToString());
-	}
+    bool jumpAttempted = false;
 
-	private void Awake() {
+	void Awake() {
         rb = GetComponent<Rigidbody>();
 
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
-
-        if (AttitudeSensor.current != null) {
-            InputSystem.EnableDevice(AttitudeSensor.current);
-        }
+        Scripts_InputManager_Wyatt.EnableAttitudeSensor();
 	}
 
-	private void Update() {
-        // x corresponds to right
-            // flat is at zero degrees
-            // 360 -> 270 is right
-            // 0 -> 90 is left
-        // y corresponds to forward
-            // flat is at zero degrees
-            // 360 -> 270 is forward
-            // 0 -> 90 is backward
+	void OnEnable() {
+        Scripts_InputManager_Wyatt.touchPress.started += Jump;
+	}
 
-        Quaternion attitude = AttitudeSensor.current.attitude.ReadValue();
-        pw("x: " + attitude.eulerAngles.x + "\ny: " + attitude.eulerAngles.y + "\nz: " + attitude.eulerAngles.z);
+	void OnDisable() {
+        Scripts_InputManager_Wyatt.touchPress.started -= Jump;
+	}
+
+	void Update() {
+        Quaternion attitude = Scripts_InputManager_Wyatt.GetAttitudeSensorValue();
 
         float attitudeX = attitude.eulerAngles.x;
         float attitudeY = attitude.eulerAngles.y;
-
-        //if (Keyboard.current[Key.W].wasPressedThisFrame) {
-        //    input.y += 1;
-		//}
-        //if (Keyboard.current[Key.S].wasPressedThisFrame) {
-        //    input.y -= 1;
-		//}
-        //if (Keyboard.current[Key.A].wasPressedThisFrame) {
-        //    input.x -= 1;
-		//}
-        //if (Keyboard.current[Key.D].wasPressedThisFrame) {
-        //    input.x += 1;
-		//}
 
         if (attitudeX < 355f && attitudeX > 270f) {
             input.x = 1f; // right
@@ -76,11 +55,40 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
         cameraDir.y = 0f;
 
         Vector3 moveDir = new Vector3(movement.x, 0f, movement.z);
-        pw("movement: " + moveDir);
 
-        float force = 60;
-        float speed = 7f;
-        //rb.AddForce(moveDir * force * Time.fixedDeltaTime);
-        rb.velocity = moveDir * speed;
+        float moveForce = 300;
+        float jumpForce = 300f;
+
+        if (IsGrounded()) { // you can only roll if you're on the ground!
+            rb.AddForce(moveDir * moveForce * Time.fixedDeltaTime);
+		}
+
+        float maxSpeed = 50f;
+        if(rb.velocity.magnitude > maxSpeed){
+            float velocityY = rb.velocity.y;
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+            rb.velocity = new Vector3(rb.velocity.x, velocityY, rb.velocity.z);
+        }
+
+        if (jumpAttempted) {
+            if (IsGrounded()) {
+                Vector3 velocityDir = rb.velocity.normalized;
+                rb.AddForce(new Vector3(velocityDir.x, jumpForce, velocityDir.z));
+			} jumpAttempted = false;
+		}
+    }
+
+    bool IsGrounded() {
+        return Physics.Raycast(transform.position, -Vector3.up, 0.51f);
+	}
+
+    void Jump(InputAction.CallbackContext context) { 
+        print("wyatt position: " + Scripts_InputManager_Wyatt.touchPosition.ReadValue<Vector2>());
+        print("wyatt jump!");
+
+        jumpAttempted = true;
+
+        //transform.position = Vector3.zero;
     }
 }

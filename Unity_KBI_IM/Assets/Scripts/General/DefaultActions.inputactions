@@ -2,13 +2,61 @@
     "name": "DefaultActions",
     "maps": [
         {
-            "name": "PrimaryMap",
+            "name": "DefaultMap",
             "id": "f9aedab2-f255-4900-81c5-358eabfd0125",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "TouchPosition",
+                    "type": "PassThrough",
+                    "id": "bb66271e-a314-44ae-9372-d07cfd040f3f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TouchPress",
                     "type": "Button",
                     "id": "1485d50e-971a-4466-af49-7d1e61b50696",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TouchTap",
+                    "type": "Button",
+                    "id": "be523328-6c03-4ae5-9af0-6988e5fe28c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TouchHold",
+                    "type": "Button",
+                    "id": "3bcf9c75-f121-4857-866e-e1c88c9f6a7a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TouchSlowTap",
+                    "type": "Button",
+                    "id": "ddb50c0f-4199-4700-b78b-9f2c7f5895e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TouchDoubleTap",
+                    "type": "Button",
+                    "id": "8f977ca1-d907-489f-a78a-afa4dc029c03",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TouchTripleTap",
+                    "type": "Button",
+                    "id": "c2ad0915-281f-4c78-9014-9d2c5a540ab5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -17,12 +65,78 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "10fe1c6d-16e4-4b65-85b1-bb8897e18ad5",
-                    "path": "",
+                    "id": "3f1e1d67-b687-433d-8054-4f3871d8ae01",
+                    "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "TouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3627c0d1-cba3-4d31-9a94-e5123e148a6d",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10fe1c6d-16e4-4b65-85b1-bb8897e18ad5",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf5c8efc-e3d1-4622-8d79-b49904a8bbc8",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f69680a-bb2e-49c8-bd2e-448d91bb6c04",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "SlowTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchSlowTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf92f54b-8f43-493f-b99c-50529097ff5e",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchDoubleTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a314fea1-0781-4cb8-aef1-c1f12635bec0",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "MultiTap(tapCount=3)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchTripleTap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

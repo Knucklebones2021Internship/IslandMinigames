@@ -1,18 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Scripts_BubbleRun_BubbleUp_Wyatt : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+public class Scripts_BubbleRun_BubbleUp_Wyatt : MonoBehaviour {
+    void Update() {
         transform.rotation = Quaternion.LookRotation(Vector3.forward);
     }
 }

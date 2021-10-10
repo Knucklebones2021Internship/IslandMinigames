@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "805ad320",
         "name": "com.DefaultCompany.Unity_KBI_IM",
-        "processId": 31492,
+        "processId": 29203,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,72 @@
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 31492,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 20248,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 21438,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 22506,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 23381,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 24189,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 25014,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 26160,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 26979,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 27671,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 28423,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 29203,
             "exited": false
         }
     ],
@@ -95,7 +161,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "movement",
+    "m_Filter": "wyatt",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }
