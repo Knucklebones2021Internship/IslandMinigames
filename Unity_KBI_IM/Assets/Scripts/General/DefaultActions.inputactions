@@ -1,0 +1,33 @@
+{
+    "name": "DefaultActions",
+    "maps": [
+        {
+            "name": "PrimaryMap",
+            "id": "f9aedab2-f255-4900-81c5-358eabfd0125",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "1485d50e-971a-4466-af49-7d1e61b50696",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "10fe1c6d-16e4-4b65-85b1-bb8897e18ad5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

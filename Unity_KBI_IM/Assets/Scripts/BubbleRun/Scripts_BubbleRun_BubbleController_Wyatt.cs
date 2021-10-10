@@ -5,7 +5,6 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
     [SerializeField] GameObject cam;
 
     Rigidbody rb;
-
     Vector2 input;
 
     void pw(object message) {
@@ -23,6 +22,10 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 	}
 
 	private void Update() {
+        // x corresponds to right
+            // flat is at zero degrees
+            // 360 -> 270 is right
+            // 0 -> 90 is left
         // y corresponds to forward
             // flat is at zero degrees
             // 360 -> 270 is forward
@@ -48,9 +51,9 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 		//}
 
         if (attitudeX < 355f && attitudeX > 270f) {
-            input.x = 1f; // forward
+            input.x = 1f; // right
 		} else if (attitudeX > 5f && attitudeX < 90f) {
-            input.x = -1f; // backward
+            input.x = -1f; // left
 		} else {
             input.x = 0f; // stop
 		}
