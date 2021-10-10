@@ -1,0 +1,33 @@
+{
+    "name": "MiniGolfTouch",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "4db2f13d-669e-4c17-a580-341797d9878f",
+            "actions": [
+                {
+                    "name": "TouchInput",
+                    "type": "Value",
+                    "id": "8c0aa012-fa3f-4a9f-b6c8-fa3452611371",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a39d57e6-0947-45af-a1fb-47b24775bce2",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
