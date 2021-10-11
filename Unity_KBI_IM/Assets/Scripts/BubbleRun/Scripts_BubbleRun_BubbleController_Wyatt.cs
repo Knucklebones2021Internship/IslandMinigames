@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
     [SerializeField] GameObject cam;
+    [SerializeField] GameObject cameraFollow;
 
     Rigidbody rb;
     Vector2 input;
@@ -77,6 +78,8 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
                 rb.AddForce(new Vector3(velocityDir.x, jumpForce, velocityDir.z));
 			} jumpAttempted = false;
 		}
+
+        cameraFollow.transform.rotation = Quaternion.LookRotation(Vector3.forward);
     }
 
     bool IsGrounded() {
