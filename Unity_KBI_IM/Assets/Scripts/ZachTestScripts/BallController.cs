@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour
@@ -22,6 +23,8 @@ public class BallController : MonoBehaviour
             Destroy(gameObject);
 
         rb = GetComponent<Rigidbody>();
+
+        Scripts_InputManager_Wyatt.EnableAttitudeSensor();
     }
 
     // Start is called before the first frame update
@@ -33,6 +36,22 @@ public class BallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Scripts_InputManager_Wyatt.touchPosition.ReadValue<Vector2>());
+    }
+
+    private void OnEnable()
+    {
+        // when input first happens - for instance, 
+        Scripts_InputManager_Wyatt.touchPress.started += Shoot;
+    }
+
+    private void OnDisable()
+    {
         
+    }
+
+    void Shoot(InputAction.CallbackContext context)
+    {
+
     }
 }
