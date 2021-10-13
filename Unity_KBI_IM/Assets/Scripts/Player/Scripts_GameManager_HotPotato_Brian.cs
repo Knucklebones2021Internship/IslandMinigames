@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; 
 
-public class Scripts_GameManager_HotPotato_Brian : MonoBehaviour
+[DefaultExecutionOrder(-50)]
+public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
 {
+	protected override void Awake() {
+		base.Awake();
+	}
+
     // List of players in the game 
     public List<GameObject> playerList; 
     public GameObject hotPotato;
@@ -61,8 +66,8 @@ public class Scripts_GameManager_HotPotato_Brian : MonoBehaviour
     // Sets the timers invisible and displays the game over panel
     // </summary>
     void GameOver() {
-        globalTimer.SetActive(false);
         playerTimer.SetActive(false); 
+        globalTimer.SetActive(false);
 
         for (int i = 1; i < 5; i++) {
             Scripts_Player_HotPotato_Brian pScript = playerList[i-1].GetComponent<Scripts_Player_HotPotato_Brian>();
