@@ -40,18 +40,6 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
                 timerCountdown = true; 
             }
 
-            /*
-            if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) {
-                RaycastHit raycastHit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-                if (Physics.Raycast(ray, out raycastHit, 100f)) {
-                    if (raycastHit.transform != null) {
-                        PlayerUpdate(raycastHit.transform.gameObject);
-                    }
-                }
-            }
-            */
-
             // Detect whether the user has touched a player 
             if (Mouse.current.leftButton.isPressed) {
                 Vector3 mousePos = Mouse.current.position.ReadValue();

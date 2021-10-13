@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281720151802438212}
   - component: {fileID: 8274929712544303398}
+  - component: {fileID: 1917789046398733216}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -150,6 +151,18 @@ MonoBehaviour:
   playerTimer: {fileID: 0}
   pTime: 10
   hotPotato: {fileID: 0}
+--- !u!114 &1917789046398733216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281720151802438211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c486a4df1ffe605418ffdac35f0d5fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6281720152097025895
 GameObject:
   m_ObjectHideFlags: 0
