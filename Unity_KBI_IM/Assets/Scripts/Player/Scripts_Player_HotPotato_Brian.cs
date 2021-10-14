@@ -14,6 +14,7 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
 
     public int playerID; 
     public bool isHoldingPotato = false; 
+    public bool gameOver = false; 
 
     // UI for the player timer 
     public GameObject playerTimer; 
@@ -33,12 +34,38 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
     // </summary>
     void Update()
     {
+        if (!gameOver) {
+            StartCoroutine(Play()); 
+        }
+    }
+
+    IEnumerator Play() {
         // Start the player time when the player holds the potato 
         if (isHoldingPotato) {
+            yield return new WaitForSeconds(1.0f); 
+
             if (!timerCountdown) {
                 currTime = pTime; 
-                timerCountdown = true; 
+                timerCountdown = true;   
             }
+
+            Debug.Log(Input.acceleration);
+            
+            if (Input.acceleration.x < -0.5f) {
+                //Debug.Log("Left"); 
+                StartCoroutine(PotatoPass(leftPlayer)); 
+            }
+            
+            else if (Input.acceleration.x > 0.6f ) {
+                //Debug.Log("Right"); 
+                StartCoroutine(PotatoPass(rightPlayer)); 
+            }
+              
+            else if (Input.acceleration.z < -0.9f) {
+                //Debug.Log("Opp"); 
+                StartCoroutine(PotatoPass(oppPlayer)); 
+            } /**/
+                    
 
             // Detect whether the user has touched a player 
             if (Mouse.current.leftButton.isPressed) {
@@ -73,11 +100,11 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
             playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");               
             if (currTime <= 0) {
                 currTime = 0;
+                playerTimer.SetActive(false);
             }          
         
-        }
+        }        
     }
-
     // <summary> 
     // Pass the potato to the clicked player if they are not holding the potato 
     // </summary>
@@ -96,5 +123,20 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
                 timerCountdown = false;
             }
         }
-    }     
+    }
+
+    // <summary> 
+    // Pass the potato to the player corresponding to the direction of the phone flick. 
+    // </summary>
+    // <param name="player"></param>
+    IEnumerator PotatoPass(GameObject player) {
+        Scripts_Player_HotPotato_Brian pScript = player.GetComponent<Scripts_Player_HotPotato_Brian>();
+
+        pScript.isHoldingPotato = true; 
+        hotPotato.transform.position = pScript.guide.transform.position;
+        hotPotato.transform.rotation = pScript.guide.transform.rotation; 
+        isHoldingPotato = false;
+        timerCountdown = false;
+        yield return new WaitForSeconds(0.1f);      
+    }      
 }

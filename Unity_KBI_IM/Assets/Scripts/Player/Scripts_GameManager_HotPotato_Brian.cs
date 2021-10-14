@@ -71,11 +71,12 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
 
         for (int i = 1; i < 5; i++) {
             Scripts_Player_HotPotato_Brian pScript = playerList[i-1].GetComponent<Scripts_Player_HotPotato_Brian>();
+            pScript.gameOver = true;
+            
             // Change the UI for the losing player number 
             if (pScript.isHoldingPotato) {
                 playerNum.GetComponent<TMPro.TextMeshProUGUI>().text = i.ToString("0"); 
                 gameOverPanel.SetActive(true);
-                break;
             }             
         }
     }
