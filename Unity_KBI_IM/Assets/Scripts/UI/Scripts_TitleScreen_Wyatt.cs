@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Scripts_TitleScreen_Wyatt : MonoBehaviour {
+[DefaultExecutionOrder(-50)]
+public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	PlayerInput tsInput;
 
 	[SerializeField] GameObject TitlePanel;
@@ -10,7 +11,9 @@ public class Scripts_TitleScreen_Wyatt : MonoBehaviour {
 	[SerializeField] GameObject LobbiesPanel;
 	[SerializeField] GameObject SettingsPanel;
 
-	void Awake() {
+	protected override void Awake() {
+		base.Awake();
+
         Screen.orientation = ScreenOrientation.Portrait;
 		Input.backButtonLeavesApp = true;
 

@@ -1697,9 +1697,10 @@ GameObject:
   - component: {fileID: 1345121710}
   - component: {fileID: 1345121709}
   - component: {fileID: 1345121708}
+  - component: {fileID: 1345121713}
   - component: {fileID: 1345121712}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1803,6 +1804,36 @@ MonoBehaviour:
   QueuePanel: {fileID: 1789553018}
   LobbiesPanel: {fileID: 1730766494}
   SettingsPanel: {fileID: 637733305}
+--- !u!114 &1345121713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345121707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ce0e449ce2735a44484f59b24b99848a, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Titlescreen
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1549371311
 GameObject:
   m_ObjectHideFlags: 0
