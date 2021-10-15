@@ -1,0 +1,33 @@
+{
+    "name": "TitlesceenActions",
+    "maps": [
+        {
+            "name": "Titlescreen",
+            "id": "ceba410c-7e92-460a-ac3f-23f8099e8536",
+            "actions": [
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "9778c4fb-9164-4ef0-bd22-6f1e03f04c99",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fc4589fa-2897-48b5-bb55-f7c27a874cfa",
+                    "path": "*/{Back}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
