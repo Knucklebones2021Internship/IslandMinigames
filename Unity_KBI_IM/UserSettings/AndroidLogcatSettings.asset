@@ -1,31 +1,13 @@
 {
     "m_SelectedDeviceId": "805ad320",
     "m_SelectedPackage": {
-        "deviceId": "805ad320",
-        "name": "com.DefaultCompany.Unity_KBI_IM",
-        "processId": 22140,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 537,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 2981,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 17064,
-            "exited": true
-        },
         {
             "deviceId": "805ad320",
             "name": "com.sec.android.app.launcher",
@@ -48,12 +30,24 @@
             "deviceId": "805ad320",
             "name": "com.unity3d.mobileremote",
             "processId": 21722,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 22140,
+            "exited": true
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 2450,
+            "exited": true
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.unity3d.mobileremote",
+            "processId": 3446,
             "exited": false
         }
     ],

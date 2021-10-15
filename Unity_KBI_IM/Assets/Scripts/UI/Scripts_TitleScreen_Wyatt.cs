@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 [DefaultExecutionOrder(-50)]
 public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
@@ -43,6 +44,8 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	public void EnterLobbies() { 
 		TitlePanel.SetActive(false);
 		LobbiesPanel.SetActive(true);
+
+		Scripts_NetworkManager_Wyatt.ConnectToServer();
 	}
 
 	public void EnterSettings() { 
