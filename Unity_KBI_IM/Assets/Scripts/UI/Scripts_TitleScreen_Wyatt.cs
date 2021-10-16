@@ -37,6 +37,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		TitlePanel.SetActive(false);
 		QuickPlayPanel.SetActive(true);
 
+		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.QUICKPLAY;
 		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.quickplayLobby);
 	}
 
@@ -46,6 +47,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		TitlePanel.SetActive(false);
 		QueuePanel.SetActive(true);
 
+		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.MATCHMAKING;
 		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.matchmadeLobby);
 	}
 
@@ -55,6 +57,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		TitlePanel.SetActive(false);
 		RoomsPanel.SetActive(true);
 
+		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.CUSTOM_LOBBY;
 		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.customLobby);
 	}
 

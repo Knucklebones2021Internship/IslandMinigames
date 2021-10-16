@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "805ad320",
         "name": "com.DefaultCompany.Unity_KBI_IM",
-        "processId": 21065,
+        "processId": 11273,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,6 +54,12 @@
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 21065,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 11273,
             "exited": false
         }
     ],

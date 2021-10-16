@@ -3,15 +3,13 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
-public enum MultiplayerStatus { MATCHMAKING, CUSTOM_LOBBY }
-
-// TODO: move to global manager
+public enum MultiplayerType { QUICKPLAY, MATCHMAKING, CUSTOM_LOBBY }
 
 [DefaultExecutionOrder(-60)]
 public class Scripts_NetworkManager_Wyatt : MonoBehaviourPunCallbacks {
 	public static Scripts_NetworkManager_Wyatt Instance { get; private set; }
 
-	public static MultiplayerStatus multiplayerStatus;
+	public static MultiplayerType multiplayerType;
 
 	public static bool connectedToMaster = false;
 

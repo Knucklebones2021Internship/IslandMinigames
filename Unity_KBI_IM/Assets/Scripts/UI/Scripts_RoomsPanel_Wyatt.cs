@@ -140,6 +140,7 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 
 	// once we've joined the room, enter the CustomRoom scene
 	public override void OnJoinedRoom() {
+		print("hello");
 		SceneManager.LoadScene("CustomRoom");
 	}
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5991354427173809708}
   - component: {fileID: 5589064660052626117}
   - component: {fileID: 5991354427173809711}
+  - component: {fileID: 3304334115085520594}
   m_Layer: 0
   m_Name: GlobalManager
   m_TagString: Untagged
@@ -56,7 +57,35 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bb66271e-a314-44ae-9372-d07cfd040f3f
+    m_ActionName: DefaultMap/TouchPosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1485d50e-971a-4466-af49-7d1e61b50696
+    m_ActionName: DefaultMap/TouchPress
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: be523328-6c03-4ae5-9af0-6988e5fe28c2
+    m_ActionName: DefaultMap/TouchTap
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3bcf9c75-f121-4857-866e-e1c88c9f6a7a
+    m_ActionName: DefaultMap/TouchHold
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ddb50c0f-4199-4700-b78b-9f2c7f5895e6
+    m_ActionName: DefaultMap/TouchSlowTap
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f977ca1-d907-489f-a78a-afa4dc029c03
+    m_ActionName: DefaultMap/TouchDoubleTap
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c2ad0915-281f-4c78-9014-9d2c5a540ab5
+    m_ActionName: DefaultMap/TouchTripleTap
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: DefaultMap
@@ -72,5 +101,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d147d5d0f74b524db5c45953787296d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3304334115085520594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991354427173809710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72878e83d90da134193fb25055960e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
