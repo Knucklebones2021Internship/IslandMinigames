@@ -26,6 +26,11 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 	[SerializeField] Transform roomItemContainer;
 	[SerializeField] GameObject roomItemTemplate;
 
+	[Header("Interactables")]
+	[SerializeField] ScrollRect roomItemScrollRect;
+	[SerializeField] Button joinRoomButton;
+	[SerializeField] Button createRoomButton;
+
 	List<Scripts_RoomItem_Wyatt> roomItems = new List<Scripts_RoomItem_Wyatt>();
 	List<RoomInfo> roomInfos = new List<RoomInfo>();
 
@@ -37,11 +42,25 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 		createRoomPanel.SetActive(false);
 	}
 
+	public void SetUIInteractable(bool interactable) {
+		for (int i=0; i<roomItems.Count; i++) {
+			roomItems[i].GetComponent<Button>().interactable = interactable;
+		}
+
+		if (!interactable) DeselectAllRoomItems();
+
+		roomItemScrollRect.vertical = interactable;
+		joinRoomButton.interactable = interactable;
+		createRoomButton.interactable = interactable;
+	}
+
 	#region JoinPanel
 	public void OnJoinRoomButton() {
 		joinRoomPanel.SetActive(true);
 		joinRoomNameField.text = "";
 		joinErrorLabel.gameObject.SetActive(false);
+
+		SetUIInteractable(false);
 	}
 
 	public void JoinRoomFromListButton(string roomName) {
@@ -61,6 +80,7 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 
 	public void OnJoinCancelButton() {
 		joinRoomPanel.SetActive(false);
+		SetUIInteractable(true);
 	}
 	#endregion
 
@@ -115,7 +135,8 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 
 	// whenever the room list is updated, refresh the list of rooms
 	public override void OnRoomListUpdate(List<RoomInfo> roomList) {
-		if (Time.time <= nextRoomListUpdateTime) return;
+		if (joinRoomPanel.activeInHierarchy) return; // don't refresh while we're joining
+		if (Time.time <= nextRoomListUpdateTime) return; // limit refresh rate
 		nextRoomListUpdateTime = Time.time + timeBetweenRoomListUpdates;
 
 		// clear old room items
@@ -130,7 +151,6 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 				newItem.SetUpRoomItem(info.Name, info.PlayerCount, info.MaxPlayers);
 				roomItems.Add(newItem);
 			} roomInfos.Add(info);
-			print(info.Name);
 		}
 	}
 

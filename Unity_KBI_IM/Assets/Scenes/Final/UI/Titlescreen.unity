@@ -4820,7 +4820,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Menu
+  m_DefaultActionMap: ceba410c-7e92-460a-ac3f-23f8099e8536
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1372593898
@@ -6774,6 +6774,9 @@ MonoBehaviour:
   createErrorLabel: {fileID: 742658929}
   roomItemContainer: {fileID: 439241157}
   roomItemTemplate: {fileID: 1969354664}
+  roomItemScrollRect: {fileID: 2125273109}
+  joinRoomButton: {fileID: 2032447877}
+  createRoomButton: {fileID: 1499494502}
 --- !u!1 &1789553018
 GameObject:
   m_ObjectHideFlags: 0

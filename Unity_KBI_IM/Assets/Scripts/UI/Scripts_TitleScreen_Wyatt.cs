@@ -78,6 +78,8 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		if (JoinRoomPanel.activeInHierarchy || CreateRoomPanel.activeInHierarchy) {
 			JoinRoomPanel.SetActive(false);
 			CreateRoomPanel.SetActive(false);
+
+			RoomsPanel.GetComponent<Scripts_RoomsPanel_Wyatt>().SetUIInteractable(true);
 		} else if (!TitlePanel.activeInHierarchy) {
 			TitlePanel.SetActive(true);
 			QuickPlayPanel.SetActive(false);
