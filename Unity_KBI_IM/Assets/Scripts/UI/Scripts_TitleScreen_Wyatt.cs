@@ -1,6 +1,6 @@
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Photon.Pun;
 
 [DefaultExecutionOrder(-50)]
 public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
@@ -9,7 +9,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	[SerializeField] GameObject TitlePanel;
 	[SerializeField] GameObject QuickPlayPanel;
 	[SerializeField] GameObject QueuePanel;
-	[SerializeField] GameObject LobbiesPanel;
+	[SerializeField] GameObject RoomsPanel;
 	[SerializeField] GameObject SettingsPanel;
 
 	protected override void Awake() {
@@ -23,7 +23,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		TitlePanel.SetActive(true);
 		QuickPlayPanel.SetActive(false);
 		QueuePanel.SetActive(false);
-		LobbiesPanel.SetActive(false);
+		RoomsPanel.SetActive(false);
 		SettingsPanel.SetActive(false);
 	}
 
@@ -32,20 +32,30 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 
 	#region BUTTON FUNCS
 	public void EnterQuickPlay() { 
+		if (!Scripts_NetworkManager_Wyatt.connectedToMaster) return;
+
 		TitlePanel.SetActive(false);
 		QuickPlayPanel.SetActive(true);
+
+		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.quickplayLobby);
 	}
 
 	public void EnterQueue() { 
+		if (!Scripts_NetworkManager_Wyatt.connectedToMaster) return;
+
 		TitlePanel.SetActive(false);
 		QueuePanel.SetActive(true);
+
+		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.matchmadeLobby);
 	}
 
-	public void EnterLobbies() { 
-		TitlePanel.SetActive(false);
-		LobbiesPanel.SetActive(true);
+	public void EnterRooms() {
+		if (!Scripts_NetworkManager_Wyatt.connectedToMaster) return;
 
-		Scripts_NetworkManager_Wyatt.ConnectToServer();
+		TitlePanel.SetActive(false);
+		RoomsPanel.SetActive(true);
+
+		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.customLobby);
 	}
 
 	public void EnterSettings() { 
@@ -56,12 +66,13 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	public void Quit() { Application.Quit(); }
 	#endregion
 
+	// TODO: make functional for other panels as well!
 	public void OnBack(InputAction.CallbackContext ctx) {
 		if (!TitlePanel.activeInHierarchy) {
 			TitlePanel.SetActive(true);
 			QuickPlayPanel.SetActive(false);
 			QueuePanel.SetActive(false);
-			LobbiesPanel.SetActive(false);
+			RoomsPanel.SetActive(false);
 			SettingsPanel.SetActive(false);
 		} else Quit();
 	}
