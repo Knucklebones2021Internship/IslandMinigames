@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/UI/Titlescreen.unity
     guid: 0ad7811c140c4e44b93033c548b6caf4
   - enabled: 1
-    path: Assets/Scenes/Final/UI/CustomRoom.unity
+    path: Assets/Scenes/Final/UI/PregameRoom.unity
     guid: eee382eb259205341b7b0cacb43af3ab
   - enabled: 1
     path: Assets/Scenes/TestLabs/TestLab_BubbleController.unity

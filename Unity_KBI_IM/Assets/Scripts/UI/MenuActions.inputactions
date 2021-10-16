@@ -2,7 +2,7 @@
     "name": "TitlesceenActions",
     "maps": [
         {
-            "name": "Titlescreen",
+            "name": "Menu",
             "id": "ceba410c-7e92-460a-ac3f-23f8099e8536",
             "actions": [
                 {

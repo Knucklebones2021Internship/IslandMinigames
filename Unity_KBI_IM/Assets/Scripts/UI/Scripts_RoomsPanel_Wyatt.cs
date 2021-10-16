@@ -138,10 +138,9 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 		for (int i=0; i<roomItems.Count; i++) roomItems[i].Reset();
 	}
 
-	// once we've joined the room, enter the CustomRoom scene
+	// once we've joined the room, enter the PregameRoom scene to wait for your fellow players
 	public override void OnJoinedRoom() {
-		print("hello");
-		SceneManager.LoadScene("CustomRoom");
+		SceneManager.LoadScene("PregameRoom");
 	}
 
 	public override void OnJoinRoomFailed(short returnCode, string message) {
