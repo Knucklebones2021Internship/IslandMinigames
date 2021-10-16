@@ -6,11 +6,16 @@ using UnityEngine.InputSystem;
 public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	PlayerInput tsInput;
 
+	[Header("Panels")]
 	[SerializeField] GameObject TitlePanel;
 	[SerializeField] GameObject QuickPlayPanel;
 	[SerializeField] GameObject QueuePanel;
 	[SerializeField] GameObject RoomsPanel;
 	[SerializeField] GameObject SettingsPanel;
+
+	[Header("SubPanels")]
+	[SerializeField] GameObject JoinRoomPanel;
+	[SerializeField] GameObject CreateRoomPanel;
 
 	protected override void Awake() {
 		base.Awake();
@@ -69,9 +74,11 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	public void Quit() { Application.Quit(); }
 	#endregion
 
-	// TODO: make functional for other panels as well!
 	public void OnBack(InputAction.CallbackContext ctx) {
-		if (!TitlePanel.activeInHierarchy) {
+		if (JoinRoomPanel.activeInHierarchy || CreateRoomPanel.activeInHierarchy) {
+			JoinRoomPanel.SetActive(false);
+			CreateRoomPanel.SetActive(false);
+		} else if (!TitlePanel.activeInHierarchy) {
 			TitlePanel.SetActive(true);
 			QuickPlayPanel.SetActive(false);
 			QueuePanel.SetActive(false);
