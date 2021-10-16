@@ -7,6 +7,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	PlayerInput tsInput;
 
 	[Header("Panels")]
+	[SerializeField] GameObject ConnectingToServerPanel;
 	[SerializeField] GameObject TitlePanel;
 	[SerializeField] GameObject QuickPlayPanel;
 	[SerializeField] GameObject QueuePanel;
@@ -25,20 +26,26 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 
 		tsInput = GetComponent<PlayerInput>();
 
-		TitlePanel.SetActive(true);
+		ConnectingToServerPanel.SetActive(true);
+		TitlePanel.SetActive(false);
 		QuickPlayPanel.SetActive(false);
 		QueuePanel.SetActive(false);
 		RoomsPanel.SetActive(false);
 		SettingsPanel.SetActive(false);
 	}
 
-	void OnEnable()  { tsInput.actions["Back"].started += OnBack; }
-	void OnDisable() { tsInput.actions["Back"].started -= OnBack; }
+	void OnEnable()  {
+		Scripts_NetworkManager_Wyatt.ConnectedToMaster += DisplayTitleScreen;
+		tsInput.actions["Back"].started += OnBack; 
+	}
+
+	void OnDisable() { 
+		Scripts_NetworkManager_Wyatt.ConnectedToMaster -= DisplayTitleScreen;
+		tsInput.actions["Back"].started -= OnBack; 
+	}
 
 	#region BUTTON FUNCS
 	public void EnterQuickPlay() { 
-		if (!Scripts_NetworkManager_Wyatt.connectedToMaster) return;
-
 		TitlePanel.SetActive(false);
 		QuickPlayPanel.SetActive(true);
 
@@ -47,8 +54,6 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	}
 
 	public void EnterQueue() { 
-		if (!Scripts_NetworkManager_Wyatt.connectedToMaster) return;
-
 		TitlePanel.SetActive(false);
 		QueuePanel.SetActive(true);
 
@@ -57,8 +62,6 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	}
 
 	public void EnterRooms() {
-		if (!Scripts_NetworkManager_Wyatt.connectedToMaster) return;
-
 		TitlePanel.SetActive(false);
 		RoomsPanel.SetActive(true);
 
@@ -74,13 +77,18 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	public void Quit() { Application.Quit(); }
 	#endregion
 
+	void DisplayTitleScreen() { 
+		ConnectingToServerPanel.SetActive(false);
+		TitlePanel.SetActive(true);
+	}
+
 	public void OnBack(InputAction.CallbackContext ctx) {
 		if (JoinRoomPanel.activeInHierarchy || CreateRoomPanel.activeInHierarchy) {
 			JoinRoomPanel.SetActive(false);
 			CreateRoomPanel.SetActive(false);
 
 			RoomsPanel.GetComponent<Scripts_RoomsPanel_Wyatt>().SetUIInteractable(true);
-		} else if (!TitlePanel.activeInHierarchy) {
+		} else if (!TitlePanel.activeInHierarchy && !ConnectingToServerPanel.activeInHierarchy) {
 			TitlePanel.SetActive(true);
 			QuickPlayPanel.SetActive(false);
 			QueuePanel.SetActive(false);

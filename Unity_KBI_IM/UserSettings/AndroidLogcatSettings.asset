@@ -16,12 +16,6 @@
         },
         {
             "deviceId": "805ad320",
-            "name": "com.unity3d.mobileremote",
-            "processId": 3446,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 21065,
             "exited": true
@@ -42,6 +36,12 @@
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 17116,
+            "exited": true
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 18931,
             "exited": true
         }
     ],

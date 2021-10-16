@@ -2,6 +2,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+using System;
 
 public enum MultiplayerType { QUICKPLAY, MATCHMAKING, CUSTOM_LOBBY }
 
@@ -9,13 +10,16 @@ public enum MultiplayerType { QUICKPLAY, MATCHMAKING, CUSTOM_LOBBY }
 public class Scripts_NetworkManager_Wyatt : MonoBehaviourPunCallbacks {
 	public static Scripts_NetworkManager_Wyatt Instance { get; private set; }
 
+	#region NETWORKING EVENTS
+	public static event Action ConnectedToMaster;
+	#endregion
+
+	#region LOBBY TYPES
 	public static MultiplayerType multiplayerType;
-
-	public static bool connectedToMaster = false;
-
 	public static TypedLobby quickplayLobby = new TypedLobby("quickplay", LobbyType.Default);
 	public static TypedLobby matchmadeLobby = new TypedLobby("matchmade", LobbyType.Default);
 	public static TypedLobby customLobby = new TypedLobby("custom", LobbyType.Default);
+	#endregion
 
 	static string currentRoomName;
 
@@ -30,7 +34,7 @@ public class Scripts_NetworkManager_Wyatt : MonoBehaviourPunCallbacks {
 	}
 
 	public override void OnConnectedToMaster() {
-		connectedToMaster = true;
+		ConnectedToMaster.Invoke();
 	}
 
 	public override void OnLeftRoom() {
