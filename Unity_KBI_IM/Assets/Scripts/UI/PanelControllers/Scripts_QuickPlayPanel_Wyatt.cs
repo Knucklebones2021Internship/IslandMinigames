@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,8 @@ public class Scripts_QuickPlayPanel_Wyatt : MonoBehaviour {
 	}
 
 	void QueueForRoom() {
-		PhotonNetwork.JoinRandomOrCreateRoom();
+		RoomOptions options = new RoomOptions() { MaxPlayers = 4 };
+		PhotonNetwork.JoinRandomOrCreateRoom(typedLobby: Scripts_NetworkManager_Wyatt.quickplayLobby, roomOptions: options);
 	}
 
 	void EnterPregameScene() {

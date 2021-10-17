@@ -7,7 +7,8 @@ using Photon.Realtime;
 using System;
 using UnityEngine.SceneManagement;
 
-public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
+public class Scripts_RoomsPanel_Wyatt : MonoBehaviour {
+	#region SERIALIZED FIELDS
 	[Header("Panels")]
 	[SerializeField] GameObject joinRoomPanel;
 	[SerializeField] GameObject createRoomPanel;
@@ -30,6 +31,7 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 	[SerializeField] ScrollRect roomItemScrollRect;
 	[SerializeField] Button joinRoomButton;
 	[SerializeField] Button createRoomButton;
+	#endregion
 
 	List<Scripts_RoomItem_Wyatt> roomItems = new List<Scripts_RoomItem_Wyatt>();
 	List<RoomInfo> roomInfos = new List<RoomInfo>();
@@ -42,6 +44,18 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 		createRoomPanel.SetActive(false);
 	}
 
+	void OnEnable() {
+		Scripts_NetworkManager_Wyatt.RoomListUpdate += UpdateRoomList;
+		Scripts_NetworkManager_Wyatt.JoinedRoom += EnterPregameScene;
+		Scripts_NetworkManager_Wyatt.JoinRoomFailed += JoinFailed;
+	}
+
+	void OnDisable() {
+		Scripts_NetworkManager_Wyatt.RoomListUpdate -= UpdateRoomList;
+		Scripts_NetworkManager_Wyatt.JoinedRoom -= EnterPregameScene;
+		Scripts_NetworkManager_Wyatt.JoinRoomFailed -= JoinFailed;
+	}
+
 	public void SetUIInteractable(bool interactable) {
 		for (int i=0; i<roomItems.Count; i++) {
 			roomItems[i].GetComponent<Button>().interactable = interactable;
@@ -52,6 +66,10 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 		roomItemScrollRect.vertical = interactable;
 		joinRoomButton.interactable = interactable;
 		createRoomButton.interactable = interactable;
+	}
+
+	public void DeselectAllRoomItems() {
+		for (int i=0; i<roomItems.Count; i++) roomItems[i].Reset();
 	}
 
 	#region JoinPanel
@@ -133,8 +151,9 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 	}
 	#endregion
 
+	#region NETWORKING EVENT CALLBACKS
 	// whenever the room list is updated, refresh the list of rooms
-	public override void OnRoomListUpdate(List<RoomInfo> roomList) {
+	void UpdateRoomList(List<RoomInfo> roomList) {
 		if (joinRoomPanel.activeInHierarchy) return; // don't refresh while we're joining
 		if (Time.time <= nextRoomListUpdateTime) return; // limit refresh rate
 		nextRoomListUpdateTime = Time.time + timeBetweenRoomListUpdates;
@@ -154,17 +173,14 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviourPunCallbacks {
 		}
 	}
 
-	public void DeselectAllRoomItems() {
-		for (int i=0; i<roomItems.Count; i++) roomItems[i].Reset();
-	}
-
 	// once we've joined the room, enter the PregameRoom scene to wait for your fellow players
-	public override void OnJoinedRoom() {
+	void EnterPregameScene() {
 		SceneManager.LoadScene("PregameRoom");
 	}
 
-	public override void OnJoinRoomFailed(short returnCode, string message) {
+	void JoinFailed(short returnCode, string message) {
 		joinErrorLabel.text = "Error: " + message;
 		joinErrorLabel.gameObject.SetActive(true);
 	}
+	#endregion
 }
