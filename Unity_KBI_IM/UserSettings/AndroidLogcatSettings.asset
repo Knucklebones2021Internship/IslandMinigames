@@ -17,12 +17,6 @@
         {
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 21065,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 11273,
             "exited": true
         },
@@ -42,6 +36,12 @@
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 18931,
+            "exited": true
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 21011,
             "exited": true
         }
     ],
