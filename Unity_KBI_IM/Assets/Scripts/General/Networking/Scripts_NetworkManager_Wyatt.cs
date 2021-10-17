@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
 
-public enum MultiplayerType { QUICKPLAY, MATCHMAKING, CUSTOM_LOBBY }
+public enum MultiplayerType { QUICKPLAY, NORMAL, CUSTOM_LOBBY }
 
 [DefaultExecutionOrder(-60)]
 public class Scripts_NetworkManager_Wyatt : MonoBehaviourPunCallbacks {
@@ -42,7 +42,7 @@ public class Scripts_NetworkManager_Wyatt : MonoBehaviourPunCallbacks {
 	#region LOBBY TYPES
 	public static MultiplayerType multiplayerType;
 	public static TypedLobby quickplayLobby = new TypedLobby("quickplay", LobbyType.Default);
-	public static TypedLobby matchmadeLobby = new TypedLobby("matchmade", LobbyType.Default);
+	public static TypedLobby normalLobby = new TypedLobby("normal", LobbyType.Default);
 	public static TypedLobby customLobby = new TypedLobby("custom", LobbyType.Default);
 	#endregion
 

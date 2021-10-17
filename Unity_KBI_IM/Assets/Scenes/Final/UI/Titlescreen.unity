@@ -1763,6 +1763,7 @@ GameObject:
   - component: {fileID: 527493628}
   - component: {fileID: 527493630}
   - component: {fileID: 527493629}
+  - component: {fileID: 527493631}
   m_Layer: 5
   m_Name: QuickPlayPanel
   m_TagString: Untagged
@@ -1828,6 +1829,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527493627}
   m_CullTransparentMesh: 1
+--- !u!114 &527493631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527493627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449e4420da7bf9648a7327268be98dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &535433781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,7 +3839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Queue
+  m_text: Normal Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4247,7 +4260,7 @@ GameObject:
   - component: {fileID: 918958327}
   - component: {fileID: 918958326}
   m_Layer: 5
-  m_Name: QueueButton
+  m_Name: NormalPlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4319,7 +4332,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1345121712}
         m_TargetAssemblyTypeName: Scripts_TitleScreen_Wyatt, Assembly-CSharp
-        m_MethodName: EnterQueue
+        m_MethodName: EnterNormalPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5134,7 +5147,7 @@ MonoBehaviour:
   ConnectingToServerPanel: {fileID: 820929050}
   TitlePanel: {fileID: 2095456656}
   QuickPlayPanel: {fileID: 527493627}
-  QueuePanel: {fileID: 1789553018}
+  NormalPlayPanel: {fileID: 1789553018}
   RoomsPanel: {fileID: 1730766494}
   SettingsPanel: {fileID: 637733305}
   JoinRoomPanel: {fileID: 1519083410}
@@ -7075,7 +7088,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Queue
+  m_text: 'Normal Play
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7268,8 +7283,9 @@ GameObject:
   - component: {fileID: 1789553019}
   - component: {fileID: 1789553021}
   - component: {fileID: 1789553020}
+  - component: {fileID: 1789553022}
   m_Layer: 5
-  m_Name: QueuePanel
+  m_Name: NormalPlayPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7333,6 +7349,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789553018}
   m_CullTransparentMesh: 1
+--- !u!114 &1789553022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789553018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fe78f7a213e9e4a8d6184cfd465fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1831246542
 GameObject:
   m_ObjectHideFlags: 0

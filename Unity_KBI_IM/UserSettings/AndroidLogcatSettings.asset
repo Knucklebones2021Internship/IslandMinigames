@@ -17,12 +17,6 @@
         {
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 8018,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 9679,
             "exited": true
         },
@@ -42,6 +36,18 @@
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 12666,
+            "exited": true
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.sec.android.gallery3d",
+            "processId": 14919,
+            "exited": false
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 16401,
             "exited": true
         }
     ],

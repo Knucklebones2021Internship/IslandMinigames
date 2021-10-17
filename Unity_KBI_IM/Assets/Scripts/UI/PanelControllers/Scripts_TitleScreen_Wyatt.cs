@@ -10,7 +10,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	[SerializeField] GameObject ConnectingToServerPanel;
 	[SerializeField] GameObject TitlePanel;
 	[SerializeField] GameObject QuickPlayPanel;
-	[SerializeField] GameObject QueuePanel;
+	[SerializeField] GameObject NormalPlayPanel;
 	[SerializeField] GameObject RoomsPanel;
 	[SerializeField] GameObject SettingsPanel;
 
@@ -29,7 +29,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		ConnectingToServerPanel.SetActive(true);
 		TitlePanel.SetActive(false);
 		QuickPlayPanel.SetActive(false);
-		QueuePanel.SetActive(false);
+		NormalPlayPanel.SetActive(false);
 		RoomsPanel.SetActive(false);
 		SettingsPanel.SetActive(false);
 	}
@@ -53,12 +53,12 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.quickplayLobby);
 	}
 
-	public void EnterQueue() { 
+	public void EnterNormalPlay() { 
 		TitlePanel.SetActive(false);
-		QueuePanel.SetActive(true);
+		NormalPlayPanel.SetActive(true);
 
-		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.MATCHMAKING;
-		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.matchmadeLobby);
+		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.NORMAL;
+		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.normalLobby);
 	}
 
 	public void EnterRooms() {
@@ -91,7 +91,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		} else if (!TitlePanel.activeInHierarchy && !ConnectingToServerPanel.activeInHierarchy) {
 			TitlePanel.SetActive(true);
 			QuickPlayPanel.SetActive(false);
-			QueuePanel.SetActive(false);
+			NormalPlayPanel.SetActive(false);
 			RoomsPanel.SetActive(false);
 			SettingsPanel.SetActive(false);
 		} else Quit();
