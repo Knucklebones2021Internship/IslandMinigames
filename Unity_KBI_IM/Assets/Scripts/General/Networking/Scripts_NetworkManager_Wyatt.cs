@@ -52,6 +52,7 @@ public class Scripts_NetworkManager_Wyatt : MonoBehaviourPunCallbacks {
 		if (Instance == null) {
 			Instance = this;
 			PhotonNetwork.ConnectUsingSettings();
+			PhotonNetwork.AutomaticallySyncScene = true;
 			DontDestroyOnLoad(gameObject);
 		} else {
 			Destroy(gameObject);

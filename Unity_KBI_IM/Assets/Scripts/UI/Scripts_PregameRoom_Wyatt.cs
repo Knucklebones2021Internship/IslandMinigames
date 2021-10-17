@@ -62,7 +62,8 @@ public class Scripts_PregameRoom_Wyatt : Scripts_BaseManager_Wyatt {
 
 	#region BUTTON FUNCS
 	public void OnPlayButton() {
-		// TODO: play game
+		playButton.interactable = false;
+		PhotonNetwork.LoadLevel("LoadingScreen");
 	}
 
 	public void OnLeaveRoomButton() {
