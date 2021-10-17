@@ -20,6 +20,7 @@ public class Scripts_NormalPlay_Wyatt : MonoBehaviour {
 	}
 
 	void EnterPregameScene() {
+		PhotonNetwork.CurrentRoom.IsOpen = false;
 		SceneManager.LoadScene("PregameRoom");
 	}
 }
