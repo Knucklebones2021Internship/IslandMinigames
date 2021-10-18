@@ -3,12 +3,12 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Test_Event" ID="{7739C400-E770-4915-99B4-1826F152BE5A}">
+				<Event Name="Ball_Jump" ID="{94BC07B2-9643-47ED-AD20-682CAD80D533}">
 					<ChildrenList>
-						<Action Name="" ID="{BA42B936-4681-4CBC-B57C-7108649E5AE2}" ShortID="314647118">
+						<Action Name="" ID="{F4C67DFF-61C1-4B11-88D0-BA6AF555F5AB}" ShortID="377833824">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Test_SFX" ID="{E786C515-576A-46C7-84D7-8FFE727B879F}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+									<ObjectRef Name="Bouncing_Ball" ID="{6B1BCA21-5DE8-4B13-90D6-B3475D11215D}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

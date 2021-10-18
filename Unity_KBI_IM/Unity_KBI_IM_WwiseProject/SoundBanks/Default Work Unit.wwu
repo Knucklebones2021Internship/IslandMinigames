@@ -4,8 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{3E64A795-8847-472B-BFF9-637CC765AE92}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundBank Name="Test_Soundbank" ID="{28230405-563F-4E5C-8EF6-8F94917F319F}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="SFX" ID="{CD4BCF90-5DFE-41A8-BC68-F9984F1BCF82}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Test_Event" ID="{7739C400-E770-4915-99B4-1826F152BE5A}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ball_Jump" ID="{94BC07B2-9643-47ED-AD20-682CAD80D533}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

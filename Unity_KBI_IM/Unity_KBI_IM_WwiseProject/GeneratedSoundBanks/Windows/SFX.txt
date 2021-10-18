@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	134222113	Ball_Jump			\Default Work Unit\Ball_Jump	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	646396865	Bouncing_Ball	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\bouncing ball sfx 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bouncing_Ball		33140
+

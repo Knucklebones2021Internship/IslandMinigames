@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="iOS" BasePlatform="iOS" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\iOS\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\GeneratedSoundBanks\iOS\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\iOS\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Assets\StreamingAssets\Audio\GeneratedSoundBanks\iOS\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\GeneratedSoundBanks\iOS</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\GeneratedSoundBanks\iOS</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -16,16 +16,21 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="4154996803" Language="SFX" Hash="977989114">
+		<SoundBank Id="4154996803" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Test_Soundbank</ObjectPath>
 			<ShortName>Test_Soundbank</ShortName>
 			<Path>Test_Soundbank.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="4237593279" Language="SFX" Hash="2257583664">
+			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Carey</ObjectPath>
+			<ShortName>SFX_Carey</ShortName>
+			<Path>SFX_Carey.bnk</Path>
 			<IncludedEvents>
-				<Event Id="4258653052" Name="Test_Event" ObjectPath="\Events\Default Work Unit\Test_Event">
+				<Event Id="134222113" Name="Ball_Jump" ObjectPath="\Events\Default Work Unit\Ball_Jump" DurationType="OneShot" DurationMin="0.187506" DurationMax="0.187506">
 					<IncludedMemoryFiles>
-						<File Id="168697633" Language="SFX">
-							<ShortName>Intro Music_Master-St.wav</ShortName>
-							<Path>SFX\Intro Music_Master-St_10C4C929.wem</Path>
+						<File Id="646396865" Language="SFX">
+							<ShortName>bouncing ball sfx 5.wav</ShortName>
+							<Path>SFX\bouncing ball sfx 5_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

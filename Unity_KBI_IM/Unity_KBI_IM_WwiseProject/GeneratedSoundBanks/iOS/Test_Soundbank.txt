@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	4258653052	Test_Event			\Default Work Unit\Test_Event	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	168697633	Test_SFX	C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\iOS\SFX\Intro Music_Master-St_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test_SFX		3926424
-

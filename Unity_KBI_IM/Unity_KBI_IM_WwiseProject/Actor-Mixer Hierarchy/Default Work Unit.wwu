@@ -3,7 +3,19 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{F953BB53-3471-4F54-84DD-B41C68643107}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Test_SFX" ID="{E786C515-576A-46C7-84D7-8FFE727B879F}" ShortID="418367421">
+				<Sound Name="Bouncing_Ball" ID="{6B1BCA21-5DE8-4B13-90D6-B3475D11215D}" ShortID="698639178">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
@@ -13,17 +25,17 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Intro Music_Master-St" ID="{1441CCC8-B4C4-45EA-B8AF-DDA1FBA31BE2}">
+						<AudioFileSource Name="bouncing ball sfx 5" ID="{76F94A2C-B32D-46A1-A622-B2F42079B2E6}">
 							<Language>SFX</Language>
-							<AudioFile>Intro Music_Master-St.wav</AudioFile>
+							<AudioFile>bouncing ball sfx 5.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="168697633"/>
+								<MediaID ID="646396865"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ObjectLists/>
 					<ActiveSourceList>
-						<ActiveSource Name="Intro Music_Master-St" ID="{1441CCC8-B4C4-45EA-B8AF-DDA1FBA31BE2}" Platform="Linked"/>
+						<ActiveSource Name="bouncing ball sfx 5" ID="{76F94A2C-B32D-46A1-A622-B2F42079B2E6}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
