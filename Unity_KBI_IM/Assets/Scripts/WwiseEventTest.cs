@@ -12,7 +12,7 @@ public class WwiseEventTest : MonoBehaviour
     {
         testEvent.Post(gameObject);
         sfxTestEvent.Post(gameObject);
-    
+        AkSoundEngine.PostEvent("Ball_Jump", gameObject);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class WwiseEventTest : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Space was pressed");
-            AkSoundEngine.PostEvent("Ball_Jump", this.gameObject);
+            //AkSoundEngine.PostEvent("Ball_Jump", this.gameObject);
         }
     }
 }
