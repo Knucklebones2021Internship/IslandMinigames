@@ -5,16 +5,23 @@ using UnityEngine;
 public class WwiseEventTest : MonoBehaviour
 {
     public AK.Wwise.Event testEvent;
+    public AK.Wwise.Event sfxTestEvent;
 
     // Start is called before the first frame update
     void Start()
     {
         testEvent.Post(gameObject);
+        sfxTestEvent.Post(gameObject);
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("Space was pressed");
+            AkSoundEngine.PostEvent("Ball_Jump", this.gameObject);
+        }
     }
 }
