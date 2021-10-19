@@ -15,12 +15,11 @@ public class Scripts_QuickPlayPanel_Wyatt : MonoBehaviour {
 	}
 
 	void QueueForRoom() {
-		RoomOptions options = new RoomOptions() { MaxPlayers = 4 };
+		RoomOptions options = new RoomOptions() { MaxPlayers = 4, IsOpen = true, IsVisible = true };
 		PhotonNetwork.JoinRandomOrCreateRoom(typedLobby: Scripts_NetworkManager_Wyatt.quickplayLobby, roomOptions: options);
 	}
 
 	void EnterPregameScene() {
-		PhotonNetwork.CurrentRoom.IsOpen = false;
 		SceneManager.LoadScene("PregameRoom");
 	}
 }

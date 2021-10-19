@@ -67,6 +67,8 @@ public class Scripts_PregameRoom_Wyatt : Scripts_BaseManager_Wyatt {
 	}
 
 	public void OnLeaveRoomButton() {
+		PhotonNetwork.CurrentRoom.IsOpen = false;
+		PhotonNetwork.CurrentRoom.IsVisible = false;
 		PhotonNetwork.LeaveRoom();
 	}
 	#endregion

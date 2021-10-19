@@ -175,7 +175,6 @@ public class Scripts_RoomsPanel_Wyatt : MonoBehaviour {
 
 	// once we've joined the room, enter the PregameRoom scene to wait for your fellow players
 	void EnterPregameScene() {
-		PhotonNetwork.CurrentRoom.IsOpen = false;
 		SceneManager.LoadScene("PregameRoom");
 	}
 
