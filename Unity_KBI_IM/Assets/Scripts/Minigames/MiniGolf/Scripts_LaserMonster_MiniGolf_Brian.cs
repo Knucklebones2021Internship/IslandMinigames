@@ -24,6 +24,9 @@ public class Scripts_LaserMonster_MiniGolf_Brian : MonoBehaviour
     // Timer to shoot the laser 
     float shootTimer = 3.0f; 
 
+    // <summary> 
+    // Move around in a circle and shoot the laser projectile every 3 seconds 
+    // </summary>     
     void Update() {
         timer += Time.deltaTime * rotSpeed; 
         Orbit(); 
@@ -32,13 +35,17 @@ public class Scripts_LaserMonster_MiniGolf_Brian : MonoBehaviour
             GameObject projectile = Instantiate(laser) as GameObject; 
             projectile.transform.position = transform.position + transform.forward * 2; 
             Rigidbody rb = projectile.GetComponent<Rigidbody>(); 
-            rb.velocity = transform.forward * 40;
+            rb.velocity = transform.forward * 25;
+            Destroy(projectile, 3.0f);
             shootTimer = 3.0f;
         } else {
             shootTimer -= Time.deltaTime; 
         }
     }
 
+    // <summary> 
+    // Orbit around a central point while rotating 
+    // </summary>
     void Orbit()
     {
         if (rotateClockwise) {
