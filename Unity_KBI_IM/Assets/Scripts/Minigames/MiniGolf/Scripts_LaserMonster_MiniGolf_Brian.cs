@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Scripts_LaserMonster_MiniGolf_Brian : MonoBehaviour
+{
+
+    public float xSpread; 
+    public float zSpread; 
+    public float yOffset; 
+    public Transform centerPoint; 
+
+    public float rotSpeed; 
+    public bool rotateClockwise; 
+
+    // Rotation timer 
+    float timer = 0;
+
+    private float Rotation = 0; 
+    public float rotationRate; 
+
+    // Laser Projectile that the monster shoots 
+    public GameObject laser; 
+    // Timer to shoot the laser 
+    float shootTimer = 3.0f; 
+
+    void Update() {
+        timer += Time.deltaTime * rotSpeed; 
+        Orbit(); 
+        
+        if (shootTimer <= 0) {
+            GameObject projectile = Instantiate(laser) as GameObject; 
+            projectile.transform.position = transform.position + transform.forward * 2; 
+            Rigidbody rb = projectile.GetComponent<Rigidbody>(); 
+            rb.velocity = transform.forward * 40;
+            shootTimer = 3.0f;
+        } else {
+            shootTimer -= Time.deltaTime; 
+        }
+    }
+
+    void Orbit()
+    {
+        if (rotateClockwise) {
+            float x = -Mathf.Cos(timer) * xSpread; 
+            float z = Mathf.Sin(timer) * zSpread; 
+            Vector3 pos = new Vector3(x, yOffset, z); 
+            transform.position = pos + centerPoint.position; 
+        } else {
+            float x = Mathf.Cos(timer) * xSpread; 
+            float z = Mathf.Sin(timer) * zSpread; 
+            Vector3 pos = new Vector3(x, yOffset, z); 
+            transform.position = pos + centerPoint.position; 
+        }
+        if (Rotation == 360) { Rotation = 0; }
+        Rotation = Rotation + rotationRate * Time.deltaTime; 
+        gameObject.transform.rotation = Quaternion.Euler(0, Rotation, 0);         
+    }
+}
