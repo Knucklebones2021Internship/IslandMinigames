@@ -23,7 +23,7 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 
         float attitudeX = attitude.x;
         float attitudeY = attitude.y;
-        float offset = 10f;
+        float offset = 30f;
 
         if (attitudeX < 360f - offset && attitudeX > 180f) {
             input.x = 1f; // right
@@ -60,7 +60,7 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 
         Vector3 moveDir = new Vector3(movement.x, 0f, movement.z);
 
-        float moveForce = 300f;
+        float moveForce = 800f; 
         float jumpForce = 300f;
 
         if (IsGrounded()) { // you can only roll if you're on the ground!
@@ -68,6 +68,7 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 		}
 
         float maxSpeed = 100f;
+        print(rb.velocity.magnitude);
         if(rb.velocity.magnitude > maxSpeed){
             print("clamping speed");
             float velocityY = rb.velocity.y;
@@ -83,7 +84,7 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 			} jumpAttempted = false;
 		}
 
-        cameraFollow.transform.rotation = Quaternion.LookRotation(Vector3.forward);
+        cameraFollow.transform.position = transform.position;
     }
 
     bool IsGrounded() {
