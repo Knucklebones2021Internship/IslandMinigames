@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
+/// DEPRECATED - USE THE OLD INPUT SYSTEM
 /// <para> This is a global manager class to handle our input system. </para>
 /// <para> All of our minigames should either subscribe to the InputAction events or use it to poll input. </para>
 /// <para> Add functionality as necessary. </para>

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
     [SerializeField] GameObject cam;
@@ -9,45 +8,49 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
     Vector2 input;
 
     bool jumpAttempted = false;
+    bool screenPressed = false;
 
 	void Awake() {
         rb = GetComponent<Rigidbody>();
 
-        Scripts_InputManager_Wyatt.EnableAttitudeSensor();
+        if (SystemInfo.supportsGyroscope) {
+            Input.gyro.enabled = true;
+        }
 	}
 
-	void OnEnable() {
-        Scripts_InputManager_Wyatt.touchPress.started += Jump;
-	}
+    void Update() {
+        Vector3 attitude = Input.gyro.attitude.eulerAngles;
 
-	void OnDisable() {
-        Scripts_InputManager_Wyatt.touchPress.started -= Jump;
-	}
+        float attitudeX = attitude.x;
+        float attitudeY = attitude.y;
+        float offset = 10f;
 
-	void Update() {
-        Quaternion attitude = Scripts_InputManager_Wyatt.GetAttitudeSensorValue();
-
-        float attitudeX = attitude.eulerAngles.x;
-        float attitudeY = attitude.eulerAngles.y;
-
-        if (attitudeX < 355f && attitudeX > 270f) {
+        if (attitudeX < 360f - offset && attitudeX > 180f) {
             input.x = 1f; // right
-		} else if (attitudeX > 5f && attitudeX < 90f) {
+		} else if (attitudeX > 0f + offset && attitudeX < 180f) {
             input.x = -1f; // left
 		} else {
             input.x = 0f; // stop
 		}
 
-        if (attitudeY < 355f && attitudeY > 270f) {
+        if (attitudeY < 360f - offset && attitudeY > 180f) {
             input.y = 1f; // forward
-		} else if (attitudeY > 5f && attitudeY < 90f) {
+		} else if (attitudeY > 0f + offset && attitudeY < 180f) {
             input.y = -1f; // backward
 		} else {
             input.y = 0f; // stop
 		}
 
         input = input.normalized;
-	}
+
+        // poll for jump
+        if (Input.touchCount > 0) {
+            if (!screenPressed) {
+                jumpAttempted = true;
+                screenPressed = true;
+			}
+        } else screenPressed = false;
+    }
 
 	void FixedUpdate() {
         Vector3 movement = new Vector3(input.x, 0f, input.y);
@@ -57,15 +60,16 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 
         Vector3 moveDir = new Vector3(movement.x, 0f, movement.z);
 
-        float moveForce = 300;
+        float moveForce = 300f;
         float jumpForce = 300f;
 
         if (IsGrounded()) { // you can only roll if you're on the ground!
             rb.AddForce(moveDir * moveForce * Time.fixedDeltaTime);
 		}
 
-        float maxSpeed = 50f;
+        float maxSpeed = 100f;
         if(rb.velocity.magnitude > maxSpeed){
+            print("clamping speed");
             float velocityY = rb.velocity.y;
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
@@ -85,13 +89,4 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
     bool IsGrounded() {
         return Physics.Raycast(transform.position, -Vector3.up, 0.51f);
 	}
-
-    void Jump(InputAction.CallbackContext context) { 
-        print("wyatt position: " + Scripts_InputManager_Wyatt.touchPosition.ReadValue<Vector2>());
-        print("wyatt jump!");
-
-        jumpAttempted = true;
-
-        //transform.position = Vector3.zero;
-    }
 }

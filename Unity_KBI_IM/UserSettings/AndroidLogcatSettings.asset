@@ -3,41 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "805ad320",
         "name": "com.DefaultCompany.Unity_KBI_IM",
-        "processId": 25257,
+        "processId": 1595,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "805ad320",
-            "name": "com.sec.android.app.launcher",
-            "processId": 4178,
-            "exited": false
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 12666,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.sec.android.gallery3d",
-            "processId": 14919,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 16401,
-            "exited": true
-        },
-        {
-            "deviceId": "805ad320",
-            "name": "com.DefaultCompany.Unity_KBI_IM",
-            "processId": 20974,
-            "exited": true
-        },
         {
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
@@ -48,24 +18,30 @@
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 22864,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 23811,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 24293,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "805ad320",
             "name": "com.DefaultCompany.Unity_KBI_IM",
             "processId": 25257,
+            "exited": true
+        },
+        {
+            "deviceId": "805ad320",
+            "name": "com.DefaultCompany.Unity_KBI_IM",
+            "processId": 1595,
             "exited": false
         }
     ],
