@@ -32,7 +32,8 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
     {
         int pid = Random.Range(1, playerList.Count + 1);
         Scripts_Player_HotPotato_Brian pScript = playerList[pid-1].GetComponent<Scripts_Player_HotPotato_Brian>();
-        pScript.isHoldingPotato = true; 
+        pScript.isHoldingPotato = true;
+        pScript.justReceivedPotato = true;
         hotPotato.transform.position = pScript.guide.transform.position;
         hotPotato.transform.rotation = pScript.guide.transform.rotation;
     }

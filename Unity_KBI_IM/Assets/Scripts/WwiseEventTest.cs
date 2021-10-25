@@ -18,10 +18,10 @@ public class WwiseEventTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Space was pressed");
-            //AkSoundEngine.PostEvent("Ball_Jump", this.gameObject);
-        }
+        //if(Input.GetKey(KeyCode.Space))
+        //{
+        //    Debug.Log("Space was pressed");
+        //    //AkSoundEngine.PostEvent("Ball_Jump", this.gameObject);
+        //}
     }
 }

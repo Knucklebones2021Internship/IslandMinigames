@@ -202,6 +202,10 @@ PrefabInstance:
       propertyPath: rightPlayer
       value: 
       objectReference: {fileID: 1923217563}
+    - target: {fileID: 8274929712544303398, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
+      propertyPath: tossPotatoCorrectEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: db848310b624d684b8f9292eec8a6866, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
 --- !u!4 &60288854 stripped
@@ -416,7 +420,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &663079238
 GameObject:
@@ -909,7 +913,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1010091351
 GameObject:
@@ -1085,6 +1089,10 @@ PrefabInstance:
       propertyPath: rightPlayer
       value: 
       objectReference: {fileID: 6281720152389329849}
+    - target: {fileID: 8274929712544303398, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
+      propertyPath: tossPotatoCorrectEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: db848310b624d684b8f9292eec8a6866, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
 --- !u!4 &1098508139 stripped
@@ -1222,7 +1230,7 @@ Transform:
   - {fileID: 1923217562}
   - {fileID: 60288854}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534010160
 GameObject:
@@ -1589,7 +1597,7 @@ RectTransform:
   - {fileID: 774972660}
   - {fileID: 2090805301}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1689,7 +1697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1728889340 stripped
 Transform:
@@ -1775,6 +1783,10 @@ PrefabInstance:
       propertyPath: rightPlayer
       value: 
       objectReference: {fileID: 1098508140}
+    - target: {fileID: 8274929712544303398, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
+      propertyPath: tossPotatoCorrectEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: db848310b624d684b8f9292eec8a6866, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
 --- !u!4 &1923217562 stripped
@@ -1838,7 +1850,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2003115636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003115638}
+  - component: {fileID: 2003115637}
+  m_Layer: 0
+  m_Name: WwiseSoundbanks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2003115637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003115636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e73f01c35400484c870515a8389f22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ebc8500ca59ad4e408301d4bf4dd1b3f, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!4 &2003115638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003115636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.6130843, y: -1.5386078, z: -2.5362499}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020006183
 GameObject:
@@ -2003,7 +2070,7 @@ Transform:
   m_Children:
   - {fileID: 1010091352}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090805300
 GameObject:
@@ -2163,6 +2230,10 @@ PrefabInstance:
       propertyPath: rightPlayer
       value: 
       objectReference: {fileID: 60288855}
+    - target: {fileID: 8274929712544303398, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
+      propertyPath: tossPotatoCorrectEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: db848310b624d684b8f9292eec8a6866, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}
 --- !u!1 &6281720152389329849 stripped

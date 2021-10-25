@@ -13,7 +13,8 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
     public Transform guide; 
 
     public int playerID; 
-    public bool isHoldingPotato = false; 
+    public bool isHoldingPotato = false;
+    public bool justReceivedPotato = false;
     public bool gameOver = false; 
 
     // UI for the player timer 
@@ -27,6 +28,9 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
     public float pTime = 10f; 
 
     public GameObject hotPotato;
+
+    public AK.Wwise.Event receivePotatoEvent;
+    public AK.Wwise.Event tossPotatoCorrectEvent;
 
     // <summary> 
     // Start the player timer when they are holding the hot potato 
@@ -42,6 +46,11 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
     IEnumerator Play() {
         // Start the player time when the player holds the potato 
         if (isHoldingPotato) {
+            if (justReceivedPotato)
+            {
+                receivePotatoEvent.Post(gameObject);
+                justReceivedPotato = false;
+            }
             yield return new WaitForSeconds(1.0f); 
 
             if (!timerCountdown) {
@@ -116,7 +125,10 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
 
             // If the user presses another player that doesn't have the hot potato 
             if (pScript.playerID != playerID) {
-                pScript.isHoldingPotato = true; 
+                pScript.isHoldingPotato = true;
+                pScript.justReceivedPotato = true;
+                //tossPotatoCorrectEvent.Post(gameObject);
+                //Debug.Log("How often is this getting called?");
                 hotPotato.transform.position = pScript.guide.transform.position;
                 hotPotato.transform.rotation = pScript.guide.transform.rotation; 
                 isHoldingPotato = false;
@@ -132,9 +144,11 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
     IEnumerator PotatoPass(GameObject player) {
         Scripts_Player_HotPotato_Brian pScript = player.GetComponent<Scripts_Player_HotPotato_Brian>();
 
-        pScript.isHoldingPotato = true; 
+        pScript.isHoldingPotato = true;
+        pScript.justReceivedPotato = true;
         hotPotato.transform.position = pScript.guide.transform.position;
-        hotPotato.transform.rotation = pScript.guide.transform.rotation; 
+        hotPotato.transform.rotation = pScript.guide.transform.rotation;
+        tossPotatoCorrectEvent.Post(gameObject);
         isHoldingPotato = false;
         timerCountdown = false;
         yield return new WaitForSeconds(0.1f);      
