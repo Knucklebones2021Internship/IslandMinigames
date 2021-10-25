@@ -10,6 +10,11 @@
 								<Value>5</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Inclusion" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-7</Value>
@@ -36,6 +41,117 @@
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="bouncing ball sfx 5" ID="{76F94A2C-B32D-46A1-A622-B2F42079B2E6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="TossPotato_Correct_SFX" ID="{0537B6A6-EE53-401E-AF39-0977B3206F2E}" ShortID="944413483">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="TossedCorrect_SFX_Master-St" ID="{999CBB3C-E2BB-4108-A5B6-142B86AF6100}">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>TossedCorrect_SFX_Master-St.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="559015716"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="TossedCorrect_SFX_Master-St" ID="{999CBB3C-E2BB-4108-A5B6-142B86AF6100}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="TossPotato_Incorrect_SFX" ID="{10118A65-BF67-45B7-8C12-B7B3A69C5358}" ShortID="390977858">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="TossedIncorrect_SFX_Master-St" ID="{3558E20E-6A7C-4967-9E97-27764BF46D32}">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>TossedIncorrect_SFX_Master-St.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="707757364"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="TossedIncorrect_SFX_Master-St" ID="{3558E20E-6A7C-4967-9E97-27764BF46D32}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ReceivePotato_SFX" ID="{C79B492B-4E64-454C-8EE7-B836275D74AD}" ShortID="343095437">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="PotatoRecieved_SFX_Master-St" ID="{A821D1F9-7BE9-4764-8C48-B28642FA58C9}">
+							<PropertyList>
+								<Property Name="VolumeOffset" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>PotatoRecieved_SFX_Master-St.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="840297879"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="PotatoRecieved_SFX_Master-St" ID="{A821D1F9-7BE9-4764-8C48-B28642FA58C9}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

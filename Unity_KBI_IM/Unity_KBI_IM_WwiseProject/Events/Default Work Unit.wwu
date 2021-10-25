@@ -14,6 +14,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Toss_Potato_Correct" ID="{CA5D52B1-37C6-43E3-A6B6-2150E33D3497}">
+					<ChildrenList>
+						<Action Name="" ID="{BC5635C4-F517-436E-8514-4921936C4BEC}" ShortID="534990452">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TossPotato_Correct_SFX" ID="{0537B6A6-EE53-401E-AF39-0977B3206F2E}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Toss_Potato_Incorrect" ID="{FBF9BCE1-546F-4D1C-8E50-7EBC07C64F63}">
+					<ChildrenList>
+						<Action Name="" ID="{271885AA-3C3C-49B2-9EBC-C1CFCE5AEFEF}" ShortID="11850181">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TossPotato_Incorrect_SFX" ID="{10118A65-BF67-45B7-8C12-B7B3A69C5358}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Receive_Potato" ID="{955FB465-501E-43F7-A8E9-1BD3F31991B2}">
+					<ChildrenList>
+						<Action Name="" ID="{D0D80FCB-C4DD-43E7-9336-7FA7F8A24CDA}" ShortID="320632841">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ReceivePotato_SFX" ID="{C79B492B-4E64-454C-8EE7-B836275D74AD}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -14,11 +14,15 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BALL_JUMP = 134222113U;
+        static const AkUniqueID RECEIVE_POTATO = 4025095850U;
+        static const AkUniqueID TOSS_POTATO_CORRECT = 704023553U;
+        static const AkUniqueID TOSS_POTATO_INCORRECT = 2840732446U;
     } // namespace EVENTS
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID HOTPOTATO_SOUNDBANK_GABRIEL = 3017799530U;
         static const AkUniqueID SFX_CAREY = 4237593279U;
         static const AkUniqueID TEST_SOUNDBANK = 4154996803U;
     } // namespace BANKS

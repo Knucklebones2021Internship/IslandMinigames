@@ -15,6 +15,17 @@
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
+				<SoundBank Name="HotPotato_Soundbank_Gabriel" ID="{E510BB54-D40A-44D7-8246-A2E2ADF791A8}">
+					<Comment>Soundbank for the Hot Potato Minigame
+Includes all potato-related SFX and the BGX interactivity for the minigame</Comment>
+					<ObjectInclusionList>
+						<ObjectRef Name="Toss_Potato_Correct" ID="{CA5D52B1-37C6-43E3-A6B6-2150E33D3497}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Receive_Potato" ID="{955FB465-501E-43F7-A8E9-1BD3F31991B2}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Toss_Potato_Incorrect" ID="{FBF9BCE1-546F-4D1C-8E50-7EBC07C64F63}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundBanks>

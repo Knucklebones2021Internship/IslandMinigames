@@ -1,0 +1,10 @@
+Event	ID	Name			Wwise Object Path	Notes
+	704023553	Toss_Potato_Correct			\Default Work Unit\Toss_Potato_Correct	
+	2840732446	Toss_Potato_Incorrect			\Default Work Unit\Toss_Potato_Incorrect	
+	4025095850	Receive_Potato			\Default Work Unit\Receive_Potato	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	559015716	TossPotato_Correct_SFX	C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\iOS\SFX\TossedCorrect_SFX_Master-St_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\TossPotato_Correct_SFX		240064
+	707757364	TossPotato_Incorrect_SFX	C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\iOS\SFX\TossedIncorrect_SFX_Master-St_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\TossPotato_Incorrect_SFX		240064
+	840297879	ReceivePotato_SFX	C:\Users\priemg\_Personal\Knucklebones\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\iOS\SFX\PotatoRecieved_SFX_Master-St_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ReceivePotato_SFX		240064
+
