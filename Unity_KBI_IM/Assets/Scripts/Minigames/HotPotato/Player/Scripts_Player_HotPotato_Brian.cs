@@ -20,7 +20,7 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
     // UI for the player timer 
     public GameObject playerTimer; 
     // Boolean to indicate whether the timer should now start counting down 
-    bool timerCountdown = false; 
+    public bool timerCountdown = false; 
 
     // The current time for the player 
     float currTime = 0f; 

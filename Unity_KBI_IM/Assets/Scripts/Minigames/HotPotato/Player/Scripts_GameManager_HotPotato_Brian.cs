@@ -25,14 +25,22 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
     // Color of orange for the player timer 
     private Color pTimerColor = new Color(1.0f, 140f/255f, 61f/255f);
 
-    // Boolean for whether a new prompt is being shown 
-    private bool newPrompt = true; 
+    // ======= TRIVIA SYSTEM ========
+    // Timer for each of the question prompts. They last 15 seconds 
+    private float questionTimer = 15f; 
+    // +++ List of Questions +++
+    public List<GameObject> questionList;
+
+    // Boolean for whether the answer for the prompt is correct or 
+    // incorrect, which determines whether holding the potato will 
+    // increase/decrease player score time 
+    private float correctAnswer; 
+    // =============================== 
 
     // <summary> 
     // Randomly determine the first player to hold the potato 
     // </summary>
-    void Start()
-    {   
+    void Start() {   
         RandomPotato();
     }
 
@@ -41,6 +49,8 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
     // Changes the color of the timers when certain numbers have been reached   
     // </summary>
     void Update() {
+        questionTimer -= Time.deltaTime;
+
         int endGlobalTime = 0;
         int endPlayerTime = 0;
         int.TryParse(globalTimer.GetComponent<TMPro.TextMeshProUGUI>().text, out endGlobalTime);
@@ -56,9 +66,23 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
             playerTimer.GetComponent<TMPro.TextMeshProUGUI>().color = pTimerColor;
         }
 
+        // If a player with a potato holds it for more than 6 seconds, the potato is 
+        // randomly tossed to another player 
         if (endPlayerTime <= 0) {
             //GameOver(); 
-            playerTimer.SetActive(false); 
+            //playerTimer.SetActive(false); 
+            for (int i = 1; i < 5; i++) {
+                Scripts_Player_HotPotato_Brian pScript = playerList[i-1].GetComponent<Scripts_Player_HotPotato_Brian>();
+
+                if (pScript.isHoldingPotato) {
+                    pScript.isHoldingPotato = false; 
+                    pScript.justReceivedPotato = false;
+                    pScript.timerCountdown = false;
+                    endPlayerTime = 6;
+                    RandomPotato(); 
+                    break;
+                }             
+            }         
         } 
     } 
 
