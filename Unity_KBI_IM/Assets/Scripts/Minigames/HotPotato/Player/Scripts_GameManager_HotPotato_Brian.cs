@@ -48,7 +48,7 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
         int.TryParse(globalTimer.GetComponent<TMPro.TextMeshProUGUI>().text, out endGlobalTime);
         int.TryParse(playerTimer.GetComponent<TMPro.TextMeshProUGUI>().text, out endPlayerTime);
         
-        if (endGlobalTime <= 80) {
+        if (endGlobalTime <= 10) {
             globalTimer.GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
         } 
 
@@ -58,8 +58,9 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
             playerTimer.GetComponent<TMPro.TextMeshProUGUI>().color = pTimerColor;
         }
 
-        if (endGlobalTime <= 75 || endPlayerTime <= 0) {
-            GameOver(); 
+        if (endPlayerTime <= 0) {
+            //GameOver(); 
+            playerTimer.SetActive(false); 
         } 
     }
   

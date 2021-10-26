@@ -22,8 +22,8 @@ public class Scripts_GlobalTimer_HotPotato_Brian : MonoBehaviour {
     {
         currTime -= 1 * Time.deltaTime; 
         GetComponent<TMPro.TextMeshProUGUI>().text = currTime.ToString("0");        
-        if (currTime <= 75) {
-            currTime = 75;
+        if (currTime <= 0) {
+            currTime = 0;
         }
     }
 }

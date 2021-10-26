@@ -276,7 +276,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 90
+  m_text: 60
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05938dd27e7daae46901316cfc0a3ae6, type: 2}
   m_sharedMaterial: {fileID: 7562027520659464296, guid: 05938dd27e7daae46901316cfc0a3ae6, type: 2}
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950c9357d45d8594ba7497d0ff48f3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 90
+  startingTime: 60
 --- !u!1 &223695629
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05938dd27e7daae46901316cfc0a3ae6, type: 2}
   m_sharedMaterial: {fileID: 7562027520659464296, guid: 05938dd27e7daae46901316cfc0a3ae6, type: 2}
@@ -1692,13 +1692,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724562218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.77, y: 3.82, z: 0.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 7.77, y: 0.89, z: 0.09}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &1728889340 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6281720151802438212, guid: 9026de15a25ebc3458c28eea8051935b, type: 3}

@@ -148,9 +148,19 @@ MonoBehaviour:
   guide: {fileID: 8899376278428103772}
   playerID: 0
   isHoldingPotato: 0
+  justReceivedPotato: 0
+  gameOver: 0
   playerTimer: {fileID: 0}
-  pTime: 10
+  pTime: 5
   hotPotato: {fileID: 0}
+  receivePotatoEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  tossPotatoCorrectEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &1917789046398733216
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,7 +27,11 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
     // Player time,  the maximum amount of time a player can hold a potato 
     public float pTime = 10f; 
 
+    // The hot potato being passed around 
     public GameObject hotPotato;
+
+    // +++ Player Score Timer +++
+    public float scoreTime = 0f; 
 
     public AK.Wwise.Event receivePotatoEvent;
     public AK.Wwise.Event tossPotatoCorrectEvent;
