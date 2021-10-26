@@ -151,8 +151,9 @@ MonoBehaviour:
   justReceivedPotato: 0
   gameOver: 0
   playerTimer: {fileID: 0}
-  pTime: 5
+  pTime: 6
   hotPotato: {fileID: 0}
+  scoreTime: 0
   receivePotatoEvent:
     idInternal: 0
     valueGuidInternal: 
