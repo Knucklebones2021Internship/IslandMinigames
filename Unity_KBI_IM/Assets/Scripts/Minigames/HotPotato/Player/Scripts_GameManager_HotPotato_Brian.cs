@@ -39,6 +39,13 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
     public bool correctAnswer; 
     // Index for prompts
     private int promptIndex = 0; 
+
+    // UI for the increase/decrease of player score time 
+    public GameObject scoreTimerChange;  
+    // Boolean for whether the score timer change is being shown 
+    private bool sTimerShown = false; 
+    // The amount of time the score timer UI is shown, which will be 1.5 seconds 
+    private float sTimerCooldown = 1.5f;   
     // =============================== 
 
     // <summary> 
@@ -79,9 +86,18 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
 
             questionList[promptIndex].SetActive(true);
             answerList[promptIndex].SetActive(true);
+
+            StartCoroutine(ShowScoreTime());
             questionTimer = 15f;
         }
         
+        if (sTimerShown) { sTimerCooldown -= Time.deltaTime; }
+        if (sTimerCooldown <= 0) { 
+            scoreTimerChange.GetComponent<TMPro.TextMeshProUGUI>().text = "";
+            sTimerCooldown = 1.5f; 
+            sTimerShown = false;
+        }
+
         int endGlobalTime = 0;
         int endPlayerTime = 0;
         int.TryParse(globalTimer.GetComponent<TMPro.TextMeshProUGUI>().text, out endGlobalTime);
@@ -146,5 +162,18 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
                 gameOverPanel.SetActive(true);
             }             
         }
+    }
+
+    IEnumerator ShowScoreTime() {
+        // Get the first player's score time 
+        Scripts_Player_HotPotato_Brian pScript = playerList[0].GetComponent<Scripts_Player_HotPotato_Brian>();
+        scoreTimerChange.GetComponent<TMPro.TextMeshProUGUI>().text = pScript.scoreTime.ToString("F2"); 
+        if (pScript.scoreTime > 0) {
+            scoreTimerChange.GetComponent<TMPro.TextMeshProUGUI>().color = Color.green;
+        } else {
+            scoreTimerChange.GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
+        }  
+        sTimerShown = true; 
+        yield return new WaitForSeconds(1.0f);   
     }
 }

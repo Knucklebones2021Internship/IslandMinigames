@@ -55,14 +55,21 @@ public class Scripts_Player_HotPotato_Brian : MonoBehaviour
                 receivePotatoEvent.Post(gameObject);
                 justReceivedPotato = false;
             }
-            yield return new WaitForSeconds(1.0f); 
+            yield return new WaitForSeconds(0.5f); 
 
             if (!timerCountdown) {
                 currTime = pTime; 
                 timerCountdown = true;   
             }
 
-            Debug.Log(Input.acceleration);
+            // +++ Score Time Calculation +++
+            Scripts_Potato_HotPotato_BrianLin potScript = hotPotato.GetComponent<Scripts_Potato_HotPotato_BrianLin>();
+            
+            if (potScript.potType) { scoreTime += Time.deltaTime; } 
+            else if (!potScript.potType) { scoreTime -= Time.deltaTime; }
+            // ++++++++++++++++++++++++++++++
+
+            //Debug.Log(Input.acceleration);
             
             if (Input.acceleration.x < -0.5f) {
                 //Debug.Log("Left"); 
