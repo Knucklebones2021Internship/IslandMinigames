@@ -91,7 +91,7 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
             questionTimer = 15f;
         }
         
-        if (sTimerShown) { sTimerCooldown -= Time.deltaTime; }
+        while (sTimerShown) { sTimerCooldown -= Time.deltaTime; }
         if (sTimerCooldown <= 0) { 
             scoreTimerChange.GetComponent<TMPro.TextMeshProUGUI>().text = "";
             sTimerCooldown = 1.5f; 
@@ -164,6 +164,9 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
         }
     }
 
+    // <summary> 
+    // Shows the score time for Player 1
+    // </summary>
     IEnumerator ShowScoreTime() {
         // Get the first player's score time 
         Scripts_Player_HotPotato_Brian pScript = playerList[0].GetComponent<Scripts_Player_HotPotato_Brian>();
@@ -174,6 +177,10 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
             scoreTimerChange.GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
         }  
         sTimerShown = true; 
-        yield return new WaitForSeconds(1.0f);   
+
+        //Animator animator = scoreTimerChange.GetComponent<Animator>();
+        //animator.SetBool("PromptEnded", true); 
+
+        yield return new WaitForSeconds(0.1f);   
     }
 }

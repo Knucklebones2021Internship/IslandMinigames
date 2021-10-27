@@ -2102,6 +2102,7 @@ GameObject:
   - component: {fileID: 1627198335}
   - component: {fileID: 1627198337}
   - component: {fileID: 1627198336}
+  - component: {fileID: 1627198338}
   m_Layer: 5
   m_Name: ScoreChange
   m_TagString: Untagged
@@ -2225,6 +2226,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627198334}
   m_CullTransparentMesh: 1
+--- !u!95 &1627198338
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627198334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8f1f9bfee3034d49af51e9b0d384f52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1674390110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,10 +3144,12 @@ MonoBehaviour:
   - {fileID: 1977177884}
   - {fileID: 156668923}
   - {fileID: 1562837737}
+  - {fileID: 257235717}
   answerList:
   - {fileID: 1983392663}
   - {fileID: 1721869093}
   - {fileID: 1806666244}
+  - {fileID: 367579682}
   correctAnswer: 0
   scoreTimerChange: {fileID: 1627198334}
 --- !u!4 &1980021495
