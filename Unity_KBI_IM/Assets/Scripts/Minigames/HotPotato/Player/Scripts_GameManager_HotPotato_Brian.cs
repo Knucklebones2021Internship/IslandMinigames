@@ -30,11 +30,15 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
     private float questionTimer = 15f; 
     // +++ List of Questions +++
     public List<GameObject> questionList;
+    // +++ List of Answers +++
+    public List<GameObject> answerList; 
 
     // Boolean for whether the answer for the prompt is correct or 
     // incorrect, which determines whether holding the potato will 
     // increase/decrease player score time 
-    private float correctAnswer; 
+    public bool correctAnswer; 
+    // Index for prompts
+    private int promptIndex = 0; 
     // =============================== 
 
     // <summary> 
@@ -42,6 +46,12 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
     // </summary>
     void Start() {   
         RandomPotato();
+        correctAnswer = true; 
+
+        // Script for the hot potato 
+        Scripts_Potato_HotPotato_BrianLin potScript = hotPotato.GetComponent<Scripts_Potato_HotPotato_BrianLin>();
+        // Set the hot potato to type "correct" 
+        potScript.potType = true;
     }
 
     // <summary> 
@@ -50,7 +60,28 @@ public class Scripts_GameManager_HotPotato_Brian : Scripts_BaseManager_Wyatt
     // </summary>
     void Update() {
         questionTimer -= Time.deltaTime;
+        
+        if (questionTimer <= 0) {
+            questionList[promptIndex].SetActive(false);
+            answerList[promptIndex].SetActive(false);
 
+            promptIndex++; 
+            if (promptIndex % 2 == 1) { 
+                correctAnswer = false; 
+                Scripts_Potato_HotPotato_BrianLin potScript = hotPotato.GetComponent<Scripts_Potato_HotPotato_BrianLin>();
+                potScript.potType = false;
+            }
+            else if (promptIndex % 2 == 0) { 
+                correctAnswer = true; 
+                Scripts_Potato_HotPotato_BrianLin potScript = hotPotato.GetComponent<Scripts_Potato_HotPotato_BrianLin>();
+                potScript.potType = true; 
+            }
+
+            questionList[promptIndex].SetActive(true);
+            answerList[promptIndex].SetActive(true);
+            questionTimer = 15f;
+        }
+        
         int endGlobalTime = 0;
         int endPlayerTime = 0;
         int.TryParse(globalTimer.GetComponent<TMPro.TextMeshProUGUI>().text, out endGlobalTime);
