@@ -222,7 +222,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
         // finally, we apply a force to the ball with a multiplier, shotPower
         rb.AddForce(-direction * strength * shotPower);
         // originally:
-        // rb.AddForce(-direction * strength * shotPower);
+        // rb.AddForce(direction * strength * shotPower);
         // this shot the ball in the same direction as the user pulls/aims
 
         // and now the ball is not idle
