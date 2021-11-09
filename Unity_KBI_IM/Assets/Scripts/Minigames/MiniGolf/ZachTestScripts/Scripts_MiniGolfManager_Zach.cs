@@ -19,7 +19,12 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     public GameObject globalTimer;
     // Game Over UI  
     public GameObject gameOverPanel;
+    // Answer choices for the question 
+    public GameObject answers; 
 
+    void Start() {
+        StartCoroutine(ShowAnswers());
+    }
     void Update() {
 
         int endGlobalTime = 0;
@@ -40,4 +45,13 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
         globalTimer.SetActive(false);
         gameOverPanel.SetActive(true);
     }    
+
+    // <summary> 
+    // Wait a few seconds before showing the answer choices for the given question
+    // </summary>
+    IEnumerator ShowAnswers() {
+        yield return new WaitForSeconds(2f); 
+
+        answers.SetActive(true); 
+    }
 }
