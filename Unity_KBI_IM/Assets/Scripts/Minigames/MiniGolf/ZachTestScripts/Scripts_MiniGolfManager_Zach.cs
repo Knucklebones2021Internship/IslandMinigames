@@ -28,7 +28,7 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
         if (endGlobalTime <= 25) {
             globalTimer.GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
         }
-        if (endGlobalTime <= 20) {
+        if (endGlobalTime <= 10) {
             GameOver(); 
         } 
     }
