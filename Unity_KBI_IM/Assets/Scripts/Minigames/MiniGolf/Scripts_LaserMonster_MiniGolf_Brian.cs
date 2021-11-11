@@ -34,6 +34,8 @@ public class Scripts_LaserMonster_MiniGolf_Brian : MonoBehaviour
         if (shootTimer <= 0) {
             GameObject projectile = Instantiate(laser) as GameObject; 
             projectile.transform.position = transform.position + transform.forward * 2; 
+            projectile.transform.rotation = transform.rotation;
+            projectile.transform.rotation *= Quaternion.Euler(90, 0, 0);
             Rigidbody rb = projectile.GetComponent<Rigidbody>(); 
             rb.velocity = transform.forward * 25;
             Destroy(projectile, 3.0f);

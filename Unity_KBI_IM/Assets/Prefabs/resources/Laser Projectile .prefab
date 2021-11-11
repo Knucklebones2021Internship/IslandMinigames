@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3533326057814776700}
   - component: {fileID: 7382701403414274459}
   - component: {fileID: 7479894967044348685}
+  - component: {fileID: 680982124418843719}
   m_Layer: 0
   m_Name: 'Laser Projectile '
   m_TagString: Untagged
@@ -113,3 +114,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &680982124418843719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241303712079464507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0490866396ec74fa54d7d3f86a0fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
