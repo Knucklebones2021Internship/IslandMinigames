@@ -24,6 +24,9 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     // Answer choices for the question 
     public GameObject answers; 
 
+    // UI for the answer choices of each hole 
+    public GameObject holeAnswers; 
+
     void Start() {
         StartCoroutine(ShowAnswers());
     }
@@ -52,10 +55,12 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
 
     // <summary> 
     // Wait a few seconds before showing the answer choices for the given question
+    // and the answers that each hole represents 
     // </summary>
     IEnumerator ShowAnswers() {
         yield return new WaitForSeconds(2f); 
-
+        holeAnswers.SetActive(true); 
         answers.SetActive(true); 
+
     }
 }
