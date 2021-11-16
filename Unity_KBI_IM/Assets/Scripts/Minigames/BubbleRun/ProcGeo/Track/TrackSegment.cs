@@ -30,6 +30,7 @@ public class TrackSegment : MonoBehaviour {
 		// vertex data
 		List<Vector3> vertices = new List<Vector3>();
 		List<Vector3> normals = new List<Vector3>();
+		List<Vector2> uvs = new List<Vector2>();
 		for (int ring=0; ring<edgeRingCount; ring++) {
 			float t = ring / (edgeRingCount - 1f);
 			OrientedPoint op = GetBezierOrientedPoint(t);
@@ -37,6 +38,7 @@ public class TrackSegment : MonoBehaviour {
 			for (int i=0; i<shape2D.VertexCount; i++) {
 				vertices.Add(op.LocalToWorldPos(shape2D.vertices[i].point * 0.25f));
 				normals.Add(op.LocalToWorldVec(shape2D.vertices[i].normal));
+				uvs.Add(new Vector2(shape2D.vertices[i].u, t));
 			}
 		}
 
@@ -68,6 +70,7 @@ public class TrackSegment : MonoBehaviour {
 
 		mesh.SetVertices(vertices);
 		mesh.SetNormals(normals);
+		mesh.SetUVs(0, uvs);
 		mesh.SetTriangles(triangles, 0);
 	}
 
