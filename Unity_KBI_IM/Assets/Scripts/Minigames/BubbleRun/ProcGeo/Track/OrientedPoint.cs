@@ -9,8 +9,12 @@ public struct OrientedPoint {
 		orientation = ori;
 	}
 
-	public Vector3 LocalToWorld(Vector3 localSpacePos) {
+	public Vector3 LocalToWorldPos(Vector3 localSpacePos) {
 		return position + orientation * localSpacePos;
+	}
+
+	public Vector3 LocalToWorldVec(Vector3 localSpacePos) {
+		return orientation * localSpacePos;
 	}
 }
 
