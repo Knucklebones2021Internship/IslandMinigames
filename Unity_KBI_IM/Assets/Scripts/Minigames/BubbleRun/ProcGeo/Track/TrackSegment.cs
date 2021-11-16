@@ -27,6 +27,11 @@ public class TrackSegment : MonoBehaviour {
 	void GenerateMesh() {
 		mesh.Clear();
 
+		float uSpan = shape2D.CalcUSpan();
+		float approxLength = GetApproxLength();
+		float uRatio = approxLength / uSpan;
+		print("Uspan: " + uSpan + " | " + approxLength + " : " + uRatio);
+
 		// vertex data
 		List<Vector3> vertices = new List<Vector3>();
 		List<Vector3> normals = new List<Vector3>();
@@ -35,12 +40,15 @@ public class TrackSegment : MonoBehaviour {
 			float t = ring / (edgeRingCount - 1f);
 			OrientedPoint op = GetBezierOrientedPoint(t);
 
+			float value = t * uRatio;
+			print("t: " + t + " | uratio: " + value);
+
 			for (int i=0; i<shape2D.VertexCount; i++) {
 				vertices.Add(op.LocalToWorldPos(shape2D.vertices[i].point * 0.25f));
 				normals.Add(op.LocalToWorldVec(shape2D.vertices[i].normal));
-				uvs.Add(new Vector2(shape2D.vertices[i].u, t));
+				uvs.Add(new Vector2(shape2D.vertices[i].u, value));
 			}
-		}
+		}print("-----------------------------------");
 
 		// triangle indices
 		List<int> triangles = new List<int>();
@@ -122,5 +130,20 @@ public class TrackSegment : MonoBehaviour {
 			Vector3.Lerp(d, e, t),
 			Quaternion.LookRotation(tangent)
 		);
+	}
+
+	float GetApproxLength(int precision = 8) {
+		Vector3[] points = new Vector3[precision];
+		for (int i=0; i<precision; i++) {
+			float t = i / (precision - 1f);
+			points[i] = GetBezierOrientedPoint(t).position;
+		}
+
+		float dist = 0;
+		for (int i=0; i<precision-1; i++) {
+			Vector3 a = points[i];
+			Vector3 b = points[i+1];
+			dist += Vector3.Distance(a, b);
+		} return dist;
 	}
 }
