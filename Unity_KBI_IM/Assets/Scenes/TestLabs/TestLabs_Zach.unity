@@ -1267,6 +1267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalTimer: {fileID: 91136186}
   gameOverPanel: {fileID: 1534041861}
+  questionPanel: {fileID: 0}
   answers: {fileID: 1926703761}
 --- !u!4 &522079225
 Transform:
@@ -1945,7 +1946,7 @@ Transform:
   m_GameObject: {fileID: 837340943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.31, y: 6.46, z: 3.47}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children:
   - {fileID: 933861611}
   m_Father: {fileID: 1739839462}
@@ -2093,8 +2094,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933861610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.423, y: 0.824, z: 0}
-  m_LocalScale: {x: 1, y: 0.17178, z: 0.52189}
+  m_LocalPosition: {x: 0.431, y: 0.71, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.17178, z: 0.4}
   m_Children: []
   m_Father: {fileID: 837340944}
   m_RootOrder: 0
@@ -3327,13 +3328,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417408199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.423, y: 0.824, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.01, y: 0.71, z: 0.27}
   m_LocalScale: {x: 1, y: 0.17178, z: 0.52189}
   m_Children: []
   m_Father: {fileID: 1318109534}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1417408201
 BoxCollider:
   m_ObjectHideFlags: 0

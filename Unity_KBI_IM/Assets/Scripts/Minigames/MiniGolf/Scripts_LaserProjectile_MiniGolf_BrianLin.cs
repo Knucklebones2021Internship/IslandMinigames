@@ -9,9 +9,10 @@ public class Scripts_LaserProjectile_MiniGolf_BrianLin : MonoBehaviour
     // Makes the projectile disappear after hitting a ball 
     // </summary>
     // <param name="other"></param>
+    /*
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "Ball") {
             gameObject.SetActive(false);
         }
-    }
+    }*/
 }
