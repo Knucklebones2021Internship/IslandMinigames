@@ -11,17 +11,48 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2901137828">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1980823497">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3017799530" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\HotPotato_Soundbank_Gabriel</ObjectPath>
+			<ShortName>HotPotato_Soundbank_Gabriel</ShortName>
+			<Path>HotPotato_Soundbank_Gabriel.bnk</Path>
+			<IncludedEvents>
+				<Event Id="4025095850" Name="Receive_Potato" ObjectPath="\Events\Default Work Unit\Receive_Potato" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000">
+					<IncludedMemoryFiles>
+						<File Id="840297879" Language="SFX">
+							<ShortName>PotatoRecieved_SFX_Master-St.wav</ShortName>
+							<Path>SFX\PotatoRecieved_SFX_Master-St_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="704023553" Name="Toss_Potato_Correct" ObjectPath="\Events\Default Work Unit\Toss_Potato_Correct" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000">
+					<IncludedMemoryFiles>
+						<File Id="559015716" Language="SFX">
+							<ShortName>TossedCorrect_SFX_Master-St.wav</ShortName>
+							<Path>SFX\TossedCorrect_SFX_Master-St_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2840732446" Name="Toss_Potato_Incorrect" ObjectPath="\Events\Default Work Unit\Toss_Potato_Incorrect" DurationType="OneShot" DurationMin="1.250000" DurationMax="1.250000">
+					<IncludedMemoryFiles>
+						<File Id="707757364" Language="SFX">
+							<ShortName>TossedIncorrect_SFX_Master-St.wav</ShortName>
+							<Path>SFX\TossedIncorrect_SFX_Master-St_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
 		</SoundBank>
 		<SoundBank Id="4154996803" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Test_Soundbank</ObjectPath>
 			<ShortName>Test_Soundbank</ShortName>
 			<Path>Test_Soundbank.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="4237593279" Language="SFX" Hash="2257583664">
+		<SoundBank Id="4237593279" Language="SFX" Hash="2140720112">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Carey</ObjectPath>
 			<ShortName>SFX_Carey</ShortName>
 			<Path>SFX_Carey.bnk</Path>
@@ -31,6 +62,14 @@
 						<File Id="646396865" Language="SFX">
 							<ShortName>bouncing ball sfx 5.wav</ShortName>
 							<Path>SFX\bouncing ball sfx 5_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1772485256" Name="Ball_Roll" ObjectPath="\Events\Default Work Unit\Ball_Roll" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="632638271" Language="SFX">
+							<ShortName>rolling ball sfx  3.wav</ShortName>
+							<Path>SFX\rolling ball sfx  3_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

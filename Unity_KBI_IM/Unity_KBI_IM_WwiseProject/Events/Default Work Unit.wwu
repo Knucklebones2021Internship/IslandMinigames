@@ -47,6 +47,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Ball_Roll" ID="{FF846744-BC7E-43DD-8864-8BD7BF9D8DE9}">
+					<ChildrenList>
+						<Action Name="" ID="{F64B881A-642A-4453-8D51-06E25FA6AE63}" ShortID="1048255470">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rolling_Ball" ID="{E6E1EFDF-C91D-4A94-B29C-F095B6210784}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

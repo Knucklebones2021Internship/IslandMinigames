@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 141991215bd4884c933af2f57ecda2d4
     GuidInternal: 
-    m_lastTime: -8585689052693401696
+    m_lastTime: -8585688176731107107
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: cc5eaa4548923a48ae35597c3760158b
     GuidInternal: 
-    m_lastTime: -8585689052695476904
+    m_lastTime: -8585688176732252273
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 95a7643e47882b47bff9637cc765ae92
     GuidInternal: 
-    m_lastTime: -8585663365738362977
+    m_lastTime: -8585651760374275745
     List:
     - name: HotPotato_Soundbank_Gabriel
       guid: 54bb10e50ad4d7448246a2e2adf791a8
@@ -122,7 +122,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: b8f4373c223a414d9138f055a854a768
     GuidInternal: 
-    m_lastTime: -8585663365738870065
+    m_lastTime: -8585651760374395766
     List:
     - name: Ball_Jump
       guid: b207bc944396ed47ad20682cad80d533
@@ -138,6 +138,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: b207bc944396ed47ad20682cad80d533
       Path: Events\Default Work Unit\Ball_Jump
+      maxAttenuation: 0
+      maxDuration: 0.187506
+      minDuration: 0.187506
+    - name: Ball_Roll
+      guid: 446784ff7ebcdd4388648bd7bf9d8de9
+      id: 1772485256
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: Ball_Roll
+        ObjectType: 3
+        guid: 446784ff7ebcdd4388648bd7bf9d8de9
+      Path: Events\Default Work Unit\Ball_Roll
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -156,8 +173,8 @@ MonoBehaviour:
         guid: 65b45f951e50f743a8e91bd3f31991b2
       Path: Events\Default Work Unit\Receive_Potato
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.25
+      minDuration: 1.25
     - name: Toss_Potato_Correct
       guid: b1525dcac637e343a6b62150e33d3497
       id: 704023553
@@ -173,8 +190,8 @@ MonoBehaviour:
         guid: b1525dcac637e343a6b62150e33d3497
       Path: Events\Default Work Unit\Toss_Potato_Correct
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.25
+      minDuration: 1.25
     - name: Toss_Potato_Incorrect
       guid: e1bcf9fb6f541c4d8e507ebc07c64f63
       id: 2840732446
@@ -190,8 +207,8 @@ MonoBehaviour:
         guid: e1bcf9fb6f541c4d8e507ebc07c64f63
       Path: Events\Default Work Unit\Toss_Potato_Incorrect
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.25
+      minDuration: 1.25
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -204,7 +221,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 5f68440866195d4097b8ef96065ab67b
     GuidInternal: 
-    m_lastTime: -8585689052697509737
+    m_lastTime: -8585688176733442090
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -218,7 +235,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 713e007ecee45442b952bda81d592a9e
     GuidInternal: 
-    m_lastTime: -8585689052693511683
+    m_lastTime: -8585688176731155966
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -232,7 +249,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 88eee56228327d4eb3eea9fa9d356e9c
     GuidInternal: 
-    m_lastTime: -8585689052693481662
+    m_lastTime: -8585688176731145966
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -246,10 +263,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 463a3d8321bc1943b20acca565219d72
     GuidInternal: 
-    m_lastTime: -8585689052693471663
+    m_lastTime: -8585688176731135969
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 010000000500000006000000070000000f00000010000000a9000000aa0000000c0100000d010000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

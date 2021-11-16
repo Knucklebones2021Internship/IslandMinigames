@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BALL_JUMP = 134222113U;
+        static const AkUniqueID BALL_ROLL = 1772485256U;
         static const AkUniqueID RECEIVE_POTATO = 4025095850U;
         static const AkUniqueID TOSS_POTATO_CORRECT = 704023553U;
         static const AkUniqueID TOSS_POTATO_INCORRECT = 2840732446U;

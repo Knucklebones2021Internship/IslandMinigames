@@ -13,6 +13,9 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
     bool moving = false;
     bool grounded = false;
 
+    public AK.Wwise.Event ballJump;
+    public AK.Wwise.Event ballRoll;
+
 	void Awake() {
         rb = GetComponent<Rigidbody>();
 
@@ -101,7 +104,11 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
         bool newGrounded = IsGrounded();
         if (!grounded && newGrounded) {
             // TODO CAREY: play bouncing sound
-		} grounded = newGrounded;
+            Debug.Log("jumping");
+            ballJump.Post(gameObject);
+        }
+       
+        grounded = newGrounded;
 
         if (grounded) { // you can only roll if you're on the ground!
             rb.AddForce(moveDir * moveForce * Time.fixedDeltaTime);
@@ -118,14 +125,17 @@ public class Scripts_BubbleRun_BubbleController_Wyatt : MonoBehaviour {
 
         if (rb.velocity.magnitude < 0.1f) {
             // CAREY TODO: stop rolling sound
+            ballRoll.Stop(gameObject);
             moving = false;
 		} else {
             if (!moving) {
                 // CAREY TODO: play rolling sound
-
                 moving = true;
-			}
-		}
+                ballRoll.Post(gameObject);
+                Debug.Log("Posting Ball Roll");
+
+            }
+        }
 
         if (jumpAttempted) {
             if (IsGrounded()) {

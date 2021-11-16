@@ -1,6 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
 	134222113	Ball_Jump			\Default Work Unit\Ball_Jump	
+	1772485256	Ball_Roll			\Default Work Unit\Ball_Roll	
+
+Effect plug-ins	ID	Name	Type				Notes
+	86245554	Attack_Remover	Wwise Compressor			
+	3487820010	One_Tap_Half_Second	Wwise Delay			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	632638271	Rolling_Ball	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\rolling ball sfx  3_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Rolling_Ball		187492
 	646396865	Bouncing_Ball	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\bouncing ball sfx 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bouncing_Ball		33140
 

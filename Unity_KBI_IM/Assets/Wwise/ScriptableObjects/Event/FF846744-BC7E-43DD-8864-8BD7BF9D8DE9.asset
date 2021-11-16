@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724c0dda0bf8e944791d5e96094322e9, type: 3}
+  m_Name: FF846744-BC7E-43DD-8864-8BD7BF9D8DE9
+  m_EditorClassIdentifier: 
+  objectName: Ball_Roll
+  id: 1772485256
+  guid: FF846744-BC7E-43DD-8864-8BD7BF9D8DE9
