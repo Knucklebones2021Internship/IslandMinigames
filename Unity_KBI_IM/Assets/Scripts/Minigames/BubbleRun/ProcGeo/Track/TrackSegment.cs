@@ -27,14 +27,16 @@ public class TrackSegment : MonoBehaviour {
 	void GenerateMesh() {
 		mesh.Clear();
 
-		// vertices
+		// vertex data
 		List<Vector3> vertices = new List<Vector3>();
+		List<Vector3> normals = new List<Vector3>();
 		for (int ring=0; ring<edgeRingCount; ring++) {
 			float t = ring / (edgeRingCount - 1f);
 			OrientedPoint op = GetBezierOrientedPoint(t);
 
 			for (int i=0; i<shape2D.VertexCount; i++) {
 				vertices.Add(op.LocalToWorldPos(shape2D.vertices[i].point * 0.25f));
+				normals.Add(op.LocalToWorldVec(shape2D.vertices[i].normal));
 			}
 		}
 
@@ -61,15 +63,16 @@ public class TrackSegment : MonoBehaviour {
 				triangles.Add(currentA);
 				triangles.Add(nextB);
 				triangles.Add(currentB);
-
 			}
 		}
 
 		mesh.SetVertices(vertices);
+		mesh.SetNormals(normals);
 		mesh.SetTriangles(triangles, 0);
 	}
 
 	public void OnDrawGizmos() {
+		return;
 		for (int i=0; i<4; i++) {
 			Gizmos.DrawSphere(GetPos(i), 0.05f);
 		}
