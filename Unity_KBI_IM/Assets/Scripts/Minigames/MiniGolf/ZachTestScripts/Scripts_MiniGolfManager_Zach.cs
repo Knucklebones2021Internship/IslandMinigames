@@ -19,6 +19,8 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     public GameObject globalTimer;
     // Game Over UI  
     public GameObject gameOverPanel;
+    // UI for the questions 
+    public GameObject questionPanel; 
     // Answer choices for the question 
     public GameObject answers; 
 
@@ -43,6 +45,8 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     // </summary>
     void GameOver() {
         globalTimer.SetActive(false);
+        questionPanel.SetActive(false); 
+        answers.SetActive(false); 
         gameOverPanel.SetActive(true);
     }    
 
