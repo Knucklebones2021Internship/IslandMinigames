@@ -9,8 +9,14 @@ public class TrackSegment : MonoBehaviour {
 	[Range(2, 32)] [SerializeField] int edgeRingCount = 8;
 
 	[Range(0f, 1f)] [SerializeField] float t = 0;
-	[SerializeField] Transform[] controlPoints = new Transform[4];
-	Vector3 GetPos(int i) => controlPoints[i].transform.position;
+	[SerializeField] Transform startPoint;
+	[SerializeField] Transform endPoint;
+	Vector3 GetPos(int i) {
+		if (i == 0) return startPoint.position;
+		else if (i == 1) return startPoint.TransformPoint(Vector3.forward * startPoint.localScale.z);
+		else if (i == 2) return endPoint.TransformPoint(Vector3.back * endPoint.localScale.z);
+		else return endPoint.position;
+	}
 
 	Mesh mesh;
 
@@ -125,10 +131,11 @@ public class TrackSegment : MonoBehaviour {
 		Vector3 e = Vector3.Lerp(b, c, t);
 
 		Vector3 tangent = (e - d).normalized;
+		Vector3 up = Vector3.Lerp(startPoint.up, endPoint.up, t).normalized;
 
 		return new OrientedPoint(
 			Vector3.Lerp(d, e, t),
-			Quaternion.LookRotation(tangent)
+			Quaternion.LookRotation(tangent, up)
 		);
 	}
 
