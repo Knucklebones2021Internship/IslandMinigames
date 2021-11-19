@@ -20,7 +20,11 @@ public class Scripts_JumpMonster_MiniGolf_BrianLin : MonoBehaviour
     // </summary>    
     void Update()
     {
+
         if (Vector3.Distance(wayPoints[index].transform.position, transform.position) < wpRadius) {
+            if (index == 0) {
+                StartCoroutine(BlockerWait()); 
+            }            
             index++; 
             if (index >= wayPoints.Length) { 
                 moving = false; 
@@ -32,6 +36,12 @@ public class Scripts_JumpMonster_MiniGolf_BrianLin : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, wayPoints[index].transform.position, Time.deltaTime * mvmSpeed);
         }
         
+    }
+
+    IEnumerator BlockerWait() {
+        moving = false; 
+        yield return new WaitForSeconds(3); 
+        moving = true; 
     }
 
 }
