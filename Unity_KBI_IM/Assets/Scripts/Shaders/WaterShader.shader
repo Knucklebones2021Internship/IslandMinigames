@@ -1,8 +1,10 @@
 Shader "Unlit/WaterShader" {
     Properties {
-        _MainTex ("Texture", 2D) = "white" {}
-        [HDR] _WaterColor ("Water Color", Color) = (0, 0, 0 , 0)
-        _CellSize("Cell Size", Range(0, 1)) = 0.05
+        _WaterColor ("Water Color", Color) = (0, 0, 0 , 0)
+        [HDR] _RippleColor ("Ripple Color", Color) = (0, 0, 0 , 0)
+        _CellDensity("Cell Density", float) = 1
+        _ShearStrength("Shear Strength", float) = 1
+        _RippleIntensity("Ripple Intensity", float) = 1
     }
     SubShader {
         Tags {"Queue" = "Transparent" "RenderType"="Transparent" }
@@ -25,65 +27,74 @@ Shader "Unlit/WaterShader" {
             struct VertOut {
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
-                float3 worldPos : TEXCOOD1;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-
             float4 _WaterColor;
-            float _CellSize;
+            float4 _RippleColor;
+            float _CellDensity;
+            float _ShearStrength;
+            float _RippleIntensity;
 
-            float rand2dTo1d(float2 value, float2 dotDir = float2(12.9898, 78.233)){
-            	float2 smallValue = sin(value);
-            	float random = dot(smallValue, dotDir);
-            	random = frac(sin(random) * 143758.5453);
-            	return random;
+            inline float2 unity_voronoi_noise_randomVector (float2 UV, float offset) {
+                float2x2 m = float2x2(15.27, 47.63, 99.41, 89.98);
+                UV = frac(sin(mul(UV, m)) * 46839.32);
+                return float2(sin(UV.y*+offset)*0.5+0.5, cos(UV.x*offset)*0.5+0.5);
             }
             
-            float2 rand2dTo2d(float2 value){
-            	return float2(
-            		rand2dTo1d(value, float2(12.989, 78.233)),
-            		rand2dTo1d(value, float2(39.346, 11.135))
-            	);
-            }
-
-       	    float voronoiNoise(float2 value){
-                float2 baseCell = floor(value);
-
-                float minDistToCell = 10;
-                [unroll]
-                for(int x=-1; x<=1; x++){
-                    [unroll]
-                    for(int y=-1; y<=1; y++){
-                        float2 cell = baseCell + float2(x, y);
-                        float2 cellPosition = cell + rand2dTo2d(cell);
-                        float2 toCell = cellPosition - value;
-                        float distToCell = length(toCell);
-                        if(distToCell < minDistToCell){
-                            minDistToCell = distToCell;
+            void Unity_Voronoi_float(float2 UV, float AngleOffset, float CellDensity, out float Out, out float Cells) {
+                float2 g = floor(UV * CellDensity);
+                float2 f = frac(UV * CellDensity);
+                float t = 8.0;
+                float3 res = float3(8.0, 0.0, 0.0);
+            
+                for(int y=-1; y<=1; y++)
+                {
+                    for(int x=-1; x<=1; x++)
+                    {
+                        float2 lattice = float2(x,y);
+                        float2 offset = unity_voronoi_noise_randomVector(lattice + g, AngleOffset);
+                        float d = distance(lattice + offset, f);
+                        if(d < res.x)
+                        {
+                            res = float3(d, offset.x, offset.y);
+                            Out = res.x;
+                            Cells = res.y;
                         }
                     }
                 }
-                return minDistToCell;
-		    }
+            }
+
+            void Unity_RadialShear_float(float2 UV, float2 Center, float Strength, float2 Offset, out float2 Out) {
+                float2 delta = UV - Center;
+                float delta2 = dot(delta.xy, delta.xy);
+                float2 delta_offset = delta2 * Strength;
+                Out = UV + float2(delta.y, -delta.x) * delta_offset + Offset;
+            }
 
             VertOut vert (VertIn v) {
                 VertOut o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                o.worldPos = mul(unity_ObjectToWorld, v.vertex);
+                o.uv = v.uv;
                 return o;
             }
 
-            fixed4 frag (VertOut i) : SV_Target {
-                float2 value = i.worldPos.xz / _CellSize;
-			    float noise = voronoiNoise(value + _Time.yy);
+            fixed4 frag(VertOut i) : SV_Target{
+                // apply a radial shear to our UVs
+                float2 voronoiUV;
+                Unity_RadialShear_float(i.uv, float2(0.5, 0.5), _ShearStrength, float2(0, 0), voronoiUV);
 
-                return float4(noise, noise, noise, 1);
+                // calculate voronoi value at this pixel
+                float noise, cells;
+                Unity_Voronoi_float(voronoiUV, _Time.y + 30, _CellDensity, noise, cells);
 
-                fixed4 col = tex2D(_MainTex, i.uv);
-                return col * _WaterColor;
+                // exponentiate the noise to get sharper lines
+                noise = pow(noise, _RippleIntensity);
+
+                //return float4(noise, noise, noise, 1);
+
+                float4 rippleColor = float4(noise, noise, noise, 1) * _RippleColor;
+
+                return _WaterColor + rippleColor;
             }
             ENDCG
         }
