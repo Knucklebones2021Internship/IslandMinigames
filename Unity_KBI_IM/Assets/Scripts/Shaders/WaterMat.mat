@@ -30,6 +30,8 @@ Material:
     - _ShearStrength: 1.94
     - _WaveDensity: 24289.6
     - _WaveScale: 11.7
+    - _WaveSize: 0.15
+    - _WaveSpeed: 0.05
     m_Colors:
     - _RippleColor: {r: 1.0809699, g: 1.1445695, b: 1.1504298, a: 0.39607844}
     - _WaterColor: {r: 0.20961201, g: 0.8679245, b: 0.84735227, a: 0.39607844}
