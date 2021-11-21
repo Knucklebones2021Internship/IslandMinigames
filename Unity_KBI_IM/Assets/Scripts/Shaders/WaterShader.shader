@@ -5,6 +5,9 @@ Shader "Unlit/WaterShader" {
         _CellDensity("Cell Density", float) = 1
         _ShearStrength("Shear Strength", float) = 1
         _RippleIntensity("Ripple Intensity", float) = 1
+        _WaveScale("Wave Scale", float) = 1
+        _WaveSpeed("Wave Speed", float) = 1
+        _WaveSize("Wave Size", float) = 1
     }
     SubShader {
         Tags {"Queue" = "Transparent" "RenderType"="Transparent" }
@@ -34,6 +37,9 @@ Shader "Unlit/WaterShader" {
             float _CellDensity;
             float _ShearStrength;
             float _RippleIntensity;
+            float _WaveScale;
+            float _WaveSpeed;
+            float _WaveSize;
 
             inline float2 unity_voronoi_noise_randomVector (float2 UV, float offset) {
                 float2x2 m = float2x2(15.27, 47.63, 99.41, 89.98);
@@ -71,10 +77,41 @@ Shader "Unlit/WaterShader" {
                 Out = UV + float2(delta.y, -delta.x) * delta_offset + Offset;
             }
 
+            float2 unity_gradientNoise_dir(float2 p) {
+                p = p % 289;
+                float x = (34 * p.x + 1) * p.x % 289 + p.y;
+                x = (34 * x + 1) * x % 289;
+                x = frac(x / 41) * 2 - 1;
+                return normalize(float2(x - floor(x + 0.5), abs(x) - 0.5));
+            }
+            
+            float unity_gradientNoise(float2 p) {
+                float2 ip = floor(p);
+                float2 fp = frac(p);
+                float d00 = dot(unity_gradientNoise_dir(ip), fp);
+                float d01 = dot(unity_gradientNoise_dir(ip + float2(0, 1)), fp - float2(0, 1));
+                float d10 = dot(unity_gradientNoise_dir(ip + float2(1, 0)), fp - float2(1, 0));
+                float d11 = dot(unity_gradientNoise_dir(ip + float2(1, 1)), fp - float2(1, 1));
+                fp = fp * fp * fp * (fp * (fp * 6 - 15) + 10);
+                return lerp(lerp(d00, d01, fp.y), lerp(d10, d11, fp.y), fp.x);
+            }
+            
+            void Unity_GradientNoise_float(float2 UV, float Scale, out float Out) {
+                Out = unity_gradientNoise(UV * Scale) + 0.5;
+            }
+
             VertOut vert (VertIn v) {
                 VertOut o;
+
+                float waveHeight;
+                Unity_GradientNoise_float(v.uv + float2(_Time.y, _Time.y) * _WaveSpeed, _WaveScale, waveHeight);
+                v.vertex.y += (waveHeight - 0.5) * _WaveSize;
+
                 o.vertex = UnityObjectToClipPos(v.vertex);
+
                 o.uv = v.uv;
+                //o.uv.x = waveHeight;
+
                 return o;
             }
 
@@ -90,10 +127,9 @@ Shader "Unlit/WaterShader" {
                 // exponentiate the noise to get sharper lines
                 noise = pow(noise, _RippleIntensity);
 
-                //return float4(noise, noise, noise, 1);
-
                 float4 rippleColor = float4(noise, noise, noise, 1) * _RippleColor;
 
+                //return float4(i.uv.xxx, 1);
                 return _WaterColor + rippleColor;
             }
             ENDCG
