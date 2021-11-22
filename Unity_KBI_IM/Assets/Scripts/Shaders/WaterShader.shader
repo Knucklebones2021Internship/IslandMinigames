@@ -8,6 +8,8 @@ Shader "Unlit/WaterShader" {
         _WaveScale("Wave Scale", float) = 1
         _WaveSpeed("Wave Speed", float) = 1
         _WaveSize("Wave Size", float) = 1
+
+        _FoamIntensity("Foam Intensity", float) = 1
     }
     SubShader {
         Tags {"Queue" = "Transparent" "RenderType"="Transparent" }
@@ -28,8 +30,9 @@ Shader "Unlit/WaterShader" {
             };
 
             struct VertOut {
-                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float4 screenPosition : TEXCOORD1;
             };
 
             float4 _WaterColor;
@@ -40,6 +43,9 @@ Shader "Unlit/WaterShader" {
             float _WaveScale;
             float _WaveSpeed;
             float _WaveSize;
+            float _FoamIntensity;
+
+            sampler2D _CameraDepthTexture;
 
             inline float2 unity_voronoi_noise_randomVector (float2 UV, float offset) {
                 float2x2 m = float2x2(15.27, 47.63, 99.41, 89.98);
@@ -106,11 +112,10 @@ Shader "Unlit/WaterShader" {
                 float waveHeight;
                 Unity_GradientNoise_float(v.uv + float2(_Time.y, _Time.y) * _WaveSpeed, _WaveScale, waveHeight);
                 v.vertex.y += (waveHeight - 0.5) * _WaveSize;
-
                 o.vertex = UnityObjectToClipPos(v.vertex);
 
                 o.uv = v.uv;
-                //o.uv.x = waveHeight;
+                o.screenPosition = ComputeScreenPos(o.vertex);
 
                 return o;
             }
@@ -127,10 +132,23 @@ Shader "Unlit/WaterShader" {
                 // exponentiate the noise to get sharper lines
                 noise = pow(noise, _RippleIntensity);
 
+                // multiplicativley blend the ripple color
                 float4 rippleColor = float4(noise, noise, noise, 1) * _RippleColor;
+                
+                // compute the screen depth at this point
+                float2 textureCoordinate = i.screenPosition.xy / i.screenPosition.w;
+                float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, textureCoordinate);
+                depth = LinearEyeDepth(depth);
 
-                //return float4(i.uv.xxx, 1);
-                return _WaterColor + rippleColor;
+                // subtract our vertex depth from the screen depth to get a mask which represents intersecting geometry
+                float foamMask = depth - i.screenPosition.w;
+
+                // invert and exponentiate to get crisp foam lines
+                foamMask = 1 - foamMask;
+                foamMask = pow(foamMask, _FoamIntensity);
+
+                // additively blend
+                return _WaterColor + rippleColor + foamMask;
             }
             ENDCG
         }

@@ -19,6 +19,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Foam:
+        m_Texture: {fileID: 2800000, guid: 153a3f348efc7514a87aeab9cb151f0b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamGradient:
+        m_Texture: {fileID: 2800000, guid: 84d8f84f536aaa6499fcaa6c05a886b0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -26,6 +34,8 @@ Material:
     m_Floats:
     - _CellDensity: 9.81
     - _CellSize: 0.05
+    - _FoamIntensity: 30
+    - _FoamStrength: 1
     - _RippleIntensity: 4.53
     - _ShearStrength: 1.94
     - _WaveDensity: 24289.6
