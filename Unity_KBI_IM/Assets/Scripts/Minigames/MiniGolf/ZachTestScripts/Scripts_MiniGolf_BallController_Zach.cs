@@ -118,12 +118,9 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
     /// <returns>a nullable Vector3</returns>
     private Vector3? CastMouseClickRay()
     {
-        /*------------------------------------------------------------------------------------------------*/
-
-        /// <summary>
-        /// this is code originally from the video i learned from
-        /// i have since converted all of the mouse input to touch input
-        /// </summary>
+        #region old code from video
+        // this is code originally from the video i learned from
+        // i have since converted all of the mouse input to touch input
 
         /*Vector3 screenMousePositionFar = new Vector3(
             Input.mousePosition.x,
@@ -133,8 +130,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
             Input.mousePosition.x,
             Input.mousePosition.y,
             Camera.main.nearClipPlane);*/
-
-        /*------------------------------------------------------------------------------------------------*/
+        #endregion
 
         // if a touch is detected
         if (Input.touchCount > 0)
