@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour
-{
+public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
     // <summary> 
     // Destroys a ball once it has entered the whole 
     // </summary>

@@ -185,6 +185,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 064cdb87284ab7a4aa8a3358b77e1cd3, type: 3}
   m_PrefabInstance: {fileID: 71939589}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &165530247 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+  m_PrefabInstance: {fileID: 6559478236079206229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &305486970
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +224,10 @@ Transform:
   - {fileID: 1908511985}
   - {fileID: 71939590}
   - {fileID: 1595045340}
+  - {fileID: 165530247}
+  - {fileID: 1889330904}
+  - {fileID: 1968434590}
+  - {fileID: 1127622548}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -566,6 +575,68 @@ MonoBehaviour:
   target: {fileID: 1257107068}
   lighthouse: {fileID: 765895074}
   height: 11
+--- !u!1001 &1127622547
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 305486971}
+    m_Modifications:
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.0915
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0094
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304275, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_Name
+      value: MiniGolfHole (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+--- !u!4 &1127622548 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+  m_PrefabInstance: {fileID: 1127622547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1145551781
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,6 +1057,68 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 19c6db2b52cbe314ebc6f6cad3e9713d, type: 3}
+--- !u!1001 &1889330903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 305486971}
+    m_Modifications:
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304275, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_Name
+      value: MiniGolfHole (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+--- !u!4 &1889330904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+  m_PrefabInstance: {fileID: 1889330903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1908511984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1048,3 +1181,122 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 064cdb87284ab7a4aa8a3358b77e1cd3, type: 3}
   m_PrefabInstance: {fileID: 1908511984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1968434589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 305486971}
+    m_Modifications:
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0065
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.1027
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304275, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_Name
+      value: MiniGolfHole (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+--- !u!4 &1968434590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+  m_PrefabInstance: {fileID: 1968434589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6559478236079206229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 305486971}
+    m_Modifications:
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0043
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0666
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304275, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_Name
+      value: MiniGolfHole
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
