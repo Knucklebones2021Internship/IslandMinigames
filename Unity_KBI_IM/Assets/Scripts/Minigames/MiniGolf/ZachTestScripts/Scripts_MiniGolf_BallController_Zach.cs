@@ -226,8 +226,11 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
         }*/
     #endregion
 
+    [Tooltip("A multiplier for applying power to the ball.")]
     public float power = 10f;
-    public float maxFingerDrag = 5f;
+    [Tooltip("The maximum force magnitude. This is used for clamping the vector of the finger drag, which is used for applying the force on the ball.")]
+    public float maxForceMagnitude = 5f;
+    [Tooltip("The velocity at which the ball is considered stopped. At or below this threshold, the ball will manually stop.")]
     public float stopVelocity = 0.1f;
 
     private Rigidbody rb;
@@ -246,15 +249,25 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
         mainCam = Camera.main;
     }
 
+    /// <summary>
+    /// this is where all the magic happens
+    /// </summary>
     private void FixedUpdate()
     {
+        // if the velocity's magnitude is at or below the stopVelocity, stop the ball manually
         if (rb.velocity.magnitude <= stopVelocity)
             Stop();
 
+        // if the ball is idle and a touch is detected, allow aiming
         if (isIdle)
             if (Input.touchCount > 0)
                 isAiming = true;
 
+        // if any touches are detected, get the first touch
+        // then, do the appropriate tasks based on whether the finger
+        // (1) first touches the screen
+        // (2) is held on the screen
+        // (3) is released from the screen
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -270,6 +283,9 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// manually stopping the ball by zeroing its velocities, after which its labeled idle
+    /// </summary>
     private void Stop()
     {
         rb.velocity = Vector3.zero;
@@ -277,48 +293,60 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
         isIdle = true;
     }
 
+    /// <summary>
+    /// to-do for when the finger starts dragging
+    /// </summary>
+    /// <param name="screenPoint"></param>
     private void DragStart(Vector3 screenPoint)
     {
-        // Debug.Log("DragStart()");
-        // Debug.Log("touch.position: " + touch.position);
+        // this is where dragging starts
         dragStartPos = mainCam.ScreenToWorldPoint(screenPoint);
-        // Debug.Log("dragStartPos: " + dragStartPos);
 
+        // begin the line renderer at the ball's position, and turn it on
         line.positionCount = 1;
         line.SetPosition(0, transform.position);
         line.enabled = true;
     }
 
+    /// <summary>
+    /// to-do for when the finger is currently dragging
+    /// </summary>
+    /// <param name="screenPoint"></param>
     private void Dragging(Vector3 screenPoint)
     {
-        // Debug.Log("Dragging()");
-        // Debug.Log("touch.position: " + touch.position);
+        // there is where dragging currently is
         Vector3 draggingPos = mainCam.ScreenToWorldPoint(screenPoint);
-        // Debug.Log("draggingPos: " + draggingPos);
 
+        // the drag vector is stored in dragOffset
+        // end the line renderer at the point where the drag is "attached" to the ball
         line.positionCount = 2;
-        Vector3 offset = draggingPos - dragStartPos;
-        line.SetPosition(1, transform.position + offset);
+        Vector3 dragOffset = draggingPos - dragStartPos;
+        line.SetPosition(1, transform.position + dragOffset);
     }
 
+    /// <summary>
+    /// to-do for when the finger releases from dragging
+    /// </summary>
+    /// <param name="screenPoint"></param>
     private void DragRelease(Vector3 screenPoint)
     {
-        // Debug.Log("DragRelease()");
-        // Debug.Log("touch.position: " + touch.position);
-
+        // turn off aiming and the line renderer
         isAiming = false;
         line.enabled = false;
-
         line.positionCount = 0;
 
+        // this is where dragging is released
         Vector3 dragReleasePos = mainCam.ScreenToWorldPoint(screenPoint);
-        // Debug.Log("dragReleasePos: " + dragReleasePos);
 
+        // let the force be the current drag vector but set in the opposite direction
+        // and clamp it to be no more than the maximum force magnitude
         Vector3 force = dragStartPos - dragReleasePos;
-        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxFingerDrag);
+        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxForceMagnitude);
 
+        // add an instant force to the ball, in the direction opposite the drag and with a multiplier of power
         rb.AddForce(clampedForce * power, ForceMode.Impulse);
 
+        // now the ball is no longer idle
         isIdle = false;
     }
 }
