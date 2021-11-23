@@ -225,8 +225,11 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour {
         }*/
     #endregion
 
+    [Tooltip("A multiplier for applying power to the ball.")]
     public float power = 10f;
-    public float maxFingerDrag = 5f;
+    [Tooltip("The maximum force magnitude. This is used for clamping the vector of the finger drag, which is used for applying the force on the ball.")]
+    public float maxForceMagnitude = 5f;
+    [Tooltip("The velocity at which the ball is considered stopped. At or below this threshold, the ball will manually stop.")]
     public float stopVelocity = 0.1f;
 
     private Rigidbody rb;
@@ -289,8 +292,9 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour {
 
         Vector3 dragReleasePos = mainCam.ScreenToWorldPoint(screenPoint);
         Vector3 force = dragStartPos - dragReleasePos;
-        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxFingerDrag);
+        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxForceMagnitude);
 
+        // add an instant force to the ball, in the direction opposite the drag and with a multiplier of power
         rb.AddForce(clampedForce * power, ForceMode.Impulse);
     }
 }
