@@ -8,8 +8,7 @@ using UnityEngine;
 
 // we first require that the ball have a rigidbody
 [RequireComponent(typeof(Rigidbody))]
-public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
-{
+public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour {
     #region raycasting method [full credit: https://www.youtube.com/watch?v=LjLBHSU_yic]
     /*
     // shotPower is a multiplier for the force applied on the ball
@@ -226,8 +225,11 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
         }*/
     #endregion
 
+    [Tooltip("A multiplier for applying power to the ball.")]
     public float power = 10f;
-    public float maxFingerDrag = 5f;
+    [Tooltip("The maximum force magnitude. This is used for clamping the vector of the finger drag, which is used for applying the force on the ball.")]
+    public float maxForceMagnitude = 5f;
+    [Tooltip("The velocity at which the ball is considered stopped. At or below this threshold, the ball will manually stop.")]
     public float stopVelocity = 0.1f;
 
     private Rigidbody rb;
@@ -239,86 +241,60 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
     private bool isIdle;
     private bool isAiming = false;
 
-    private void Awake()
-    {
+    private void Awake() {
         rb = GetComponent<Rigidbody>();
         line = GetComponent<LineRenderer>();
         mainCam = Camera.main;
+
+        line.positionCount = 2;
+        line.enabled = false;
     }
 
-    private void FixedUpdate()
-    {
-        if (rb.velocity.magnitude <= stopVelocity)
-            Stop();
+	private void Update() {
+        if (rb.velocity.magnitude <= stopVelocity) {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            isIdle = true;
+        } else isIdle = false;
 
-        if (isIdle)
-            if (Input.touchCount > 0)
-                isAiming = true;
+        line.SetPosition(0, transform.position);
 
-        if (Input.touchCount > 0)
-        {
+        if (Input.touchCount > 0) {
             touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began && isIdle && !isAiming)
                 DragStart(new Vector3(touch.position.x, touch.position.y, mainCam.transform.position.y));
 
-            if (touch.phase == TouchPhase.Moved && isIdle && isAiming)
-                Dragging(new Vector3(touch.position.x, touch.position.y, mainCam.transform.position.y));
+            if (touch.phase == TouchPhase.Moved)
+                if (isAiming) Dragging(new Vector3(touch.position.x, touch.position.y, mainCam.transform.position.y));
 
-            if (touch.phase == TouchPhase.Ended && isIdle && isAiming)
-                DragRelease(new Vector3(touch.position.x, touch.position.y, mainCam.transform.position.y));
+            if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                if (isAiming) DragRelease(new Vector3(touch.position.x, touch.position.y, mainCam.transform.position.y));
         }
     }
 
-    private void Stop()
-    {
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        isIdle = true;
+    private void DragStart(Vector3 screenPoint) {
+        dragStartPos = mainCam.ScreenToWorldPoint(screenPoint);
+        isAiming = true;
     }
 
-    private void DragStart(Vector3 screenPoint)
-    {
-        // Debug.Log("DragStart()");
-        // Debug.Log("touch.position: " + touch.position);
-        dragStartPos = mainCam.ScreenToWorldPoint(screenPoint);
-        // Debug.Log("dragStartPos: " + dragStartPos);
+    private void Dragging(Vector3 screenPoint) {
+        Vector3 draggingPos = mainCam.ScreenToWorldPoint(screenPoint);
 
-        line.positionCount = 1;
-        line.SetPosition(0, transform.position);
+        Vector3 offset = draggingPos - dragStartPos;
+        line.SetPosition(1, transform.position + offset);
         line.enabled = true;
     }
 
-    private void Dragging(Vector3 screenPoint)
-    {
-        // Debug.Log("Dragging()");
-        // Debug.Log("touch.position: " + touch.position);
-        Vector3 draggingPos = mainCam.ScreenToWorldPoint(screenPoint);
-        // Debug.Log("draggingPos: " + draggingPos);
-
-        line.positionCount = 2;
-        Vector3 offset = draggingPos - dragStartPos;
-        line.SetPosition(1, transform.position + offset);
-    }
-
-    private void DragRelease(Vector3 screenPoint)
-    {
-        // Debug.Log("DragRelease()");
-        // Debug.Log("touch.position: " + touch.position);
-
+    private void DragRelease(Vector3 screenPoint) {
         isAiming = false;
         line.enabled = false;
 
-        line.positionCount = 0;
-
         Vector3 dragReleasePos = mainCam.ScreenToWorldPoint(screenPoint);
-        // Debug.Log("dragReleasePos: " + dragReleasePos);
-
         Vector3 force = dragStartPos - dragReleasePos;
-        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxFingerDrag);
+        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxForceMagnitude);
 
+        // add an instant force to the ball, in the direction opposite the drag and with a multiplier of power
         rb.AddForce(clampedForce * power, ForceMode.Impulse);
-
-        isIdle = false;
     }
 }

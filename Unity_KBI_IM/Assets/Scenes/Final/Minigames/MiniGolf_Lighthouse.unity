@@ -565,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1257107068}
   lighthouse: {fileID: 765895074}
-  height: 6
+  height: 11
 --- !u!1 &1145551781
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +791,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
       propertyPath: power
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2137411825593962310, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
       propertyPath: m_RootOrder
