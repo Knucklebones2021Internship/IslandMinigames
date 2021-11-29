@@ -7,6 +7,8 @@ public class Scripts_TestBall_MiniGolf_BrianLin : MonoBehaviour
 
     public bool inWindArea = false; 
     public GameObject windArea; 
+    // Respawn point of the ball 
+    public GameObject respawnPoint; 
     private Rigidbody rb; 
 
     void Start() {
@@ -22,6 +24,13 @@ public class Scripts_TestBall_MiniGolf_BrianLin : MonoBehaviour
             Vector3 dir = windArea.GetComponent<Scripts_WindArea_MiniGolf_BrianLin>().direction;
             float windStrength = windArea.GetComponent<Scripts_WindArea_MiniGolf_BrianLin>().windForce;
             rb.AddForce(dir * windStrength);
+        }
+
+        // Respawn the ball if it has fallen below the course 
+        if (transform.position.y <= -20f) {
+            transform.position = respawnPoint.transform.position; 
+            rb.velocity = Vector3.zero; 
+            rb.angularVelocity = Vector3.zero; 
         }
     }
 

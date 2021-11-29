@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Scripts_QuadGenerator_Wyatt : MonoBehaviour {
 	private void Awake() {
 		Mesh mesh = new Mesh();
