@@ -52,7 +52,7 @@
 			<ShortName>Test_Soundbank</ShortName>
 			<Path>Test_Soundbank.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="4237593279" Language="SFX" Hash="2140720112">
+		<SoundBank Id="4237593279" Language="SFX" Hash="1170179373">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Carey</ObjectPath>
 			<ShortName>SFX_Carey</ShortName>
 			<Path>SFX_Carey.bnk</Path>
@@ -70,6 +70,14 @@
 						<File Id="632638271" Language="SFX">
 							<ShortName>rolling ball sfx  3.wav</ShortName>
 							<Path>SFX\rolling ball sfx  3_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="216937737" Name="Monster_Laser" ObjectPath="\Events\Default Work Unit\Monster_Laser" DurationType="OneShot" DurationMin="0.312500" DurationMax="0.312500">
+					<IncludedMemoryFiles>
+						<File Id="227901620" Language="SFX">
+							<ShortName>laser SFX 2.wav</ShortName>
+							<Path>SFX\laser SFX 2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
