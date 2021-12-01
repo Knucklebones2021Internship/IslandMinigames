@@ -67,8 +67,14 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
             }
             
             if (!animPlayed) {
-                StartCoroutine(WaitAnimation());
-                animPlayed = true;  
+                if (holeIndex == 0) {
+                    StartCoroutine(WaitCorrectAnimation());
+                    animPlayed = true;  
+                }
+                else {
+                    StartCoroutine(WaitIncorrectAnimation());
+                    animPlayed = true;                      
+                }
             }          
         }
     }
@@ -94,9 +100,15 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
 
     }
 
-    IEnumerator WaitAnimation() {
+    IEnumerator WaitCorrectAnimation() {
         correctAnswerText.SetActive(true);
         yield return new WaitForSeconds(2f); 
         correctAnswerText.SetActive(false);
     }
+
+    IEnumerator WaitIncorrectAnimation() {
+        incorrectAnswerText.SetActive(true);
+        yield return new WaitForSeconds(2f); 
+        incorrectAnswerText.SetActive(false);
+    }    
 }
