@@ -9,9 +9,9 @@ public class Scripts_CurveJumpMonster_MiniGolf_BrianLin : MonoBehaviour
     public float pause = 3f;  
 
     void Start() {
-        JumpMonsterWait(); 
+        StartCoroutine(JumpMonsterWait()); 
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -20,23 +20,16 @@ public class Scripts_CurveJumpMonster_MiniGolf_BrianLin : MonoBehaviour
 
         //transform.position = Scripts_MathParabola_MiniGolf_BrianLin.Parabola(Vector3.zero, Vector3.forward * 10f, 5f, animation / 5f);
 
-        if (Input.GetMouseButtonDown(0)) {
-            GetComponent<Scripts_ParabolaController_MiniGolf_BrianLin>().FollowParabola(); 
-        }
-        /*
-        if (pause > 0) {
-            pause -= Time.deltaTime; 
-        }
-        
-        else if (pause <= 0) {
-            pause = 0; 
-            moving = true;
-        }
+        //if (Input.GetMouseButtonDown(0)) {
+        //    GetComponent<Scripts_ParabolaController_MiniGolf_BrianLin>().FollowParabola(); 
+        //}
+        /**/
 
         if (moving) {
             GetComponent<Scripts_ParabolaController_MiniGolf_BrianLin>().FollowParabola(); 
+            moving = false;
         }
-        */
+        
     }
 
     IEnumerator JumpMonsterWait() {

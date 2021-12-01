@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalTimer: {fileID: 91136186}
   gameOverPanel: {fileID: 1534041861}
-  questionPanel: {fileID: 0}
+  questionPanel: {fileID: 1216897851}
   answers: {fileID: 1926703761}
   holeAnswers: {fileID: 2000920392}
   ball: {fileID: 114005601}
