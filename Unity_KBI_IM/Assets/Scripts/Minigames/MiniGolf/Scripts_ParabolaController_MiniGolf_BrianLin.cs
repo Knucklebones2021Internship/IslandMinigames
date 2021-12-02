@@ -4,36 +4,32 @@ using UnityEngine;
 
 public class Scripts_ParabolaController_MiniGolf_BrianLin : MonoBehaviour
 {
-    /// <summary>
-    /// Animation Speed
-    /// </summary>
+    // <summary> 
+    // Animation speed 
+    // </summary>
     public float Speed = 1;
 
-    /// <summary>
-    /// Start of Parabola
-    /// </summary>
+    // <summary> 
+    // Route of the curve 
+    // </summary>
     public GameObject ParabolaRoot;
 
-    /// <summary>
-    /// Autostart Animation
-    /// </summary>
+    // <summary> 
+    // Boolean to automatically start the animation 
+    // </summary>
     public bool Autostart = true;
-
-    /// <summary>
-    /// Animate
-    /// </summary>
     public bool Animation = true;
 
-    //next parabola event
+    // next parabola event
     internal bool nextParbola = false;
 
-    //animation time
+    // animation time
     protected float animationTime = float.MaxValue;
 
-    //gizmo
+    // gizmo
     protected ParabolaFly gizmo;
 
-    //draw
+    // draw
     protected ParabolaFly parabolaFly;
 
     void OnDrawGizmos()
@@ -148,7 +144,6 @@ public class Scripts_ParabolaController_MiniGolf_BrianLin : MonoBehaviour
 
     public static float DistanceToLine(Ray ray, Vector3 point)
     {
-        //see:http://answers.unity3d.com/questions/62644/distance-between-a-ray-and-a-point.html
         return Vector3.Cross(ray.direction, point - ray.origin).magnitude;
     }
 
@@ -348,14 +343,6 @@ public class Scripts_ParabolaController_MiniGolf_BrianLin : MonoBehaviour
 
         private void refreshCurveNormal()
         {
-            //                        .  E   .
-            //                   .       |       point[1]
-            //             .             |h         |       .
-            //         .                 |       ___v1------point[2]
-            //      .            ______--vl------    
-            // point[0]---------
-            //
-
             //lower v1
             Ray rl = new Ray(A, C - A);
             var v1 = ClosestPointInLine(rl, B);
