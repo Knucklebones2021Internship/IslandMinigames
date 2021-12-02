@@ -54,4 +54,13 @@ public class Scripts_TestBall_MiniGolf_BrianLin : MonoBehaviour
             inWindArea = false; 
         }        
     }
+
+    // <summary> 
+    // Respawns the ball to its respawn point
+    // </summary>
+    public void BallRespawn() {
+        transform.position = respawnPoint.transform.position; 
+        rb.velocity = Vector3.zero; 
+        rb.angularVelocity = Vector3.zero; 
+    }
 }

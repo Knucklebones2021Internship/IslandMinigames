@@ -21,8 +21,12 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     public GameObject gameOverPanel;
     // UI for the questions 
     public GameObject questionPanel; 
-    // Answer choices for the question 
-    public GameObject answers; 
+    // List of questions 
+    public GameObject[] questions; 
+    // Index for the current question 
+    private int questionIndex = 0; 
+    // Answer choices for each question 
+    public GameObject[] answers; 
 
     // UI for the answer choices of each hole 
     public GameObject holeAnswers; 
@@ -58,6 +62,7 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
 
         // Once the ball has entered a hole, check which hole it went into 
         if (!ball.activeSelf) {
+            // Check which hole it went into 
             for (int i = 0; i < holes.Length; i++) {
                 Scripts_Hole_MiniGolf_BrianLin holeScript = holes[i].GetComponent<Scripts_Hole_MiniGolf_BrianLin>();
                 if (holeScript.holeIn) {
@@ -75,7 +80,15 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
                     StartCoroutine(WaitIncorrectAnimation());
                     animPlayed = true;                      
                 }
-            }          
+            } 
+
+            // After the ball goes in the hole, go to the next question 
+            // and respawn the ball 
+            StartCoroutine(NextQuestion());
+            Scripts_TestBall_MiniGolf_BrianLin ballScript = ball.GetComponent<Scripts_TestBall_MiniGolf_BrianLin>(); 
+            ballScript.BallRespawn(); 
+            ball.SetActive(true);  
+            animPlayed = false;                   
         }
     }
 
@@ -85,7 +98,7 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     void GameOver() {
         globalTimer.SetActive(false);
         questionPanel.SetActive(false); 
-        answers.SetActive(false); 
+        answers[questionIndex].SetActive(false); 
         gameOverPanel.SetActive(true);
     }    
 
@@ -96,19 +109,39 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     IEnumerator ShowAnswers() {
         yield return new WaitForSeconds(2f); 
         holeAnswers.SetActive(true); 
-        answers.SetActive(true); 
+        answers[questionIndex].SetActive(true); 
 
     }
 
+    // <summary> 
+    // Wait a few seconds for the "correct" text animation to finish 
+    // </summary>
     IEnumerator WaitCorrectAnimation() {
         correctAnswerText.SetActive(true);
         yield return new WaitForSeconds(2f); 
         correctAnswerText.SetActive(false);
     }
 
+    // <summary> 
+    // Wait a few seconds for the "incorrect" text animation to finish 
+    // </summary>
     IEnumerator WaitIncorrectAnimation() {
         incorrectAnswerText.SetActive(true);
         yield return new WaitForSeconds(2f); 
         incorrectAnswerText.SetActive(false);
     }    
+
+    // <summary> 
+    // Wait 1 second before the next question and answers appear 
+    // </summary>
+    IEnumerator NextQuestion() {
+        questionPanel.SetActive(false);
+        answers[questionIndex].SetActive(false); 
+        questions[questionIndex].SetActive(false);       
+        yield return new WaitForSeconds(1f); 
+        questionIndex++;   
+        questionPanel.SetActive(true);
+        questions[questionIndex].SetActive(true);   
+        answers[questionIndex].SetActive(true); 
+    }     
 }
