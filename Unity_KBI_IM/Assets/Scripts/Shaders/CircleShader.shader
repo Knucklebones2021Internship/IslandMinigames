@@ -44,11 +44,27 @@ Shader "Unlit/CircleShader"
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv) * _Color; // multiplicatively blend the _Color
-                return col;
+                // Parameters
+                float3 circleColor = float3(1, 1, 1);
+                float thickness = 0.2;
+                float fade = 0.005;
+
+                // -1 -> 1 local space, adjusted for aspect ratio
+                float2 uv = i.uv * 2.0 - 1.0;
+                float aspect = _ScreenParams.x / _ScreenParams.y;
+                uv.x *= aspect;
+
+                // Calculate distance and fill circle with white
+                float distance = 1.0 - length(uv);
+                float3 color = smoothstep(0.0, fade, distance);
+                color *= smoothstep(thickness + fade, thickness, distance);
+
+                // Set output color
+                float4 fragColor = float4(color, 1.0);
+                fragColor.rgb *= circleColor;
+                return fragColor;
             }
             ENDCG
         }
