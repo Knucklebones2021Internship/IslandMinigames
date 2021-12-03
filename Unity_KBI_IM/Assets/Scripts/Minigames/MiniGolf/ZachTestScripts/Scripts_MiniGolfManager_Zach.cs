@@ -44,6 +44,9 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     // Bool for whether the animation has played already 
     private bool animPlayed = false; 
 
+    // <summary> 
+    // Show the UI for the first question and answer choices
+    // </summary>
     void Start() {
         StartCoroutine(ShowAnswers());
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Scripts_TestBall_MiniGolf_BrianLin : MonoBehaviour
 {
 
+    // Boolean for whether the ball is currently being pushed by wind from the 
+    // windmill 
     public bool inWindArea = false; 
     public GameObject windArea; 
     // Respawn point of the ball 
