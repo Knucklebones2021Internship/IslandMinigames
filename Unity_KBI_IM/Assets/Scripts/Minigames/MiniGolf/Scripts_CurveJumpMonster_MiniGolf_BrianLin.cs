@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Scripts_CurveJumpMonster_MiniGolf_BrianLin : MonoBehaviour
 {
-    //protected float animation;  
+    // Boolean for whether the jump monster is permitted to move 
     public bool moving = false;
+    // Amount of time the jump monster pauses for   
     public float pause = 3f;  
 
     void Start() {
@@ -32,6 +33,9 @@ public class Scripts_CurveJumpMonster_MiniGolf_BrianLin : MonoBehaviour
         
     }
 
+    // <summary> 
+    // Wait for a few seconds before starting to move 
+    // </summary>
     IEnumerator JumpMonsterWait() {
         moving = false; 
         yield return new WaitForSeconds(3); 
