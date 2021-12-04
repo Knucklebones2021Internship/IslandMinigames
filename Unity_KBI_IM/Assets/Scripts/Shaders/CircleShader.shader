@@ -51,10 +51,8 @@ Shader "Unlit/CircleShader"
                 float thickness = 0.2;
                 float fade = 0.005;
 
-                // -1 -> 1 local space, adjusted for aspect ratio
+                // -1 -> 1 local space
                 float2 uv = i.uv * 2.0 - 1.0;
-                float aspect = _ScreenParams.x / _ScreenParams.y;
-                uv.x *= aspect;
 
                 // Calculate distance and fill circle with white
                 float distance = 1.0 - length(uv);
