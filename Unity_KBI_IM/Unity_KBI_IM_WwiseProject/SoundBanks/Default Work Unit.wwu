@@ -27,6 +27,23 @@ Includes all potato-related SFX and the BGX interactivity for the minigame</Comm
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
+				<SoundBank Name="MiniGolf_Soundbank_Gabriel" ID="{9AB3F3B1-46E5-4D96-B5FC-5EA461D9E971}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Par" ID="{FB79A538-E101-4074-A873-4309D28E5AEC}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Laser_Block" ID="{CBB59BBC-0DD9-4185-937D-0E95B85D1C4D}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ball_Rolls_Back" ID="{5F3A288C-2418-4438-91DC-85FE9C519C58}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Rebound_Block" ID="{BBFE0FC8-28C3-444D-AF54-A136271CB59F}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Windmill_Gust" ID="{1DD00B00-E447-462A-B6BD-E5A79F2C2B09}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Over_Par" ID="{9AA82302-5642-4687-886F-0E7881C05BF3}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Hole_In_One" ID="{A3B485FC-CCE4-4998-92FE-41B7D20DCE7A}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Hit_Off_Ramp" ID="{239AAC71-39F7-49DD-BDE8-CA945EF1FB6A}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Time_Up" ID="{7667B078-85D1-4A9A-A51D-358D949E73A5}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ball_in_pond" ID="{F5BEBEEF-EBA0-4AF3-A723-315AE8537485}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Wrong_Answer" ID="{E030035D-C0C1-4DE0-995E-D4FF3F9FD329}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundBanks>

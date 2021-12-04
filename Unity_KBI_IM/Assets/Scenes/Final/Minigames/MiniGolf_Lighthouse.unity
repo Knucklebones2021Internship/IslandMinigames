@@ -229,7 +229,7 @@ Transform:
   - {fileID: 1968434590}
   - {fileID: 1127622548}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313496850
 GameObject:
@@ -508,6 +508,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa77b19d1f374e0448da000f476cab28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &808285369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808285371}
+  - component: {fileID: 808285370}
+  m_Layer: 0
+  m_Name: WwiseSoundbanks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &808285370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808285369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e73f01c35400484c870515a8389f22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e5c1063efd7aa594291806dca21a8f14, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!4 &808285371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808285369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &895628406
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +649,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895628406}
-  m_LocalRotation: {x: 0.02941325, y: 0.9065768, z: -0.0715184, w: -0.9991886}
+  m_LocalRotation: {x: 0.021765275, y: 0.6708505, z: -0.052922327, w: -0.73938155}
   m_LocalPosition: {x: -17.91, y: 4.68, z: 18.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -766,7 +821,7 @@ Transform:
   - {fileID: 1223664125}
   - {fileID: 1355975579}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1127622547
 PrefabInstance:
@@ -1346,7 +1401,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1595045339
 PrefabInstance:
@@ -1421,6 +1476,50 @@ PrefabInstance:
       propertyPath: power
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.Par.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f03d6221b4b23034a88bd40a7d3a52bd, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.TimeUp.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 6664e7e25feeb6f448d97124fcc24c9a, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.OverPar.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e22a916386d439445929118101267f0c, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.HoleInOne.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: ce787c330fcaea141b1c1ec8e4c13d9e, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.HitOffRamp.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 28f3d9110fd1b4748ac2e44340c23b55, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.LaserBlock.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: eef43ef99dc2a1449a007df422e43f2b, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.BallInWater.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c29e5c7d2cebf04b9042d63a2153fa6, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.WrongAnswer.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7568018ebb2a5f64a9e4e37681d13935, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.ReboundBlock.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: a935b679332501846b32a83bec09495d, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.WindmillGust.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 869822381da514b448f7a66d8e8541d1, type: 2}
+    - target: {fileID: 2137411825593962308, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
+      propertyPath: wwiseGolfEvents.BallRollsBack.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 66df274de7f7b7145b50616052d10e47, type: 2}
     - target: {fileID: 2137411825593962310, guid: a1a34ef13d5746d4eaeb091e90577ec3, type: 3}
       propertyPath: m_RootOrder
       value: 1

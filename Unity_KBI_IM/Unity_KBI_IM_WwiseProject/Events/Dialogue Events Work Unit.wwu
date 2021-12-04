@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{18CE8440-94A2-4198-960B-1C44AC808952}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Dialogue Events Work Unit" ID="{18CE8440-94A2-4198-960B-1C44AC808952}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Ball_in_pond" ID="{F5BEBEEF-EBA0-4AF3-A723-315AE8537485}">
+					<ChildrenList>
+						<Action Name="" ID="{5C740029-C13F-4669-880F-9E33539C25E3}" ShortID="402481958">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Let's Hope" ID="{5167B135-3330-44AA-A9D5-6334BE052F02}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ball_Rolls_Back" ID="{5F3A288C-2418-4438-91DC-85FE9C519C58}">
+					<ChildrenList>
+						<Action Name="" ID="{D297F2D5-7844-4185-A306-07290A201E5B}" ShortID="563827354">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Friendly Reminder" ID="{AB80DD94-38CB-4947-9617-E3ED6B3CC3D0}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hit_Off_Ramp" ID="{239AAC71-39F7-49DD-BDE8-CA945EF1FB6A}">
+					<ChildrenList>
+						<Action Name="" ID="{6E4DAB6C-5FF6-4619-A2A9-758298AE7AEE}" ShortID="323763009">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Look at it Soar" ID="{6B2AE7FD-6E74-4740-982E-5B684325AC15}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Windmill_Gust" ID="{1DD00B00-E447-462A-B6BD-E5A79F2C2B09}">
+					<ChildrenList>
+						<Action Name="" ID="{C8AC6CD4-7EDB-4E93-B529-C5B397251777}" ShortID="943523977">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Windmill" ID="{1278F651-1E0C-4AC0-AF25-6F766A83CB46}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Laser_Block" ID="{CBB59BBC-0DD9-4185-937D-0E95B85D1C4D}">
+					<ChildrenList>
+						<Action Name="" ID="{09775539-4810-4313-98C5-8A5667FABE65}" ShortID="123751440">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Solid Light" ID="{F05D71E4-1209-4BAE-9754-27DCCBBE2488}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Rebound_Block" ID="{BBFE0FC8-28C3-444D-AF54-A136271CB59F}">
+					<ChildrenList>
+						<Action Name="" ID="{F4666A73-3C5B-4C1D-9508-F04B3BED0A4D}" ShortID="211172977">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="If my ball" ID="{BDB71B3E-6143-4342-A5BB-D9ACA1627D5B}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hole_In_One" ID="{A3B485FC-CCE4-4998-92FE-41B7D20DCE7A}">
+					<ChildrenList>
+						<Action Name="" ID="{B97BAD75-53D6-4482-BEA8-AE6F7C1FCBDB}" ShortID="720880485">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Hole in one" ID="{B9D711F6-B36D-4A50-8565-A9FE39CA01A0}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Par" ID="{FB79A538-E101-4074-A873-4309D28E5AEC}">
+					<ChildrenList>
+						<Action Name="" ID="{812BA580-3E7A-426E-A305-BB776360BF13}" ShortID="163524652">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Par met" ID="{D0D38106-8054-4213-BBA6-945AECE84866}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Over_Par" ID="{9AA82302-5642-4687-886F-0E7881C05BF3}">
+					<ChildrenList>
+						<Action Name="" ID="{0C24DC71-585F-4329-B56C-3E81561E92C1}" ShortID="488153103">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Over par" ID="{53BF3B67-A52B-45A7-9E77-0C2B5F499FF7}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Wrong_Answer" ID="{E030035D-C0C1-4DE0-995E-D4FF3F9FD329}"/>
+				<Event Name="Time_Up" ID="{7667B078-85D1-4A9A-A51D-358D949E73A5}">
+					<ChildrenList>
+						<Action Name="" ID="{523A1537-848A-4305-8E54-245F7525A9E2}" ShortID="159906715">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Time Up Random Container" ID="{61F7E0E6-1003-48A2-ABE7-840AA034CBC2}" WorkUnitID="{9E332244-1F8F-4D77-9865-11B6491451C1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

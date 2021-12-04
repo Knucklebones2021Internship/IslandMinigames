@@ -8,7 +8,7 @@ using UnityEngine;
 
 // we first require that the ball have a rigidbody
 [RequireComponent(typeof(Rigidbody))]
-public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour 
+public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
 {
     [Tooltip("A multiplier for applying power to the ball.")]
     public float power = 10f;
@@ -25,6 +25,24 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
     private Touch touch;
     private bool isIdle;
     private bool isAiming = false;
+
+    [System.Serializable]
+    public struct WwiseGolfEvents
+    {
+        public AK.Wwise.Event BallInWater;
+        public AK.Wwise.Event BallRollsBack;
+        public AK.Wwise.Event HitOffRamp;
+        public AK.Wwise.Event WindmillGust;
+        public AK.Wwise.Event LaserBlock;
+        public AK.Wwise.Event ReboundBlock;
+        public AK.Wwise.Event HoleInOne;
+        public AK.Wwise.Event Par;
+        public AK.Wwise.Event OverPar;
+        public AK.Wwise.Event WrongAnswer;
+        public AK.Wwise.Event TimeUp;
+    }
+    [SerializeField] private WwiseGolfEvents wwiseGolfEvents;
+
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
