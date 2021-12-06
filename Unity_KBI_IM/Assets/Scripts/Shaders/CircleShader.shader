@@ -44,10 +44,17 @@ Shader "Unlit/CircleShader"
                 return o;
             }
 
+            // challenge: make circle red + a little transparent
+            // red: (1, 0, 0)
+            // a = 0.75
+            // float4(1, 0, 0, 0.75)
+            // a = 1, opaque
+            // a = 0, transparent
+
             fixed4 frag(v2f i) : SV_Target
             {
                 // Parameters
-                float3 circleColor = float3(1, 1, 1);
+                float4 circleColor = float4(1, 1, 1, 0.6);       // challenge: float4 circleColor = float4(1, 0, 0, 0.5);
                 float thickness = 0.2;
                 float fade = 0.005;
 
@@ -56,12 +63,12 @@ Shader "Unlit/CircleShader"
 
                 // Calculate distance and fill circle with white
                 float distance = 1.0 - length(uv);
-                float3 color = smoothstep(0.0, fade, distance);
-                color *= smoothstep(thickness + fade, thickness, distance);
+                float4 colorMask = smoothstep(0.0, fade, distance);                 // outer circle
+                colorMask *= smoothstep(thickness + fade, thickness, distance);     // inner circle
 
                 // Set output color
-                float4 fragColor = float4(color, 1.0);
-                fragColor.rgb *= circleColor;
+                float4 fragColor = float4(colorMask) * circleColor;
+
                 return fragColor;
             }
             ENDCG
