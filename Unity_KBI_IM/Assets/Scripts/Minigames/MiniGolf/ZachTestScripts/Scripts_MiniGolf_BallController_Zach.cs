@@ -17,13 +17,13 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     public float maxForceMagnitude = 5f;
     [Tooltip("The velocity at which the ball is considered stopped. At or below this threshold, the ball will manually stop.")]
     public float stopVelocity = 0.1f;
-    [SerializeField] [Tooltip("The uniform scale factor for the pull circle.")]
-    private float pullCircleScale = 3f;
+    [SerializeField] [Tooltip("The uniform scale factor for the aim circle.")]
+    private float aimCircleScale = 3f;
 
     private Rigidbody rb;
     private LineRenderer line;
     private Camera mainCam;
-    private GameObject pullCircle;
+    private GameObject aimCircle;
 
     private Vector3 dragStartPos;
     private Touch touch;
@@ -53,13 +53,13 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         rb = GetComponent<Rigidbody>();
         line = GetComponent<LineRenderer>();
         mainCam = Camera.main;
-        pullCircle = transform.GetChild(0).gameObject;
+        aimCircle = transform.GetChild(0).gameObject;
 
         line.positionCount = 2;
         line.enabled = false;
 
-        pullCircle.transform.localScale *= pullCircleScale;
-        pullCircle.SetActive(true);
+        aimCircle.transform.localScale *= aimCircleScale;
+        aimCircle.SetActive(true);
 
         Scripts_MiniGolf_CameraController_Wyatt cam = GameObject.Find("Main Camera").GetComponent<Scripts_MiniGolf_CameraController_Wyatt>();
         if (photonView.IsMine || !PhotonNetwork.IsConnected) {
@@ -85,13 +85,13 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
             rb.angularVelocity = Vector3.zero;
             isIdle = true;
 
-            pullCircle.transform.rotation = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
-            pullCircle.SetActive(true);
+            aimCircle.transform.rotation = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
+            aimCircle.SetActive(true);
         }
         else
         {
             isIdle = false;
-            pullCircle.SetActive(false);
+            aimCircle.SetActive(false);
         }
 
         line.SetPosition(0, transform.position);
