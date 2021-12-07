@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 // we first require that the ball have a rigidbody
 [RequireComponent(typeof(Rigidbody))]
-public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
+public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 {
     [Tooltip("A multiplier for applying power to the ball.")]
     public float power = 10f;
@@ -25,6 +26,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
     private Touch touch;
     private bool isIdle;
     private bool isAiming = false;
+    private bool mouseClicked = false;
 
     [System.Serializable]
     public struct WwiseGolfEvents
@@ -51,9 +53,23 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
 
         line.positionCount = 2;
         line.enabled = false;
+
+        Scripts_MiniGolf_CameraController_Wyatt cam = GameObject.Find("Main Camera").GetComponent<Scripts_MiniGolf_CameraController_Wyatt>();
+        if (photonView.IsMine || !PhotonNetwork.IsConnected) {
+            cam.SetTarget(this);
+		}
     }
 
+	void Start() {
+        if (photonView.IsMine) {
+            Scripts_MiniGolf_Manager_Wyatt.LocalPlayerInstance = this.gameObject;
+        }
+	}
+
 	private void Update() {
+        // if our client does not own this ball, prevent us from controlling it
+        if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
+
         if (rb.velocity.magnitude <= stopVelocity) {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
@@ -62,7 +78,8 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
 
         line.SetPosition(0, transform.position);
 
-        if (Input.touchCount > 0) {
+		#region MOBILE SUPPORT
+		if (Input.touchCount > 0) {
             touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Began && isIdle && !isAiming)
@@ -74,9 +91,29 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviour
             if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
                 if (isAiming) DragRelease(new Vector3(touch.position.x, touch.position.y, mainCam.transform.position.y));
         }
-    }
+		#endregion
 
-    private void DragStart(Vector3 screenPoint) {
+		#region MOUSE SUPPORT
+		Vector2 mousePosition = Input.mousePosition;
+        if (Input.GetMouseButtonUp(0)) { // un-clicked
+            mouseClicked = false;
+            if (isAiming) {
+                DragRelease(new Vector3(mousePosition.x, mousePosition.y, mainCam.transform.position.y));
+			}
+        } else if (mouseClicked) { // mouse moved
+            if (isAiming) {
+                Dragging(new Vector3(mousePosition.x, mousePosition.y, mainCam.transform.position.y));
+            }
+		} else if (Input.GetMouseButtonDown(0)) { // clicked
+            mouseClicked = true;
+            if (isIdle && !isAiming) {
+                DragStart(new Vector3(mousePosition.x, mousePosition.y, mainCam.transform.position.y));
+			}
+		}
+		#endregion
+	}
+
+	private void DragStart(Vector3 screenPoint) {
         dragStartPos = mainCam.ScreenToWorldPoint(screenPoint);
         isAiming = true;
     }

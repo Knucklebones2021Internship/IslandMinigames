@@ -89,32 +89,32 @@ public class TrackSegment : MonoBehaviour {
 	}
 
 	public void OnDrawGizmos() {
-		return;
-		for (int i=0; i<4; i++) {
-			Gizmos.DrawSphere(GetPos(i), 0.05f);
-		}
+		//return;
+		//for (int i=0; i<4; i++) {
+		//	Gizmos.DrawSphere(GetPos(i), 0.05f);
+		//}
 
-		Handles.DrawBezier( GetPos(0), GetPos(3), GetPos(1), GetPos(2), Color.white, EditorGUIUtility.whiteTexture, 1f);
+		//Handles.DrawBezier( GetPos(0), GetPos(3), GetPos(1), GetPos(2), Color.white, EditorGUIUtility.whiteTexture, 1f);
 
-		OrientedPoint op = GetBezierOrientedPoint(t);
+		//OrientedPoint op = GetBezierOrientedPoint(t);
 
-		Gizmos.color = Color.red;
-		Handles.PositionHandle(op.position, op.orientation);
+		//Gizmos.color = Color.red;
+		//Handles.PositionHandle(op.position, op.orientation);
 
-		void DrawPoint(Vector3 position) => Gizmos.DrawSphere(op.LocalToWorldPos(position), 0.05f);
+		//void DrawPoint(Vector3 position) => Gizmos.DrawSphere(op.LocalToWorldPos(position), 0.05f);
 
-		Vector3[] scaledVertices = shape2D.vertices.Select(v => (Vector3)v.point * 0.25f).ToArray();
-		Vector3[] verts = scaledVertices.Select(v => op.LocalToWorldPos(v)).ToArray();
+		//Vector3[] scaledVertices = shape2D.vertices.Select(v => (Vector3)v.point * 0.25f).ToArray();
+		//Vector3[] verts = scaledVertices.Select(v => op.LocalToWorldPos(v)).ToArray();
 
-		for (int i=0; i<shape2D.lineIndices.Length; i+=2) {
-			Vector3 p1 = verts[shape2D.lineIndices[i]];
-			Vector3 p2 = verts[shape2D.lineIndices[i+1]];
+		//for (int i=0; i<shape2D.lineIndices.Length; i+=2) {
+		//	Vector3 p1 = verts[shape2D.lineIndices[i]];
+		//	Vector3 p2 = verts[shape2D.lineIndices[i+1]];
 
-			Gizmos.DrawLine(p1, p2);
-			DrawPoint(scaledVertices[i]);
-		}
+		//	Gizmos.DrawLine(p1, p2);
+		//	DrawPoint(scaledVertices[i]);
+		//}
 
-		Gizmos.color = Color.white;
+		//Gizmos.color = Color.white;
 	}
 
 	OrientedPoint GetBezierOrientedPoint(float t) {

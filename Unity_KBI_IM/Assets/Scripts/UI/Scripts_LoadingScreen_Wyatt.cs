@@ -15,7 +15,8 @@ public class Scripts_LoadingScreen_Wyatt : Scripts_BaseManager_Wyatt {
 	[SerializeField] TextMeshProUGUI tipText;
 	[SerializeField] string[] tips;
 
-	string sceneName = "TestLab_BubbleController";
+	//string sceneName = "TestLab_BubbleController";
+	string sceneName = "MiniGolf_Lighthouse";
 
 	// the minimum amount of time to show the loading screen, if the level loads before this we will still wait
 	float minimumLoadTime = 3f;

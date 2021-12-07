@@ -16,7 +16,9 @@ GameObject:
   - component: {fileID: 2137411825593962309}
   - component: {fileID: 2137411825593962308}
   - component: {fileID: 780648455337582244}
-  m_Layer: 0
+  - component: {fileID: 8833414565374785308}
+  - component: {fileID: 280362423454274721}
+  m_Layer: 10
   m_Name: MiniGolfBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,9 +234,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5af729cfff846f46ad201e727797f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 10
+  power: 3
   maxForceMagnitude: 5
   stopVelocity: 0.1
+  wwiseGolfEvents:
+    BallInWater:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 9c29e5c7d2cebf04b9042d63a2153fa6, type: 2}
+    BallRollsBack:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 66df274de7f7b7145b50616052d10e47, type: 2}
+    HitOffRamp:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 28f3d9110fd1b4748ac2e44340c23b55, type: 2}
+    WindmillGust:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 869822381da514b448f7a66d8e8541d1, type: 2}
+    LaserBlock:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: eef43ef99dc2a1449a007df422e43f2b, type: 2}
+    ReboundBlock:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: a935b679332501846b32a83bec09495d, type: 2}
+    HoleInOne:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: ce787c330fcaea141b1c1ec8e4c13d9e, type: 2}
+    Par:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f03d6221b4b23034a88bd40a7d3a52bd, type: 2}
+    OverPar:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: e22a916386d439445929118101267f0c, type: 2}
+    WrongAnswer:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 7568018ebb2a5f64a9e4e37681d13935, type: 2}
+    TimeUp:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 6664e7e25feeb6f448d97124fcc24c9a, type: 2}
 --- !u!96 &780648455337582244
 TrailRenderer:
   serializedVersion: 2
@@ -342,3 +389,42 @@ TrailRenderer:
   m_MinVertexDistance: 0.001
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &8833414565374785308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137411825593962314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 280362423454274721}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &280362423454274721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137411825593962314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1

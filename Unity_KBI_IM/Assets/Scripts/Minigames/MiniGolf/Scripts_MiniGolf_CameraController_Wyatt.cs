@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Scripts_MiniGolf_CameraController_Wyatt : MonoBehaviour {
-    [SerializeField] GameObject target; 
+    [SerializeField] Scripts_MiniGolf_BallController_Zach target; 
     [SerializeField] GameObject lighthouse;
     [SerializeField] float height;
 
@@ -14,4 +14,8 @@ public class Scripts_MiniGolf_CameraController_Wyatt : MonoBehaviour {
         transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, 
             lighthouse.transform.position - target.transform.position);
     }
+
+    public void SetTarget(Scripts_MiniGolf_BallController_Zach _target) {
+        target = _target;
+	}
 }

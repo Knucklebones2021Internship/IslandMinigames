@@ -5,19 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Final/UI/Titlescreen.unity
     guid: 0ad7811c140c4e44b93033c548b6caf4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Final/UI/PregameRoom.unity
     guid: eee382eb259205341b7b0cacb43af3ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Final/UI/LoadingScreen.unity
     guid: e9960c10bd1785c4586ca8ee63dda68c
   - enabled: 1
+    path: Assets/Scenes/Final/Minigames/MiniGolf_Lighthouse.unity
+    guid: cc3fd1ff739f7be40a8abe33b8d1edde
+  - enabled: 0
     path: Assets/Scenes/TestLabs/TestLab_BubbleController.unity
     guid: 2fc6c29c499b29c4dbcd50b57c66913f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Final/Minigames/HotPotato.unity
     guid: 039aca08a83899e428ffe3769e5fe590
   m_configObjects: {}
