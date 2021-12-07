@@ -17,10 +17,13 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     public float maxForceMagnitude = 5f;
     [Tooltip("The velocity at which the ball is considered stopped. At or below this threshold, the ball will manually stop.")]
     public float stopVelocity = 0.1f;
+    [SerializeField] [Tooltip("The uniform scale factor for the pull circle.")]
+    private float pullCircleScale = 3f;
 
     private Rigidbody rb;
     private LineRenderer line;
     private Camera mainCam;
+    private GameObject pullCircle;
 
     private Vector3 dragStartPos;
     private Touch touch;
@@ -50,9 +53,13 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         rb = GetComponent<Rigidbody>();
         line = GetComponent<LineRenderer>();
         mainCam = Camera.main;
+        pullCircle = transform.GetChild(0).gameObject;
 
         line.positionCount = 2;
         line.enabled = false;
+
+        pullCircle.transform.localScale *= pullCircleScale;
+        pullCircle.SetActive(true);
 
         Scripts_MiniGolf_CameraController_Wyatt cam = GameObject.Find("Main Camera").GetComponent<Scripts_MiniGolf_CameraController_Wyatt>();
         if (photonView.IsMine || !PhotonNetwork.IsConnected) {
@@ -70,17 +77,30 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         // if our client does not own this ball, prevent us from controlling it
         if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
 
-        if (rb.velocity.magnitude <= stopVelocity) {
+        Debug.Log("Game running");
+
+        if (rb.velocity.magnitude <= stopVelocity)
+        {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             isIdle = true;
-        } else isIdle = false;
+
+            pullCircle.transform.rotation = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
+            pullCircle.SetActive(true);
+        }
+        else
+        {
+            isIdle = false;
+            pullCircle.SetActive(false);
+        }
 
         line.SetPosition(0, transform.position);
 
 		#region MOBILE SUPPORT
 		if (Input.touchCount > 0) {
             touch = Input.GetTouch(0);
+
+            Debug.Log("Touch position: " + touch.position);
 
             if (touch.phase == TouchPhase.Began && isIdle && !isAiming)
                 DragStart(new Vector3(touch.position.x, touch.position.y, mainCam.transform.position.y));
@@ -95,6 +115,9 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 
 		#region MOUSE SUPPORT
 		Vector2 mousePosition = Input.mousePosition;
+
+        Debug.Log("Mouse position: " + mousePosition);
+
         if (Input.GetMouseButtonUp(0)) { // un-clicked
             mouseClicked = false;
             if (isAiming) {

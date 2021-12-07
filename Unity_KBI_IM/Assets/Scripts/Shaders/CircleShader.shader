@@ -50,11 +50,13 @@ Shader "Unlit/CircleShader"
             // float4(1, 0, 0, 0.75)
             // a = 1, opaque
             // a = 0, transparent
+            // result: float4 circleColor = float4(1, 0, 0, 0.5);
 
             fixed4 frag(v2f i) : SV_Target
             {
                 // Parameters
-                float4 circleColor = float4(1, 1, 1, 0.6);       // challenge: float4 circleColor = float4(1, 0, 0, 0.5);
+                // float4 circleColor = float4(sin(_Time.g), sin(2 * _Time.g), sin(3 * _Time.g), 0.25);
+                float4 circleColor = float4(1, 1, 1, 0.5);
                 float thickness = 0.2;
                 float fade = 0.005;
 
