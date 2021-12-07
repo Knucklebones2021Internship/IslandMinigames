@@ -8,10 +8,13 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
 	public static GameObject LocalPlayerInstance;
 
 	void Start() {
+		print("instatiation1");
 		if (PhotonNetwork.IsConnected) {
-			PhotonNetwork.Instantiate(playerPrefab.name, spawnTransform.position, spawnTransform.rotation, 0);
+			GameObject go = PhotonNetwork.Instantiate(playerPrefab.name, spawnTransform.position, spawnTransform.rotation, 0);
+			print(go.name);
 		} else {
 			Instantiate(playerPrefab, spawnTransform.position, spawnTransform.rotation);
 		}
+		print("instatiation2");
 	}
 }
