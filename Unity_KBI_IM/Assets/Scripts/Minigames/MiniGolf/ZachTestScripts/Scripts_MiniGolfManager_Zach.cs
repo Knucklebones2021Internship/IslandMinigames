@@ -44,11 +44,16 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     // Bool for whether the animation has played already 
     private bool animPlayed = false; 
 
+    // Camera 1 
+    public GameObject camera1; 
+    // Camera 2 
+    public GameObject camera2; 
+
     // <summary> 
     // Show the UI for the first question and answer choices
     // </summary>
     void Start() {
-        StartCoroutine(ShowAnswers());
+        //StartCoroutine(ShowAnswers());
     }
 
     void Update() {
@@ -62,6 +67,11 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
         if (endGlobalTime <= 10) {
             GameOver(); 
         } 
+
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            camera1.SetActive(!camera1.activeSelf); 
+            camera2.SetActive(!camera2.activeSelf); 
+        }
 
         // Once the ball has entered a hole, check which hole it went into 
         if (!ball.activeSelf) {
