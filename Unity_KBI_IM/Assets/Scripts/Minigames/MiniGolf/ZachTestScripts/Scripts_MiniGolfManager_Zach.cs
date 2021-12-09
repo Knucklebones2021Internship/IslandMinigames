@@ -29,7 +29,9 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     public GameObject[] answers; 
 
     // UI for the answer choices of each hole 
-    public GameObject holeAnswers; 
+    public GameObject holeAnswersUI; 
+    // 3D Text for the answer choices of each hole 
+    public GameObject holeAnswers3D;
     // The ball 
     public GameObject ball; 
     // List of holes 
@@ -53,7 +55,7 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     // Show the UI for the first question and answer choices
     // </summary>
     void Start() {
-        //StartCoroutine(ShowAnswers());
+        StartCoroutine(ShowAnswers());
     }
 
     void Update() {
@@ -68,13 +70,14 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
             GameOver(); 
         } 
 
+        // Switch camera angles. Change the answer choice letters as well 
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            //camera1.SetActive(!camera1.activeSelf); 
-            //camera2.SetActive(!camera2.activeSelf); 
             Camera thirdPersonCam = camera1.GetComponent<Camera>();
             Camera topDownCam = camera2.GetComponent<Camera>(); 
             thirdPersonCam.enabled = !thirdPersonCam.enabled;
             topDownCam.enabled = !topDownCam.enabled;
+            holeAnswers3D.SetActive(!holeAnswers3D.activeSelf);
+            holeAnswersUI.SetActive(!holeAnswersUI.activeSelf);
         }
 
         // Once the ball has entered a hole, check which hole it went into 
@@ -125,7 +128,7 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
     // </summary>
     IEnumerator ShowAnswers() {
         yield return new WaitForSeconds(2f); 
-        holeAnswers.SetActive(true); 
+        holeAnswers3D.SetActive(true); 
         answers[questionIndex].SetActive(true); 
 
     }
