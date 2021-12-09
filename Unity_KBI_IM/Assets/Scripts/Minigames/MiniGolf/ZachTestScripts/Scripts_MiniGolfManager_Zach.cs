@@ -69,8 +69,12 @@ public class Scripts_MiniGolfManager_Zach : Scripts_BaseManager_Wyatt
         } 
 
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            camera1.SetActive(!camera1.activeSelf); 
-            camera2.SetActive(!camera2.activeSelf); 
+            //camera1.SetActive(!camera1.activeSelf); 
+            //camera2.SetActive(!camera2.activeSelf); 
+            Camera thirdPersonCam = camera1.GetComponent<Camera>();
+            Camera topDownCam = camera2.GetComponent<Camera>(); 
+            thirdPersonCam.enabled = !thirdPersonCam.enabled;
+            topDownCam.enabled = !topDownCam.enabled;
         }
 
         // Once the ball has entered a hole, check which hole it went into 
