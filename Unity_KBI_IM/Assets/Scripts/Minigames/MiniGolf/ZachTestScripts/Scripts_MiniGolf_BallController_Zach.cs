@@ -20,7 +20,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     [SerializeField] [Tooltip("The uniform scale factor for the aim circle.")]
     private float aimCircleScale = 3f;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     private LineRenderer line;
     private Camera mainCam;
     private GameObject aimCircle;
@@ -77,8 +77,6 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         // if our client does not own this ball, prevent us from controlling it
         if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
 
-        Debug.Log("Game running");
-
         if (rb.velocity.magnitude <= stopVelocity)
         {
             rb.velocity = Vector3.zero;
@@ -119,8 +117,6 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 		}
 
 		Vector2 mousePosition = Input.mousePosition;
-
-        Debug.Log("Mouse position: " + mousePosition);
 
         if (Input.GetMouseButtonUp(0)) { // un-clicked
             mouseClicked = false;
