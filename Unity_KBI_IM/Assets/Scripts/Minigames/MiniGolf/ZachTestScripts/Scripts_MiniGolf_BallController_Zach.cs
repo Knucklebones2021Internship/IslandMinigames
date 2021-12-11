@@ -61,7 +61,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         aimCircle.transform.localScale *= aimCircleScale;
         aimCircle.SetActive(true);
 
-        Scripts_MiniGolf_CameraController_Wyatt cam = GameObject.Find("Main Camera").GetComponent<Scripts_MiniGolf_CameraController_Wyatt>();
+        Scripts_MiniGolf_CameraController_Wyatt cam = GameObject.Find("MinigolfCamera").GetComponent<Scripts_MiniGolf_CameraController_Wyatt>();
         if (photonView.IsMine || !PhotonNetwork.IsConnected) {
             cam.SetTarget(this);
 		}
