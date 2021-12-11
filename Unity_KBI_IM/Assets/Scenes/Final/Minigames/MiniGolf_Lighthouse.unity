@@ -215,9 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: 0, y: 0, z: 0}
-  - {x: 2.1260767, y: -0.45323324, z: 0.8211823}
-  - {x: 2.3842936, y: 0.15438959, z: 0.46130824}
+  - {x: 0.249331, y: 0, z: -0.1848526}
+  - {x: 1.4270031, y: 0, z: 0.7203269}
+  - {x: 2.5760345, y: 0, z: 0.11344504}
   - {x: 2.4515777, y: 0.47350982, z: -1.7155871}
   modes: 0000000000000000
   loop: 0
@@ -487,6 +487,7 @@ MonoBehaviour:
   splinePrefab: {fileID: 466323269312220421, guid: cfc20239f9bf4384d8c86ee5ba2827b1, type: 3}
   lighthouse: {fileID: 765895074}
   exitPosition: {fileID: 1964982204}
+  duration: 0
 --- !u!1 &764199726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2095,10 @@ PrefabInstance:
     - target: {fileID: 4610591320856435384, guid: 3458a119545f1924aba43103d50603a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610591320856435389, guid: 3458a119545f1924aba43103d50603a3, type: 3}
+      propertyPath: height
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4610591320856435389, guid: 3458a119545f1924aba43103d50603a3, type: 3}
       propertyPath: upTarget
