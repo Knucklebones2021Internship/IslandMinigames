@@ -114,6 +114,10 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 		#endregion
 
 		#region MOUSE SUPPORT
+        if (Input.GetKeyDown(KeyCode.Space)) { // kill velocity for debug purposes
+            rb.velocity = Vector3.zero;
+		}
+
 		Vector2 mousePosition = Input.mousePosition;
 
         Debug.Log("Mouse position: " + mousePosition);
