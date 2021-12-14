@@ -25,4 +25,8 @@ public class Scripts_MiniGolf_CameraController_Wyatt : MonoBehaviour {
     public void SetTarget(Scripts_MiniGolf_BallController_Zach _target) {
         target = _target;
 	}
+
+    public Scripts_MiniGolf_BallController_Zach GetTarget() {
+        return target;
+	}
 }

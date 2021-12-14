@@ -31,6 +31,10 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     private bool isAiming = false;
     private bool mouseClicked = false;
 
+    Scripts_MiniGolf_CameraController_Wyatt localCameraController;
+
+    //bool playing = true;
+
     [System.Serializable]
     public struct WwiseGolfEvents
     {
@@ -61,9 +65,9 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         aimCircle.transform.localScale *= aimCircleScale;
         aimCircle.SetActive(true);
 
-        Scripts_MiniGolf_CameraController_Wyatt cam = GameObject.Find("MinigolfCamera").GetComponent<Scripts_MiniGolf_CameraController_Wyatt>();
+        localCameraController = GameObject.Find("MinigolfCamera").GetComponent<Scripts_MiniGolf_CameraController_Wyatt>();
         if (photonView.IsMine || !PhotonNetwork.IsConnected) {
-            cam.SetTarget(this);
+            localCameraController.SetTarget(this);
 		}
     }
 
@@ -76,6 +80,8 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 	private void Update() {
         // if our client does not own this ball, prevent us from controlling it
         if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
+
+        //if (!playing) return;
 
         if (rb.velocity.magnitude <= stopVelocity)
         {
@@ -159,5 +165,44 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 
         // add an instant force to the ball, in the direction opposite the drag and with a multiplier of power
         rb.AddForce(clampedForce * power, ForceMode.Impulse);
+    }
+
+    /// <summary>
+    /// This function is called by Scripts_Hole_MiniGolf_BrianLin.cs when a ball enters a hole
+    /// </summary>
+    public void CompleteHole() { // TODO: probably need to check the hole index for correct or incorrect
+        if (photonView.IsMine) {
+            // tell all other clients that this ball is complete
+            photonView.RPC("CompleteBall", RpcTarget.All, photonView.ViewID);
+            //playing = false;
+		}
+	}
+
+    [PunRPC]
+    void CompleteBall(int photonID) {
+        // remove this ball from the local potential spectate list
+        Scripts_MiniGolf_BallController_Zach ball = Scripts_MiniGolf_Manager_Wyatt.RemovePlayerFromLocalSpectateList(photonID);
+
+        if (ball == null) return; // if the ball did not exist, terminate (something went wrong, maybe this should be an assertion)
+
+        // if our camera is currently looking at this ball
+        if (localCameraController.GetTarget() == ball) {
+            // grab a new candidate from the spectate list
+            Scripts_MiniGolf_BallController_Zach candidate = Scripts_MiniGolf_Manager_Wyatt.GetLocalSpectateCandidate(0);
+
+            if (candidate == null) { // if there is no candidate
+                // enter post game UI
+                print("enter post game UI");
+			} else { // if a candidate does exist
+                // focus our camera on the candidate
+                localCameraController.SetTarget(candidate);
+
+                // enable specate UI if not enabled already
+                print("enable spectate UI");
+			}
+		}
+
+        // turn off this ball
+        ball.gameObject.SetActive(false);
     }
 }

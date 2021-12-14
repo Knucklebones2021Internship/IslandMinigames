@@ -10,9 +10,15 @@ public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
     // </summary>
     // <param name="other"></param>
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Ball") {
-            other.gameObject.SetActive(false);
-            holeIn = true; 
-        }
+        Scripts_MiniGolf_BallController_Zach ball = other.GetComponent<Scripts_MiniGolf_BallController_Zach>();
+
+        if (ball != null) {
+            // delay this for a moment for any celebration particles and sfx
+            ball.CompleteHole();
+
+            // legacy
+            //other.gameObject.SetActive(false);
+            //holeIn = true; 
+		}
     }
 }
