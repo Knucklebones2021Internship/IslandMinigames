@@ -13,6 +13,11 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
 	bool localSpectateListGenerated = false;
 	int roomSize;
 
+    // Camera 1 - Tracking Ball
+    public GameObject camera1; 
+    // Camera 2 - Whole Stage 
+    public GameObject camera2; 
+
 	void Start() {
 		roomSize = PhotonNetwork.PlayerList.Length;
 
@@ -40,6 +45,14 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
 				print(entry.Key + ": " + entry.Value);
 			}
 		}
+
+        // Switch camera angles. 
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            Camera ballCam = camera1.GetComponent<Camera>();
+            Camera stageCam = camera2.GetComponent<Camera>(); 
+            ballCam.enabled = !ballCam.enabled;
+            stageCam.enabled = !stageCam.enabled;
+        }		
 	}
 
 	/// <summary>
