@@ -39,7 +39,9 @@ Includes all potato-related SFX and the BGX interactivity for the minigame</Comm
 						<ObjectRef Name="Hit_Off_Ramp" ID="{239AAC71-39F7-49DD-BDE8-CA945EF1FB6A}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Time_Up" ID="{7667B078-85D1-4A9A-A51D-358D949E73A5}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ball_in_pond" ID="{F5BEBEEF-EBA0-4AF3-A723-315AE8537485}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="BallInHoleCorrect" ID="{EE133B67-D289-4BF1-BABC-9CBE40F949A8}" WorkUnitID="{7C1700CF-4A32-47BE-9EF8-74BFB852FDAE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Wrong_Answer" ID="{E030035D-C0C1-4DE0-995E-D4FF3F9FD329}" WorkUnitID="{18CE8440-94A2-4198-960B-1C44AC808952}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="BallInHoleIncorrect" ID="{6BD8BC9B-17D3-4EF9-BAF0-BEB811B0A9B1}" WorkUnitID="{7C1700CF-4A32-47BE-9EF8-74BFB852FDAE}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
