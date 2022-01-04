@@ -23,6 +23,10 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
     public GameObject globalTimer;
 	// Game Over UI  
     public GameObject gameOverPanel;	
+	// UI for the answers of the question 
+	public GameObject answers; 
+	// UI for the answers each hole represents 
+	public GameObject holeAnswers; 
 
 	void Start() {
 		roomSize = PhotonNetwork.PlayerList.Length;
@@ -70,6 +74,8 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
             ballCam.enabled = !ballCam.enabled;
             stageCam.enabled = !stageCam.enabled;
 			camZoomed = !camZoomed; 
+			answers.SetActive(!answers.activeSelf);
+			holeAnswers.SetActive(!holeAnswers.activeSelf);
         }		
 	}
 
