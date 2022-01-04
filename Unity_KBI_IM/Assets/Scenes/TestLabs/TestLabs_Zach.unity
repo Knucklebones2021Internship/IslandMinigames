@@ -6537,6 +6537,7 @@ MonoBehaviour:
   maxForceMagnitude: 5
   stopVelocity: 0.05
   aimCircleScale: 3
+  rb: {fileID: 0}
   wwiseGolfEvents:
     BallInWater:
       idInternal: 0

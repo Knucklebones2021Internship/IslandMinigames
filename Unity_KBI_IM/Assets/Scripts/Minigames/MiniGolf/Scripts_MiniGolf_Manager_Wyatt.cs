@@ -17,6 +17,12 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
     public GameObject camera1; 
     // Camera 2 - Whole Stage 
     public GameObject camera2; 
+	// Boolean for whether the camera is currently zoomed in or not 
+	public bool camZoomed = true; 
+    // Game Timers
+    public GameObject globalTimer;
+	// Game Over UI  
+    public GameObject gameOverPanel;	
 
 	void Start() {
 		roomSize = PhotonNetwork.PlayerList.Length;
@@ -29,6 +35,17 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
 	}
 
 	private void Update() {
+
+        int endGlobalTime = 0;
+        int.TryParse(globalTimer.GetComponent<TMPro.TextMeshProUGUI>().text, out endGlobalTime);
+
+        if (endGlobalTime <= 10) {
+            globalTimer.GetComponent<TMPro.TextMeshProUGUI>().color = Color.red;
+        }
+        if (endGlobalTime <= 0) {
+            GameOver(); 
+        } 
+
 		if (!localSpectateListGenerated) { // find all BallControllers in the scene and add them to the spectate dictionary
 			Scripts_MiniGolf_BallController_Zach[] players = FindObjectsOfType<Scripts_MiniGolf_BallController_Zach>();
 			for (int i = 0; i < players.Length; i++) {
@@ -52,6 +69,7 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
             Camera stageCam = camera2.GetComponent<Camera>(); 
             ballCam.enabled = !ballCam.enabled;
             stageCam.enabled = !stageCam.enabled;
+			camZoomed = !camZoomed; 
         }		
 	}
 
@@ -83,4 +101,14 @@ public class Scripts_MiniGolf_Manager_Wyatt : MonoBehaviourPunCallbacks {
 			} trueIndex--;
 		} return null;
 	}
+
+    // <summary> 
+    // Sets global timer invisible and displays the game over panel
+    // </summary>
+    void GameOver() {
+        globalTimer.SetActive(false);
+        //questionPanel.SetActive(false); 
+        //answers[questionIndex].SetActive(false); 
+        gameOverPanel.SetActive(true);
+    }  	
 }
