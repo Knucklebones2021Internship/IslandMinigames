@@ -148,7 +148,10 @@ Shader "Unlit/WaterShader" {
                 foamMask = pow(foamMask, _FoamIntensity);
 
                 // additively blend
-                return _WaterColor + rippleColor + foamMask;
+                float4 finalColor = _WaterColor + rippleColor + foamMask;
+                finalColor.a = saturate(finalColor.a); // clamp opacity between 0 and 1 to prevent crazy bloom
+
+                return finalColor;
             }
             ENDCG
         }
