@@ -33,6 +33,11 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 
     Scripts_MiniGolf_CameraController_Wyatt localCameraController;
 
+    public ParticleSystem ballHit;
+    public ParticleSystem waterRipple;
+    public ParticleSystem waterSplash;
+    public ParticleSystem waterDroplet;
+
     //bool playing = true;
 
     [System.Serializable]
@@ -204,5 +209,30 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 
         // turn off this ball
         ball.gameObject.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // see if we could make the ball not play the OnHit particle effect in the beginning when it falls + bounces into the course
+
+        ballHit.Play();
+        Debug.Log("Ball hit played");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            // add a way for the ball to play the water particle effects only when it *first* collides with the water quad
+
+            waterRipple.Play();
+            Debug.Log("Water ripple played");
+
+            waterSplash.Play();
+            Debug.Log("Water splash played");
+
+            waterDroplet.Play();
+            Debug.Log("Water droplet played");
+        }
     }
 }

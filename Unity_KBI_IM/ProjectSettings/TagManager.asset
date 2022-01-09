@@ -8,6 +8,7 @@ TagManager:
   - WindArea
   - LaserMonster
   - Stage
+  - Water
   layers:
   - Default
   - TransparentFX
