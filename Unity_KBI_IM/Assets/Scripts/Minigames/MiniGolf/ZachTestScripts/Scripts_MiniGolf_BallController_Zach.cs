@@ -214,6 +214,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     private void OnCollisionEnter(Collision collision)
     {
         // see if we could make the ball not play the OnHit particle effect in the beginning when it falls + bounces into the course
+        // orient the OnHit particle effect upwards at all times
 
         ballHit.Play();
         Debug.Log("Ball hit played");
@@ -224,6 +225,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         if (other.CompareTag("Water"))
         {
             // add a way for the ball to play the water particle effects only when it *first* collides with the water quad
+            // orient the water particle effects upwards at all times
 
             waterRipple.Play();
             Debug.Log("Water ripple played");
