@@ -62,7 +62,8 @@ public class Scripts_LaserMonster_MiniGolf_Brian : MonoBehaviour
             transform.position = pos + centerPoint.position; 
         }
         if (Rotation == 360) { Rotation = 0; }
-        Rotation = Rotation + rotationRate * Time.deltaTime; 
-        gameObject.transform.rotation = Quaternion.Euler(0, Rotation + 180, 0);         
+        Rotation = Rotation + rotationRate * Time.deltaTime;
+        //gameObject.transform.rotation = Quaternion.Euler(0, Rotation + 180, 0);         
+        transform.rotation = Quaternion.LookRotation(transform.position - centerPoint.position, Vector3.up);
     }
 }
