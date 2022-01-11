@@ -14,6 +14,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!95 &8640277461550990512
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447153128216857241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17d5296165f821c4a881acbe02331ba1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7977130730584455420
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6b633aa9a85f4408a945e43b8dd7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 8640277461550990512}
   xSpread: 2
   zSpread: 2
   yOffset: 0
