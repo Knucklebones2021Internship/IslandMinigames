@@ -216,6 +216,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         // see if we could make the ball not play the OnHit particle effect in the beginning when it falls + bounces into the course
         // orient the OnHit particle effect upwards at all times
 
+        ballHit.transform.rotation = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
         ballHit.Play();
         Debug.Log("Ball hit played");
     }
