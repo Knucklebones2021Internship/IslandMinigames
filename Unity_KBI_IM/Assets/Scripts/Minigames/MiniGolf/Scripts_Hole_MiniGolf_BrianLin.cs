@@ -3,7 +3,14 @@ using UnityEngine;
 public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
 
     // Boolean for whether the ball has went into this hole 
-    public bool holeIn = false; 
+    public bool holeIn = false;
+
+    private GameObject holeFX;
+
+    private void Awake()
+    {
+        holeFX = transform.GetChild(0).gameObject;
+    }
 
     // <summary> 
     // Destroys a ball once it has entered the whole 
@@ -13,6 +20,8 @@ public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
         Scripts_MiniGolf_BallController_Zach ball = other.GetComponent<Scripts_MiniGolf_BallController_Zach>();
 
         if (ball != null) {
+            Instantiate(holeFX, transform.position, Quaternion.identity);
+
             // delay this for a moment for any celebration particles and sfx
             ball.CompleteHole();
 
