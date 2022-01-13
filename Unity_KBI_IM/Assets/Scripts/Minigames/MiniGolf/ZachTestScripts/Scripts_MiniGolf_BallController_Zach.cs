@@ -32,11 +32,15 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     private bool mouseClicked = false;
 
     Scripts_MiniGolf_CameraController_Wyatt localCameraController;
+    Scripts_MiniGolf_WaterSpline_Wyatt splineScript;
 
-    public ParticleSystem ballHit;
-    public ParticleSystem waterRipple;
-    public ParticleSystem waterSplash;
-    public ParticleSystem waterDroplet;
+    public GameObject ballHitFX;
+    public GameObject waterFX;
+
+    private bool waterEffectsPlayable = true; // being set to false is equivalent to the water effects having already played once
+
+    private Quaternion globalUpDirection = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
+    private Quaternion defaultWaterEffectsDirection = Quaternion.Euler(-90, 0, 0);
 
     //bool playing = true;
 
@@ -74,6 +78,8 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         if (photonView.IsMine || !PhotonNetwork.IsConnected) {
             localCameraController.SetTarget(this);
 		}
+
+        splineScript = GameObject.Find("Water").GetComponent<Scripts_MiniGolf_WaterSpline_Wyatt>();
     }
 
 	void Start() {
@@ -94,7 +100,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
             rb.angularVelocity = Vector3.zero;
             isIdle = true;
 
-            aimCircle.transform.rotation = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
+            aimCircle.transform.rotation = globalUpDirection;
             aimCircle.SetActive(true);
         }
         else
@@ -104,6 +110,11 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         }
 
         line.SetPosition(0, transform.position);
+
+        // if the water effects have already been played upon entering the spline
+        // and the water spline is complete, allow water effects to be played
+        if (!waterEffectsPlayable && !splineScript.splining)
+            waterEffectsPlayable = true;
 
 		#region MOBILE SUPPORT
 		if (Input.touchCount > 0) {
@@ -213,29 +224,41 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 
     private void OnCollisionEnter(Collision collision)
     {
-        // see if we could make the ball not play the OnHit particle effect in the beginning when it falls + bounces into the course
-        // orient the OnHit particle effect upwards at all times
+        // if the ball is not in the water, aka the water effects are playable,
+        // then hit effects can be played
 
-        ballHit.transform.rotation = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
-        ballHit.Play();
-        Debug.Log("Ball hit played");
+        if (waterEffectsPlayable)
+            PlayHitEffects(collision);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Water"))
-        {
-            // add a way for the ball to play the water particle effects only when it *first* collides with the water quad
-            // orient the water particle effects upwards at all times
+            if (waterEffectsPlayable)
+            {
+                PlayWaterEffects(other);
 
-            waterRipple.Play();
-            Debug.Log("Water ripple played");
+                waterEffectsPlayable = false;
+            }
+    }
 
-            waterSplash.Play();
-            Debug.Log("Water splash played");
+    private void PlayHitEffects(Collision collision)
+    {
+        // spawn position is point of impact
+        Vector3 spawnPosition = collision.contacts[0].point;
+        Quaternion spawnRotation = globalUpDirection;
 
-            waterDroplet.Play();
-            Debug.Log("Water droplet played");
-        }
+        Instantiate(ballHitFX, spawnPosition, spawnRotation);
+    }
+
+    private void PlayWaterEffects(Collider collider)
+    {
+        // spawn position is point of impact
+        // ClosestPointOnBounds returns the closest point to the bounding box of the attached collider
+        // since the collider in this case is attached to a quad, ClosestPointOnBounds returns exactly the point of impact
+        Vector3 spawnPosition = collider.ClosestPointOnBounds(transform.position);
+        Quaternion spawnRotation = Quaternion.identity;
+
+        Instantiate(waterFX, spawnPosition, spawnRotation);
     }
 }

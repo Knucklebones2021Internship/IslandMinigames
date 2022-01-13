@@ -9,7 +9,7 @@ public class Scripts_MiniGolf_WaterSpline_Wyatt : MonoBehaviour {
 	Scripts_MiniGolf_BallController_Zach ball;
 	BezierSpline spline;
 
-	bool splining = false;
+	public bool splining = false;
 	float progress;
 
 	void OnTriggerEnter(Collider other) {
