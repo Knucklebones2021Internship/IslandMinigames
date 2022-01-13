@@ -23,14 +23,16 @@ public class Scripts_LaserMonster_MiniGolf_Brian : MonoBehaviour
     public GameObject laser; 
     // Timer to shoot the laser 
     float shootTimer = 3.0f; 
+    bool firing;
 
-
+    [SerializeField] Animator anim;
+    [SerializeField] Transform projectileEmitter;
     GameObject player;
 
-    // <summary> 
-    // Move around in a circle and shoot the laser projectile every 3 seconds 
-    // </summary>     
-    void Update() {
+	// <summary> 
+	// Move around in a circle and shoot the laser projectile every 3 seconds 
+	// </summary>     
+	void Update() {
         if (player == null){
             player =  player = FindObjectOfType<Scripts_MiniGolf_BallController_Zach>().gameObject;
             return;
@@ -38,23 +40,46 @@ public class Scripts_LaserMonster_MiniGolf_Brian : MonoBehaviour
         timer += Time.deltaTime * rotSpeed; 
         Orbit(); 
         
-        if (shootTimer <= 0) {
-            print(player.transform.position);
-            Vector3 playerDirection = (player.transform.position - transform.position).normalized;
-            GameObject projectile = Instantiate(laser) as GameObject; 
-            projectile.transform.position = transform.position + transform.forward * 2; 
-            projectile.transform.rotation = transform.rotation;
-            projectile.transform.rotation *= Quaternion.Euler(90, 0, 0);
-            Rigidbody rb = projectile.GetComponent<Rigidbody>(); 
-            rb.velocity = playerDirection * 5;
-            Destroy(projectile, 1.5f);
-            shootTimer = 3.0f;
-            
-            
-        } else {
-            shootTimer -= Time.deltaTime; 
-        }
+        if (!firing) {
+            if (shootTimer <= 0) {
+                StartCoroutine(Fire());
+            } else {
+                shootTimer -= Time.deltaTime; 
+            }
+		}
     }
+
+    IEnumerator Fire() {
+        firing = true;
+
+        // begin charge anim
+        anim.SetBool("Charge", true);
+        float chargeDuration = 0.833f; // length of the charge animation
+        yield return new WaitForSeconds(chargeDuration);
+        anim.SetBool("Charge", false);
+
+        // fire projectile
+        Vector3 playerDirection = (player.transform.position - projectileEmitter.position).normalized;
+        GameObject projectile = Instantiate(laser) as GameObject;
+        projectile.transform.position = projectileEmitter.position;
+        projectile.transform.rotation = Quaternion.LookRotation(playerDirection);
+        projectile.transform.rotation *= Quaternion.Euler(90, 0, 0);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>(); 
+        rb.velocity = playerDirection * 5;
+        Destroy(projectile, 1.5f);
+
+        // begin fire anim
+        anim.SetBool("Fire", true);
+        float fireDuration = 1.677f; // length of the fire animation
+        yield return new WaitForSeconds(fireDuration);
+
+        // return to idle state
+        anim.SetBool("Fire", false);
+
+        // reset state
+        shootTimer = 3.0f;
+        firing = false;
+	}
 
     // <summary> 
     // Orbit around a central point while rotating 
