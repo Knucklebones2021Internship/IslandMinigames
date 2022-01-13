@@ -254,7 +254,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         // we scale the particle effect (gameobject) according to the hit velocity and use a multiplier, in this case = 0.25
         // finally, we clamp it between 0 and 1 so that it doesn't explode to a large size if the hit velocity is high
         GameObject effectGameObject = Instantiate(ballHitFX, spawnPosition, spawnRotation);
-        effectGameObject.transform.localScale *= Mathf.Clamp01(0.25f * collision.relativeVelocity.magnitude);
+        effectGameObject.transform.localScale *= Mathf.Clamp01(ballHitScalingFactor * collision.relativeVelocity.magnitude);
 
         // now that the particle effect (gameobject) is scaled, we can play the particle effect itself
         ParticleSystem effect = effectGameObject.GetComponent<ParticleSystem>();

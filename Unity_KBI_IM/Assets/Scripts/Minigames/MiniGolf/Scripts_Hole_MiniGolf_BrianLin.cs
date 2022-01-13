@@ -7,11 +7,13 @@ public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
     public bool holeIn = false;
     public bool correctHole;
 
-    private GameObject holeFX;
+    private GameObject correctHoleFX;
+    private GameObject incorrectHoleFX;
 
     private void Awake()
     {
-        holeFX = transform.GetChild(0).gameObject;
+        correctHoleFX = transform.GetChild(0).gameObject;
+        incorrectHoleFX = transform.GetChild(1).gameObject;
     }
 
     // <summary> 
@@ -29,10 +31,10 @@ public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
     IEnumerator CompleteHole(Scripts_MiniGolf_BallController_Zach ball) {
         GameObject effects;
         if (correctHole) {
-            effects = Instantiate(holeFX, transform.position, Quaternion.identity);
+            effects = Instantiate(correctHoleFX, transform.position, Quaternion.identity);
         } else {
             // play incorrect effect :((
-            effects = new GameObject();
+            effects = Instantiate(incorrectHoleFX, transform.position, Quaternion.identity);
         }
 
         float particleEffectDuration = 1.2f;
