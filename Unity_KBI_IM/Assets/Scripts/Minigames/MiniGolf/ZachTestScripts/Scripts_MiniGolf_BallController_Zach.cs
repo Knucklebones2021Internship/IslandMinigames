@@ -17,8 +17,13 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     public float maxForceMagnitude = 5f;
     [Tooltip("The velocity at which the ball is considered stopped. At or below this threshold, the ball will manually stop.")]
     public float stopVelocity = 0.1f;
-    [SerializeField] [Tooltip("The uniform scale factor for the aim circle.")]
-    private float aimCircleScale = 3f;
+    [Tooltip("The uniform scale factor for the aim circle.")]
+    public float aimCircleScale = 3f;
+    [Tooltip("This is the scaling factor for the BallHit particle effect based on the hit velocity of the ball.")]
+    public float ballHitScalingFactor = 0.25f;
+
+    public GameObject ballHitFX;
+    public GameObject waterFX;
 
     public Rigidbody rb;
     private LineRenderer line;
@@ -34,13 +39,9 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     Scripts_MiniGolf_CameraController_Wyatt localCameraController;
     Scripts_MiniGolf_WaterSpline_Wyatt splineScript;
 
-    public GameObject ballHitFX;
-    public GameObject waterFX;
-
     private bool waterEffectsPlayable = true; // being set to false is equivalent to the water effects having already played once
 
     private Quaternion globalUpDirection = new Quaternion(0.707106829f, 0, 0, 0.707106829f);
-    private Quaternion defaultWaterEffectsDirection = Quaternion.Euler(-90, 0, 0);
 
     //bool playing = true;
 
@@ -248,10 +249,19 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         Vector3 spawnPosition = collision.contacts[0].point;
         Quaternion spawnRotation = globalUpDirection;
 
-        GameObject effect = Instantiate(ballHitFX, spawnPosition, spawnRotation);
+        // we want to scale the particle effect (gameobject) according to the hit velocity
+        // the BallHit particle effect has PlayOnAwake toggled off so that it doesn't play when instantiated
+        // we scale the particle effect (gameobject) according to the hit velocity and use a multiplier, in this case = 0.25
+        // finally, we clamp it between 0 and 1 so that it doesn't explode to a large size if the hit velocity is high
+        GameObject effectGameObject = Instantiate(ballHitFX, spawnPosition, spawnRotation);
+        effectGameObject.transform.localScale *= Mathf.Clamp01(0.25f * collision.relativeVelocity.magnitude);
+
+        // now that the particle effect (gameobject) is scaled, we can play the particle effect itself
+        ParticleSystem effect = effectGameObject.GetComponent<ParticleSystem>();
+        effect.Play();
 
         float effectDuration = 2f;
-        Destroy(effect, effectDuration);
+        Destroy(effectGameObject, effectDuration);
     }
 
     private void PlayWaterEffects(Collider collider)
