@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 3
   maxForceMagnitude: 5
-  stopVelocity: 0.1
+  stopVelocity: 0.15
   aimCircleScale: 3
   rb: {fileID: 0}
   ballHitFX: {fileID: 8658528489937041941, guid: ca30e64e5105b9246b74f89fefc53148, type: 3}
