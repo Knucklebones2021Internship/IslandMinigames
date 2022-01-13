@@ -248,7 +248,10 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         Vector3 spawnPosition = collision.contacts[0].point;
         Quaternion spawnRotation = globalUpDirection;
 
-        Instantiate(ballHitFX, spawnPosition, spawnRotation);
+        GameObject effect = Instantiate(ballHitFX, spawnPosition, spawnRotation);
+
+        float effectDuration = 2f;
+        Destroy(effect, effectDuration);
     }
 
     private void PlayWaterEffects(Collider collider)
@@ -259,6 +262,9 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         Vector3 spawnPosition = collider.ClosestPointOnBounds(transform.position);
         Quaternion spawnRotation = Quaternion.identity;
 
-        Instantiate(waterFX, spawnPosition, spawnRotation);
+        GameObject effect = Instantiate(waterFX, spawnPosition, spawnRotation);
+
+        float effectDuration = 3f;
+        Destroy(effect, effectDuration);
     }
 }
