@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1145551782}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3515,7 +3515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &327790051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15179,6 +15179,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 305486971}
     m_Modifications:
+    - target: {fileID: 4302349020751955154, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6559478235933304274, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -15226,6 +15230,14 @@ PrefabInstance:
     - target: {fileID: 6559478235933304275, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
       propertyPath: m_Name
       value: MiniGolfHole (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304286, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: holeIn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559478235933304286, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}
+      propertyPath: correctHole
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8d39c66d5f4cf34fa7856b9ddaee58a, type: 3}

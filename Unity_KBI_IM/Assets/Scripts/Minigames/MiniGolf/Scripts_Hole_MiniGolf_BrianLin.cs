@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
 
     // Boolean for whether the ball has went into this hole 
     public bool holeIn = false;
+    public bool correctHole;
 
     private GameObject holeFX;
 
@@ -20,14 +22,25 @@ public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
         Scripts_MiniGolf_BallController_Zach ball = other.GetComponent<Scripts_MiniGolf_BallController_Zach>();
 
         if (ball != null) {
-            Instantiate(holeFX, transform.position, Quaternion.identity);
-
-            // delay this for a moment for any celebration particles and sfx
-            ball.CompleteHole();
-
-            // legacy
-            //other.gameObject.SetActive(false);
-            //holeIn = true; 
+            StartCoroutine(CompleteHole(ball));
 		}
+    }
+
+    IEnumerator CompleteHole(Scripts_MiniGolf_BallController_Zach ball) {
+        GameObject effects;
+        if (correctHole) {
+            effects = Instantiate(holeFX, transform.position, Quaternion.identity);
+        } else {
+            // play incorrect effect :((
+            effects = new GameObject();
+        }
+
+        float particleEffectDuration = 1.2f;
+        yield return new WaitForSeconds(particleEffectDuration);
+
+        Destroy(effects);
+
+        // delay this for a moment for any celebration particles and sfx
+        ball.CompleteHole();
     }
 }
