@@ -19,8 +19,6 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
     public float stopVelocity = 0.1f;
     [Tooltip("The uniform scale factor for the aim circle.")]
     public float aimCircleScale = 3f;
-    [Tooltip("This is the scaling factor for the BallHit particle effect based on the hit velocity of the ball.")]
-    public float ballHitScalingFactor = 0.25f;
 
     public GameObject ballHitFX;
     public GameObject waterFX;
@@ -249,14 +247,17 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         Vector3 spawnPosition = collision.contacts[0].point;
         Quaternion spawnRotation = globalUpDirection;
 
+        Debug.Log("Relative velocity magnitude: " + collision.relativeVelocity.magnitude);
+
         // we want to scale the particle effect (gameobject) according to the hit velocity
-        // the BallHit particle effect has PlayOnAwake toggled off so that it doesn't play when instantiated
-        // we scale the particle effect (gameobject) according to the hit velocity and use a multiplier, in this case = 0.25
-        // finally, we clamp it between 0 and 1 so that it doesn't explode to a large size if the hit velocity is high
+        // we scale the particle effect (gameobject) according to the hit velocity
+        // in this case, we can use relative velocity from the collision info to represent the hit velocity,
+        // since the walls are static and do not have a velocity
         GameObject effectGameObject = Instantiate(ballHitFX, spawnPosition, spawnRotation);
-        effectGameObject.transform.localScale *= Mathf.Clamp01(ballHitScalingFactor * collision.relativeVelocity.magnitude);
+        effectGameObject.transform.localScale *= HitFXScaleFactor(collision.relativeVelocity.magnitude);
 
         // now that the particle effect (gameobject) is scaled, we can play the particle effect itself
+        // note that the particle system's PlayOnAwake is toggled off, so that it could be scaled upon instantiation before playing
         ParticleSystem effect = effectGameObject.GetComponent<ParticleSystem>();
         effect.Play();
 
@@ -276,5 +277,30 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
 
         float effectDuration = 3f;
         Destroy(effect, effectDuration);
+    }
+
+    // my original solution to scaling was using Mathf.Clamp01,
+    // but i thought this one, using inverse lerp + lerp, would give a better scaling effect,
+    // by remapping values between 0.1 and 1 instead of "throwing away" values outside of 0 and 1, per se, with Clamp01
+    private float HitFXScaleFactor(float relativeVelocity)
+    {
+        float maxRelativeVelocity = 15f; // from testing the hardest i can shoot the ball
+
+        // the idea here is that relative velocities in (0, 15) will be used to scale the particle FX scale down to (0.1, 1),
+        // using inverse lerp + lerp make this a linear transformation
+        // however, to make smaller relative velocities transform to larger scales for visibility, we use a non-linear transformation,
+        // in this case, the square root function (other functions considered were sine, log, and higher roots)
+        // we first extrapolate the percentage that the relative velocity is between 0 and the max relative velocity
+        // then we transform it non-linearly with the square root function
+        // finally, we use this transformed percentage to map the relative velocity to a scale factor between 0.1 and 1
+        // 0.1 was chosen as the lower end of lerp instead of 0 to ensure visibility for tiny relative velocities
+
+        float percentage = Mathf.InverseLerp(0, maxRelativeVelocity, relativeVelocity);
+        float transformedPercentage = Mathf.Sqrt(percentage);
+        float scaleFactor = Mathf.Lerp(0.1f, 1, transformedPercentage);
+
+        Debug.Log("Scale factor: " + scaleFactor);
+
+        return scaleFactor;
     }
 }
