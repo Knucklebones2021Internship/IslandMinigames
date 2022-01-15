@@ -31,10 +31,10 @@ public class Scripts_Hole_MiniGolf_BrianLin : MonoBehaviour {
     IEnumerator CompleteHole(Scripts_MiniGolf_BallController_Zach ball) {
         GameObject effects;
         if (correctHole) {
-            effects = Instantiate(correctHoleFX, transform.position, Quaternion.identity);
+            effects = Instantiate(correctHoleFX, correctHoleFX.transform.position, Quaternion.identity);
         } else {
             // play incorrect effect :((
-            effects = Instantiate(incorrectHoleFX, transform.position, Quaternion.identity);
+            effects = Instantiate(incorrectHoleFX, incorrectHoleFX.transform.position, Quaternion.identity);
         }
 
         float particleEffectDuration = 1.2f;
