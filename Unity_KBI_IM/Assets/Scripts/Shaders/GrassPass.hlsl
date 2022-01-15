@@ -34,7 +34,22 @@ struct Varyings
 // Properties
 float _Height;
 float _Base;
-float _Tint;
+float4 _Tint;
+float _RecieveShadows;
+
+float _LightPower;
+float _TPower;
+float _ShadowPower;
+
+float _AlphaCutoff;
+float4 _Darker;
+
+sampler2D _WindDistortionMap;
+float3 _WindFrequency;
+float _WindStrength;
+
+float _MinHeight;
+float _MaxHeight;
 
 // VERTEX PASS
 Varyings LitPassVertex(Attributes input)
@@ -70,16 +85,143 @@ Varyings LitPassVertex(Attributes input)
     return output;
 }
 
+float3x3 RotX(float ang)
+{
+    return float3x3
+        (
+            1,  0,         0,
+            0,  cos(ang),  -sin(ang),
+            0,  sin(ang),  cos(ang)
+        );
+
+}
+
+float3x3 RotY(float ang)
+{
+    return float3x3
+        (
+            cos(ang),  0,  sin(ang),
+            0,         1,  0,
+            -sin(ang), 0,  cos(ang)
+        );
+}
+
+float3x3 RotZ(float ang)
+{
+    return float3x3
+        (
+            cos(ang),  -sin(ang),  0,
+            sin(ang),  cos(ang),   0,
+            0,         0,          1
+        );
+}
+
+float rand(float3 co)
+{
+    return frac(sin(dot(co.xyz, float3(12.9898, 78.233, 53.539))) * 43758.5453);
+}
+
 [maxvertexcount(6)]
 void LitPassGeom(triangle Varyings input[3], inout TriangleStream<Varyings> outStream)
 {
-    outStream.Append(input[0]);
-    outStream.Append(input[1]);
-    outStream.Append(input[2]);
+    float2 uv = (input[0].positionOS.xy * _Time.xy * _WindFrequency);
+
+    float4 windSample = tex2Dlod(_WindDistortionMap, float4(uv, 0, 0) * _WindStrength);
+
+    float3 rotatedNormalZ = mul(input[0].normalWS, RotZ(windSample.x));
+
+    float3 rotatedNormal = mul(rotatedNormalZ, RotX(windSample.y));
+
+    float randomHeight = rand(input[0].positionWSAndFogFactor.xyz * 2.238293f);
+
+    float3 basePos = (input[0].positionWSAndFogFactor.xyz + input[1].positionWSAndFogFactor.xyz + input[2].positionWSAndFogFactor.xyz) / 3;
+
+    Varyings o1 = input[0];
+    
+    float3 rotatedTangent = normalize(mul(o1.tangentWS, RotY(rand(o1.positionWSAndFogFactor.xyz) * 90)));
+    // float randH = rand(rotatedTangent) * 0.15;
+    
+    float3 o1Pos = (basePos - rotatedTangent * _Base);
+    o1.positionCS = TransformWorldToHClip(o1Pos);
+
+    Varyings o2 = input[0];
+    float3 o2Pos = (basePos + rotatedTangent * _Base);
+    o2.positionCS = TransformWorldToHClip(o2Pos);
+
+    Varyings o3 = input[0];
+    float3 o3Pos = (basePos + rotatedTangent * _Base + rotatedNormal * clamp(_Height * randomHeight, _MinHeight, _MaxHeight));
+    o3.positionCS = TransformWorldToHClip(o3Pos);
+
+    Varyings o4 = input[0];
+    float3 o4Pos = (basePos - rotatedTangent * _Base + rotatedNormal * clamp(_Height * randomHeight, _MinHeight, _MaxHeight));
+    o4.positionCS = TransformWorldToHClip(o4Pos);
+
+    float3 newNormal = mul(rotatedTangent, RotY(PI / 2));
+    // float3 newNormal = cross(normalWS, rotatedTangent);
+
+    o1.uv = TRANSFORM_TEX(float2(0, 0), _BaseMap);
+    o2.uv = TRANSFORM_TEX(float2(1, 0), _BaseMap);
+    o3.uv = TRANSFORM_TEX(float2(1, 1), _BaseMap);
+    o4.uv = TRANSFORM_TEX(float2(0, 1), _BaseMap);
+
+    o1.normalWS = newNormal;
+    o2.normalWS = newNormal;
+    o3.normalWS = newNormal;
+    o4.normalWS = newNormal;
+
+    outStream.Append(o4);
+    outStream.Append(o3);
+    outStream.Append(o1);
+
     outStream.RestartStrip();
+
+    outStream.Append(o3);
+    outStream.Append(o2);
+    outStream.Append(o1);
+
+    outStream.RestartStrip();
+}
+
+float4 TransformWorldToShadowCoords(float3 positionWS)
+{
+    half cascadeIndex = ComputeCascadeIndex(positionWS);
+    return mul(_MainLightWorldToShadow[cascadeIndex], float4(positionWS, 1.0));
 }
 
 half4 LitPassFragment(Varyings input, bool vf : SV_IsFrontFace) : SV_Target
 {
-    return half4(1, 1, 1, 1);
+    half3 normalWS = input.normalWS;
+    normalWS = normalize(normalWS);
+
+    if (vf == true)
+        normalWS = -normalWS;
+
+    float3 positionWS = input.positionWSAndFogFactor.xyz;
+
+    half3 color = half3(0, 0, 0);
+
+    Light mainLight;
+
+    float4 shadowCoord = TransformWorldToShadowCoords(positionWS);
+
+    mainLight = GetMainLight(shadowCoord);
+
+    float3 normalLight = LightingLambert(mainLight.color, mainLight.direction, normalWS) * _LightPower;
+    float3 inverseNormalLight = LightingLambert(mainLight.color, mainLight.direction, -normalWS) * _TPower;
+
+    color = _Tint.xyz + normalLight + inverseNormalLight;
+
+    color = lerp(color, _Darker.xyz, 1 - input.uv.y);
+
+    color = lerp(_Darker.xyz, color, clamp(mainLight.shadowAttenuation + _ShadowPower, 0, 1));
+
+    float fogFactor = input.positionWSAndFogFactor.w;
+
+    color = MixFog(color, fogFactor);
+
+    float a = _BaseMap.Sample(sampler_BaseMap, input.uv).a;
+
+    clip(a - _AlphaCutoff);
+
+    return half4(color, 1);
 }
