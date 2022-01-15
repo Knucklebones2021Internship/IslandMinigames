@@ -247,7 +247,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         Vector3 spawnPosition = collision.contacts[0].point;
         Quaternion spawnRotation = globalUpDirection;
 
-        Debug.Log("Relative velocity magnitude: " + collision.relativeVelocity.magnitude);
+        // Debug.Log("Relative velocity magnitude: " + collision.relativeVelocity.magnitude);
 
         // we want to scale the particle effect (gameobject) according to the hit velocity
         // we scale the particle effect (gameobject) according to the hit velocity
@@ -299,7 +299,7 @@ public class Scripts_MiniGolf_BallController_Zach : MonoBehaviourPun
         float transformedPercentage = Mathf.Sqrt(percentage);
         float scaleFactor = Mathf.Lerp(0.1f, 1, transformedPercentage);
 
-        Debug.Log("Scale factor: " + scaleFactor);
+        // Debug.Log("Scale factor: " + scaleFactor);
 
         return scaleFactor;
     }
