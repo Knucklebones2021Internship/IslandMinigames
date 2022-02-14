@@ -12,14 +12,473 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f719d81b6d574b47aa4c474911db9fc, type: 3}
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
-  AcousticTextureWwu: []
-  AuxBusWwu: []
-  BankWwu: []
-  EventWwu: []
-  RtpcWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  TriggerWwu: []
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 141991215bd4884c933af2f57ecda2d4
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: 141991215bd4884c933af2f57ecda2d4
+    GuidInternal: 
+    m_lastTime: -8585601900716968480
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: cc5eaa4548923a48ae35597c3760158b
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: cc5eaa4548923a48ae35597c3760158b
+    GuidInternal: 
+    m_lastTime: -8585601900723042530
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: cc5eaa4548923a48ae35597c3760158b
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 95a7643e47882b47bff9637cc765ae92
+    ParentPath: SoundBanks\Default Work Unit
+    guid: 95a7643e47882b47bff9637cc765ae92
+    GuidInternal: 
+    m_lastTime: -8585601900717497064
+    List:
+    - name: HotPotato_Soundbank_Gabriel
+      guid: 54bb10e50ad4d7448246a2e2adf791a8
+      id: 3017799530
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95a7643e47882b47bff9637cc765ae92
+      - ElementName: HotPotato_Soundbank_Gabriel
+        ObjectType: 7
+        guid: 54bb10e50ad4d7448246a2e2adf791a8
+      Path: SoundBanks\Default Work Unit\HotPotato_Soundbank_Gabriel
+    - name: MiniGolf_Soundbank_Gabriel
+      guid: b1f3b39ae546964db5fc5ea461d9e971
+      id: 1433711485
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95a7643e47882b47bff9637cc765ae92
+      - ElementName: MiniGolf_Soundbank_Gabriel
+        ObjectType: 7
+        guid: b1f3b39ae546964db5fc5ea461d9e971
+      Path: SoundBanks\Default Work Unit\MiniGolf_Soundbank_Gabriel
+    - name: SFX_Carey
+      guid: 90cf4bcdfe5da841bc68f9984f1bcf82
+      id: 4237593279
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95a7643e47882b47bff9637cc765ae92
+      - ElementName: SFX_Carey
+        ObjectType: 7
+        guid: 90cf4bcdfe5da841bc68f9984f1bcf82
+      Path: SoundBanks\Default Work Unit\SFX_Carey
+    - name: Test_Soundbank
+      guid: 050423283f565c4e8ef68f94917f319f
+      id: 4154996803
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 95a7643e47882b47bff9637cc765ae92
+      - ElementName: Test_Soundbank
+        ObjectType: 7
+        guid: 050423283f565c4e8ef68f94917f319f
+      Path: SoundBanks\Default Work Unit\Test_Soundbank
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: b8f4373c223a414d9138f055a854a768
+    ParentPath: Events\Default Work Unit
+    guid: b8f4373c223a414d9138f055a854a768
+    GuidInternal: 
+    m_lastTime: -8585601900726288988
+    List:
+    - name: Ball_Jump
+      guid: b207bc944396ed47ad20682cad80d533
+      id: 134222113
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: Ball_Jump
+        ObjectType: 3
+        guid: b207bc944396ed47ad20682cad80d533
+      Path: Events\Default Work Unit\Ball_Jump
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Ball_Roll
+      guid: 446784ff7ebcdd4388648bd7bf9d8de9
+      id: 1772485256
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: Ball_Roll
+        ObjectType: 3
+        guid: 446784ff7ebcdd4388648bd7bf9d8de9
+      Path: Events\Default Work Unit\Ball_Roll
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Receive_Potato
+      guid: 65b45f951e50f743a8e91bd3f31991b2
+      id: 4025095850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: Receive_Potato
+        ObjectType: 3
+        guid: 65b45f951e50f743a8e91bd3f31991b2
+      Path: Events\Default Work Unit\Receive_Potato
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Toss_Potato_Correct
+      guid: b1525dcac637e343a6b62150e33d3497
+      id: 704023553
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: Toss_Potato_Correct
+        ObjectType: 3
+        guid: b1525dcac637e343a6b62150e33d3497
+      Path: Events\Default Work Unit\Toss_Potato_Correct
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Toss_Potato_Incorrect
+      guid: e1bcf9fb6f541c4d8e507ebc07c64f63
+      id: 2840732446
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: Toss_Potato_Incorrect
+        ObjectType: 3
+        guid: e1bcf9fb6f541c4d8e507ebc07c64f63
+      Path: Events\Default Work Unit\Toss_Potato_Incorrect
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Dialogue Events Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Dialogue Events Work Unit
+      ObjectType: 12
+      guid: 4084ce18a2949841960b1c44ac808952
+    ParentPath: Events\Dialogue Events Work Unit
+    guid: 4084ce18a2949841960b1c44ac808952
+    GuidInternal: 
+    m_lastTime: -8585601900726279019
+    List:
+    - name: Ball_in_pond
+      guid: efbebef5a0ebf34aa723315ae8537485
+      id: 2468766642
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Ball_in_pond
+        ObjectType: 3
+        guid: efbebef5a0ebf34aa723315ae8537485
+      Path: Events\Dialogue Events Work Unit\Ball_in_pond
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Ball_Rolls_Back
+      guid: 8c283a5f1824384491dc85fe9c519c58
+      id: 3533229091
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Ball_Rolls_Back
+        ObjectType: 3
+        guid: 8c283a5f1824384491dc85fe9c519c58
+      Path: Events\Dialogue Events Work Unit\Ball_Rolls_Back
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Hit_Off_Ramp
+      guid: 71ac9a23f739dd49bde8ca945ef1fb6a
+      id: 2198782405
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Hit_Off_Ramp
+        ObjectType: 3
+        guid: 71ac9a23f739dd49bde8ca945ef1fb6a
+      Path: Events\Dialogue Events Work Unit\Hit_Off_Ramp
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Hole_In_One
+      guid: fc85b4a3e4cc984992fe41b7d20dce7a
+      id: 1236423706
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Hole_In_One
+        ObjectType: 3
+        guid: fc85b4a3e4cc984992fe41b7d20dce7a
+      Path: Events\Dialogue Events Work Unit\Hole_In_One
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Laser_Block
+      guid: bc9bb5cbd90d8541937d0e95b85d1c4d
+      id: 3336002368
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Laser_Block
+        ObjectType: 3
+        guid: bc9bb5cbd90d8541937d0e95b85d1c4d
+      Path: Events\Dialogue Events Work Unit\Laser_Block
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Over_Par
+      guid: 0223a89a42568746886f0e7881c05bf3
+      id: 1677702291
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Over_Par
+        ObjectType: 3
+        guid: 0223a89a42568746886f0e7881c05bf3
+      Path: Events\Dialogue Events Work Unit\Over_Par
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Par
+      guid: 38a579fb01e17440a8734309d28e5aec
+      id: 1249339686
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Par
+        ObjectType: 3
+        guid: 38a579fb01e17440a8734309d28e5aec
+      Path: Events\Dialogue Events Work Unit\Par
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Rebound_Block
+      guid: c80ffebbc3284d44af54a136271cb59f
+      id: 2536063076
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Rebound_Block
+        ObjectType: 3
+        guid: c80ffebbc3284d44af54a136271cb59f
+      Path: Events\Dialogue Events Work Unit\Rebound_Block
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Time_Up
+      guid: 78b06776d1859a4aa51d358d949e73a5
+      id: 4051042642
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Time_Up
+        ObjectType: 3
+        guid: 78b06776d1859a4aa51d358d949e73a5
+      Path: Events\Dialogue Events Work Unit\Time_Up
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Windmill_Gust
+      guid: 000bd01d47e42a46b6bde5a79f2c2b09
+      id: 1197134253
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Windmill_Gust
+        ObjectType: 3
+        guid: 000bd01d47e42a46b6bde5a79f2c2b09
+      Path: Events\Dialogue Events Work Unit\Windmill_Gust
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Wrong_Answer
+      guid: 5d0330e0c1c0e04d995ed4ff3f9fd329
+      id: 1532174077
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Dialogue Events Work Unit
+        ObjectType: 12
+        guid: 4084ce18a2949841960b1c44ac808952
+      - ElementName: Wrong_Answer
+        ObjectType: 3
+        guid: 5d0330e0c1c0e04d995ed4ff3f9fd329
+      Path: Events\Dialogue Events Work Unit\Wrong_Answer
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 5f68440866195d4097b8ef96065ab67b
+    ParentPath: Game Parameters\Default Work Unit
+    guid: 5f68440866195d4097b8ef96065ab67b
+    GuidInternal: 
+    m_lastTime: -8585601900726139399
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 713e007ecee45442b952bda81d592a9e
+    ParentPath: States\Default Work Unit
+    guid: 713e007ecee45442b952bda81d592a9e
+    GuidInternal: 
+    m_lastTime: -8585601900717028278
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 88eee56228327d4eb3eea9fa9d356e9c
+    ParentPath: Switches\Default Work Unit
+    guid: 88eee56228327d4eb3eea9fa9d356e9c
+    GuidInternal: 
+    m_lastTime: -8585601900717008313
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 463a3d8321bc1943b20acca565219d72
+    ParentPath: Triggers\Default Work Unit
+    guid: 463a3d8321bc1943b20acca565219d72
+    GuidInternal: 
+    m_lastTime: -8585601900716998393
+    List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
