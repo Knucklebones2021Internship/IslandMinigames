@@ -49,7 +49,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		TitlePanel.SetActive(false);
 		QuickPlayPanel.SetActive(true);
 
-		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.QUICKPLAY;
+		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.SINGLEPLAYER;
 		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.quickplayLobby);
 	}
 
@@ -57,7 +57,7 @@ public class Scripts_TitleScreen_Wyatt : Scripts_BaseManager_Wyatt {
 		TitlePanel.SetActive(false);
 		NormalPlayPanel.SetActive(true);
 
-		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.NORMAL;
+		Scripts_NetworkManager_Wyatt.multiplayerType = MultiplayerType.MULTIPLAYER;
 		PhotonNetwork.JoinLobby(Scripts_NetworkManager_Wyatt.normalLobby);
 	}
 

@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
 
-public enum MultiplayerType { QUICKPLAY, NORMAL, CUSTOM_LOBBY }
+// This enum includes the names that appear at the top of each menu page
+// Singleplayer may be too long of a name for our screen size
+public enum MultiplayerType { SINGLEPLAYER, MULTIPLAYER, CUSTOM_LOBBY }
 
 [DefaultExecutionOrder(-60)]
 public class Scripts_NetworkManager_Wyatt : MonoBehaviourPunCallbacks {
