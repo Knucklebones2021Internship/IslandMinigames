@@ -201,6 +201,59 @@
 						<ActiveSource Name="rolling ball sfx  3" ID="{4308AADB-819B-4AE5-8BC7-69B3ED5FDF3D}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Golf_Putt" ID="{2C52AF7B-3097-4B88-B8A6-AF137CB766F8}" ShortID="69558531">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>50</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>560</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{362E66A3-6A9D-4A68-93C7-7DFD2F90F5F9}"/>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+							<ObjectRef Name="High_Impact" ID="{2AFD6FB0-C906-4683-A377-FEEEF72967B0}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Golf Putting SFX" ID="{0F6E1499-ACCA-4099-AFED-407CF0028B53}">
+							<Language>SFX</Language>
+							<AudioFile>Golf Putting SFX.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1036349936"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Golf Putting SFX" ID="{0F6E1499-ACCA-4099-AFED-407CF0028B53}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

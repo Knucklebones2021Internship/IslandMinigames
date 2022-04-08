@@ -58,6 +58,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Ball_Putt" ID="{79EBC064-F29E-48A3-9CC4-FE9A027E54E3}">
+					<ChildrenList>
+						<Action Name="" ID="{B9DB0239-63A0-4FA6-AF29-5F0ECD41B04D}" ShortID="476515417">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Golf_Putt" ID="{2C52AF7B-3097-4B88-B8A6-AF137CB766F8}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
