@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3254DDAA-A846-4DAA-89C0-EAD68BCFE527}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Mini-Golf Work Unit" ID="{3254DDAA-A846-4DAA-89C0-EAD68BCFE527}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="BallInHole_Correct" ID="{1FA565AC-DA78-4AE7-996B-14E2B04BA605}" ShortID="523007976">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BallInHole_Correct_Master-St" ID="{3FC006C2-B30E-455B-863C-AA2A057E5156}">
+							<Language>SFX</Language>
+							<AudioFile>BallInHole_Correct_Master-St.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="630339247"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="BallInHole_Correct_Master-St" ID="{3FC006C2-B30E-455B-863C-AA2A057E5156}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="BallInHold_Incorrect" ID="{36FCB189-3F3B-4EA8-916D-A1D9AEE0AE8F}" ShortID="14417221">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BallInHole_Incorrect_Master-St" ID="{E1A183B9-736C-4D3C-9867-5958DB05F0B7}">
+							<Language>SFX</Language>
+							<AudioFile>BallInHole_Incorrect_Master-St.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="838323034"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="BallInHole_Incorrect_Master-St" ID="{E1A183B9-736C-4D3C-9867-5958DB05F0B7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Ball In Hole SFX Container" ID="{8D178FCF-258E-467F-9916-BF8BFB6950ED}" ShortID="563447859">
+					<PropertyList>
+						<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="BallInHole_SFX2" ID="{51C52D57-0628-493B-8809-3E5729FEFD85}" ShortID="734198791">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BallInHole_SFX2_Master-St" ID="{8D13E37F-B4A8-4705-838F-F98090560E00}">
+									<Language>SFX</Language>
+									<AudioFile>BallInHole_SFX2_Master-St.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="164718716"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="BallInHole_SFX2_Master-St" ID="{8D13E37F-B4A8-4705-838F-F98090560E00}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BallInHole_SFX1" ID="{7728BA58-8113-4E99-9133-46EAEA7803BE}" ShortID="347729654">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BallInHole_SFX1_Master-St" ID="{698CF154-7251-4B83-80E5-17C4D6232E92}">
+									<Language>SFX</Language>
+									<AudioFile>BallInHole_SFX1_Master-St.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1032065703"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="BallInHole_SFX1_Master-St" ID="{698CF154-7251-4B83-80E5-17C4D6232E92}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

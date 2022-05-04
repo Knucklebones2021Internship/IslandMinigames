@@ -17,6 +17,8 @@ namespace AK
         static const AkUniqueID BALL_JUMP = 134222113U;
         static const AkUniqueID BALL_ROLL = 1772485256U;
         static const AkUniqueID BALL_ROLLS_BACK = 3533229091U;
+        static const AkUniqueID BALLINHOLECORRECT = 3142780549U;
+        static const AkUniqueID BALLINHOLEINCORRECT = 3259823370U;
         static const AkUniqueID HIT_OFF_RAMP = 2198782405U;
         static const AkUniqueID HOLE_IN_ONE = 1236423706U;
         static const AkUniqueID LASER_BLOCK = 3336002368U;
