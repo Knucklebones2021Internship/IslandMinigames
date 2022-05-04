@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 141991215bd4884c933af2f57ecda2d4
     GuidInternal: 
-    m_lastTime: -8585633684640971736
+    m_lastTime: -8585513222324553235
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: cc5eaa4548923a48ae35597c3760158b
     GuidInternal: 
-    m_lastTime: -8585633684642272025
+    m_lastTime: -8585513222328428908
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 95a7643e47882b47bff9637cc765ae92
     GuidInternal: 
-    m_lastTime: -8585617597398395394
+    m_lastTime: -8585499368491078064
     List:
     - name: HotPotato_Soundbank_Gabriel
       guid: 54bb10e50ad4d7448246a2e2adf791a8
@@ -136,7 +136,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: b8f4373c223a414d9138f055a854a768
     GuidInternal: 
-    m_lastTime: -8585518997105843214
+    m_lastTime: -8585499368491198087
     List:
     - name: Ball_Jump
       guid: b207bc944396ed47ad20682cad80d533
@@ -153,8 +153,8 @@ MonoBehaviour:
         guid: b207bc944396ed47ad20682cad80d533
       Path: Events\Default Work Unit\Ball_Jump
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.187506
+      minDuration: 0.187506
     - name: Ball_Putt
       guid: 64c0eb799ef2a3489cc4fe9a027e54e3
       id: 1254564840
@@ -189,6 +189,57 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Billboard_Break
+      guid: 2faa37c81b0ddc43ab6cdaadd43485e6
+      id: 2335559398
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: Billboard_Break
+        ObjectType: 3
+        guid: 2faa37c81b0ddc43ab6cdaadd43485e6
+      Path: Events\Default Work Unit\Billboard_Break
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: CorrectHole_SFX
+      guid: 84da1bea4019e341a45d183e7c885df1
+      id: 3644920467
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: CorrectHole_SFX
+        ObjectType: 3
+        guid: 84da1bea4019e341a45d183e7c885df1
+      Path: Events\Default Work Unit\CorrectHole_SFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: LaserMonster_SFX
+      guid: ce7d0c77ec84404fac7502a6e24bcc87
+      id: 1090863072
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: b8f4373c223a414d9138f055a854a768
+      - ElementName: LaserMonster_SFX
+        ObjectType: 3
+        guid: ce7d0c77ec84404fac7502a6e24bcc87
+      Path: Events\Default Work Unit\LaserMonster_SFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Receive_Potato
       guid: 65b45f951e50f743a8e91bd3f31991b2
       id: 4025095850
@@ -204,8 +255,8 @@ MonoBehaviour:
         guid: 65b45f951e50f743a8e91bd3f31991b2
       Path: Events\Default Work Unit\Receive_Potato
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.25
+      minDuration: 1.25
     - name: Toss_Potato_Correct
       guid: b1525dcac637e343a6b62150e33d3497
       id: 704023553
@@ -221,8 +272,8 @@ MonoBehaviour:
         guid: b1525dcac637e343a6b62150e33d3497
       Path: Events\Default Work Unit\Toss_Potato_Correct
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.25
+      minDuration: 1.25
     - name: Toss_Potato_Incorrect
       guid: e1bcf9fb6f541c4d8e507ebc07c64f63
       id: 2840732446
@@ -238,8 +289,8 @@ MonoBehaviour:
         guid: e1bcf9fb6f541c4d8e507ebc07c64f63
       Path: Events\Default Work Unit\Toss_Potato_Incorrect
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.25
+      minDuration: 1.25
   - PhysicalPath: Events\Dialogue Events Work Unit.wwu
     PathAndIcons:
     - ElementName: Events
@@ -251,7 +302,7 @@ MonoBehaviour:
     ParentPath: Events\Dialogue Events Work Unit
     guid: 4084ce18a2949841960b1c44ac808952
     GuidInternal: 
-    m_lastTime: -8585617597402606342
+    m_lastTime: -8585513222330119202
     List:
     - name: Ball_in_pond
       guid: efbebef5a0ebf34aa723315ae8537485
@@ -268,8 +319,8 @@ MonoBehaviour:
         guid: efbebef5a0ebf34aa723315ae8537485
       Path: Events\Dialogue Events Work Unit\Ball_in_pond
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.5
+      minDuration: 2.5
     - name: Ball_Rolls_Back
       guid: 8c283a5f1824384491dc85fe9c519c58
       id: 3533229091
@@ -285,8 +336,8 @@ MonoBehaviour:
         guid: 8c283a5f1824384491dc85fe9c519c58
       Path: Events\Dialogue Events Work Unit\Ball_Rolls_Back
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 5.504
+      minDuration: 5.504
     - name: Hit_Off_Ramp
       guid: 71ac9a23f739dd49bde8ca945ef1fb6a
       id: 2198782405
@@ -302,8 +353,8 @@ MonoBehaviour:
         guid: 71ac9a23f739dd49bde8ca945ef1fb6a
       Path: Events\Dialogue Events Work Unit\Hit_Off_Ramp
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.449333
+      minDuration: 2.449333
     - name: Hole_In_One
       guid: fc85b4a3e4cc984992fe41b7d20dce7a
       id: 1236423706
@@ -319,8 +370,8 @@ MonoBehaviour:
         guid: fc85b4a3e4cc984992fe41b7d20dce7a
       Path: Events\Dialogue Events Work Unit\Hole_In_One
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 3.578667
+      minDuration: 3.578667
     - name: Laser_Block
       guid: bc9bb5cbd90d8541937d0e95b85d1c4d
       id: 3336002368
@@ -336,8 +387,8 @@ MonoBehaviour:
         guid: bc9bb5cbd90d8541937d0e95b85d1c4d
       Path: Events\Dialogue Events Work Unit\Laser_Block
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.609334
+      minDuration: 4.609334
     - name: Over_Par
       guid: 0223a89a42568746886f0e7881c05bf3
       id: 1677702291
@@ -353,8 +404,8 @@ MonoBehaviour:
         guid: 0223a89a42568746886f0e7881c05bf3
       Path: Events\Dialogue Events Work Unit\Over_Par
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.5
+      minDuration: 4.5
     - name: Par
       guid: 38a579fb01e17440a8734309d28e5aec
       id: 1249339686
@@ -370,8 +421,8 @@ MonoBehaviour:
         guid: 38a579fb01e17440a8734309d28e5aec
       Path: Events\Dialogue Events Work Unit\Par
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 3.424
+      minDuration: 3.424
     - name: Rebound_Block
       guid: c80ffebbc3284d44af54a136271cb59f
       id: 2536063076
@@ -387,8 +438,8 @@ MonoBehaviour:
         guid: c80ffebbc3284d44af54a136271cb59f
       Path: Events\Dialogue Events Work Unit\Rebound_Block
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.499333
+      minDuration: 4.499333
     - name: Time_Up
       guid: 78b06776d1859a4aa51d358d949e73a5
       id: 4051042642
@@ -404,8 +455,8 @@ MonoBehaviour:
         guid: 78b06776d1859a4aa51d358d949e73a5
       Path: Events\Dialogue Events Work Unit\Time_Up
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.25
+      minDuration: 2.75
     - name: Windmill_Gust
       guid: 000bd01d47e42a46b6bde5a79f2c2b09
       id: 1197134253
@@ -421,8 +472,8 @@ MonoBehaviour:
         guid: 000bd01d47e42a46b6bde5a79f2c2b09
       Path: Events\Dialogue Events Work Unit\Windmill_Gust
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 3.5
+      minDuration: 3.5
     - name: Wrong_Answer
       guid: 5d0330e0c1c0e04d995ed4ff3f9fd329
       id: 1532174077
@@ -438,8 +489,8 @@ MonoBehaviour:
         guid: 5d0330e0c1c0e04d995ed4ff3f9fd329
       Path: Events\Dialogue Events Work Unit\Wrong_Answer
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -452,7 +503,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 5f68440866195d4097b8ef96065ab67b
     GuidInternal: 
-    m_lastTime: -8585633684642662112
+    m_lastTime: -8585513222330109198
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -466,7 +517,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 713e007ecee45442b952bda81d592a9e
     GuidInternal: 
-    m_lastTime: -8585633684641011742
+    m_lastTime: -8585513222324648247
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -480,7 +531,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 88eee56228327d4eb3eea9fa9d356e9c
     GuidInternal: 
-    m_lastTime: -8585633684641011742
+    m_lastTime: -8585513222324583237
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -494,10 +545,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 463a3d8321bc1943b20acca565219d72
     GuidInternal: 
-    m_lastTime: -8585633684641001744
+    m_lastTime: -8585513222324578236
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 05000000060000001c0000001d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -60,10 +60,43 @@
 				</Event>
 				<Event Name="Ball_Putt" ID="{79EBC064-F29E-48A3-9CC4-FE9A027E54E3}">
 					<ChildrenList>
-						<Action Name="" ID="{B9DB0239-63A0-4FA6-AF29-5F0ECD41B04D}" ShortID="476515417">
+						<Action Name="" ID="{AD5E2E31-E0C8-4851-99F7-159699DF16B2}" ShortID="285428939">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Golf_Putt" ID="{2C52AF7B-3097-4B88-B8A6-AF137CB766F8}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Billboard_Break" ID="{C837AA2F-0D1B-43DC-AB6C-DAADD43485E6}">
+					<ChildrenList>
+						<Action Name="" ID="{39A8EFBC-ED87-4332-B474-8402646E8A82}" ShortID="704039505">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="billboard breaking sfx 2" ID="{5799E38B-6A5F-4797-A9B5-273D31F5B2D2}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="CorrectHole_SFX" ID="{EA1BDA84-1940-41E3-A45D-183E7C885DF1}">
+					<ChildrenList>
+						<Action Name="" ID="{EC13D6A4-E835-46EC-B09D-4986F9529D90}" ShortID="725868673">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Correct Hole SFX" ID="{277DBDD5-FD92-4250-B24F-9E57A83349E8}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="LaserMonster_SFX" ID="{770C7DCE-84EC-4F40-AC75-02A6E24BCC87}">
+					<ChildrenList>
+						<Action Name="" ID="{1E4049C9-4B14-4C78-AD75-EF825A74F0DE}" ShortID="238718717">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Laser_OneShotEdit" ID="{3E9D575C-0CB4-499D-AFD1-345260C8CFB2}" WorkUnitID="{F953BB53-3471-4F54-84DD-B41C68643107}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

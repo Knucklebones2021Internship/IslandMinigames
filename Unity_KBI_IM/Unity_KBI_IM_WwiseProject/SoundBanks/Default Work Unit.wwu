@@ -10,8 +10,12 @@
 				</SoundBank>
 				<SoundBank Name="SFX_Carey" ID="{CD4BCF90-5DFE-41A8-BC68-F9984F1BCF82}">
 					<ObjectInclusionList>
+						<ObjectRef Name="CorrectHole_SFX" ID="{EA1BDA84-1940-41E3-A45D-183E7C885DF1}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Billboard_Break" ID="{C837AA2F-0D1B-43DC-AB6C-DAADD43485E6}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ball_Roll" ID="{FF846744-BC7E-43DD-8864-8BD7BF9D8DE9}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ball_Jump" ID="{94BC07B2-9643-47ED-AD20-682CAD80D533}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ball_Putt" ID="{79EBC064-F29E-48A3-9CC4-FE9A027E54E3}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="LaserMonster_SFX" ID="{770C7DCE-84EC-4F40-AC75-02A6E24BCC87}" WorkUnitID="{3C37F4B8-3A22-4D41-9138-F055A854A768}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

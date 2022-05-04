@@ -143,6 +143,13 @@
 								<MediaID ID="840297879"/>
 							</MediaIDList>
 						</AudioFileSource>
+						<AudioFileSource Name="Correct Hole SFX" ID="{D427F840-CC7A-41FE-8B1E-A0BB10964C46}">
+							<Language>SFX</Language>
+							<AudioFile>Correct Hole SFX.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="628998189"/>
+							</MediaIDList>
+						</AudioFileSource>
 					</ChildrenList>
 					<ObjectLists/>
 					<ActiveSourceList>
@@ -219,7 +226,12 @@
 							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
-									<Modifier Name="" ID="{362E66A3-6A9D-4A68-93C7-7DFD2F90F5F9}"/>
+									<Modifier Name="" ID="{362E66A3-6A9D-4A68-93C7-7DFD2F90F5F9}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="455"/>
+										</PropertyList>
+									</Modifier>
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
@@ -248,11 +260,151 @@
 								<MediaID ID="1036349936"/>
 							</MediaIDList>
 						</AudioFileSource>
+						<AudioFileSource Name="Correct Hole SFX" ID="{AC36DD7B-6B40-41AD-BCE8-BDABCD0D0DE5}">
+							<Language>SFX</Language>
+							<AudioFile>Correct Hole SFX.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="628998189"/>
+							</MediaIDList>
+						</AudioFileSource>
 					</ChildrenList>
 					<ObjectLists/>
 					<ActiveSourceList>
 						<ActiveSource Name="Golf Putting SFX" ID="{0F6E1499-ACCA-4099-AFED-407CF0028B53}" Platform="Linked"/>
 					</ActiveSourceList>
+				</Sound>
+				<Sound Name="billboard breaking sfx 2" ID="{5799E38B-6A5F-4797-A9B5-273D31F5B2D2}" ShortID="23401473">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>25</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-1210</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="billboard breaking sfx 2" ID="{24DEE4F2-7892-4021-B405-3A1EF979F87C}">
+							<Language>SFX</Language>
+							<AudioFile>billboard breaking sfx 2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="477408126"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="billboard breaking sfx 2" ID="{24DEE4F2-7892-4021-B405-3A1EF979F87C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Correct Hole SFX" ID="{277DBDD5-FD92-4250-B24F-9E57A83349E8}" ShortID="68172808">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>50</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>41</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{12FEA90A-5756-45B3-84C0-8CA6323ACE5C}"/>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Correct Hole SFX" ID="{29EC6C6A-C1A7-483E-80FA-40037C5E3E24}">
+							<Language>SFX</Language>
+							<AudioFile>Correct Hole SFX.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="628998189"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Correct Hole SFX" ID="{29EC6C6A-C1A7-483E-80FA-40037C5E3E24}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Laser_OneShotEdit" ID="{3E9D575C-0CB4-499D-AFD1-345260C8CFB2}" ShortID="1022478781">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>15</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>20</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-1190</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Laser_OneShotEdit" ID="{AD64EB6F-8F35-4AC0-B4C4-B5B27205CC7A}">
+							<Language>SFX</Language>
+							<AudioFile>Laser_OneShotEdit.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="652271176"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Laser_OneShotEdit" ID="{AD64EB6F-8F35-4AC0-B4C4-B5B27205CC7A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Golf Theme" ID="{E2B449F2-E682-40C0-AD26-E69B322FCB34}" ShortID="455457218">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{98A7DF5B-FDE8-40E3-AD06-1C9042204A68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{45AA5ECC-9248-483A-AE35-597C3760158B}"/>
+						</Reference>
+					</ReferenceList>
+					<ObjectLists/>
 				</Sound>
 			</ChildrenList>
 		</WorkUnit>

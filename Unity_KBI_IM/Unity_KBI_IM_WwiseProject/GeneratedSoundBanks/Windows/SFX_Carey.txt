@@ -1,7 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
 	134222113	Ball_Jump			\Default Work Unit\Ball_Jump	
+	1090863072	LaserMonster_SFX			\Default Work Unit\LaserMonster_SFX	
 	1254564840	Ball_Putt			\Default Work Unit\Ball_Putt	
 	1772485256	Ball_Roll			\Default Work Unit\Ball_Roll	
+	2335559398	Billboard_Break			\Default Work Unit\Billboard_Break	
+	3644920467	CorrectHole_SFX			\Default Work Unit\CorrectHole_SFX	
 
 Effect plug-ins	ID	Name	Type				Notes
 	86245554	Attack_Remover	Wwise Compressor			
@@ -9,7 +12,10 @@ Effect plug-ins	ID	Name	Type				Notes
 	3487820010	One_Tap_Half_Second	Wwise Delay			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	477408126	billboard breaking sfx 2	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\billboard breaking sfx 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\billboard breaking sfx 2		148912
+	628998189	Correct Hole SFX	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\Correct Hole SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Correct Hole SFX		192064
 	632638271	Rolling_Ball	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\rolling ball sfx  3_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Rolling_Ball		187492
 	646396865	Bouncing_Ball	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\bouncing ball sfx 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bouncing_Ball		33140
+	652271176	Laser_OneShotEdit	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\Laser_OneShotEdit_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser_OneShotEdit		48064
 	1036349936	Golf_Putt	C:\Users\Carey\Documents\GitHub\IslandMinigames\Unity_KBI_IM\Unity_KBI_IM_WwiseProject\.cache\Windows\SFX\Golf Putting SFX_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Golf_Putt		96064
 

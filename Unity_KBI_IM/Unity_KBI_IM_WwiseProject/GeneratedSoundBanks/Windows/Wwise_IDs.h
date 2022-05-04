@@ -15,11 +15,15 @@ namespace AK
     {
         static const AkUniqueID BALL_IN_POND = 2468766642U;
         static const AkUniqueID BALL_JUMP = 134222113U;
+        static const AkUniqueID BALL_PUTT = 1254564840U;
         static const AkUniqueID BALL_ROLL = 1772485256U;
         static const AkUniqueID BALL_ROLLS_BACK = 3533229091U;
+        static const AkUniqueID BILLBOARD_BREAK = 2335559398U;
+        static const AkUniqueID CORRECTHOLE_SFX = 3644920467U;
         static const AkUniqueID HIT_OFF_RAMP = 2198782405U;
         static const AkUniqueID HOLE_IN_ONE = 1236423706U;
         static const AkUniqueID LASER_BLOCK = 3336002368U;
+        static const AkUniqueID LASERMONSTER_SFX = 1090863072U;
         static const AkUniqueID OVER_PAR = 1677702291U;
         static const AkUniqueID PAR = 1249339686U;
         static const AkUniqueID REBOUND_BLOCK = 2536063076U;
