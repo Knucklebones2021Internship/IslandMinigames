@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7C1700CF-4A32-47BE-9EF8-74BFB852FDAE}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Mini-Golf SFX Work Unit" ID="{7C1700CF-4A32-47BE-9EF8-74BFB852FDAE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="BallInHoleCorrect" ID="{EE133B67-D289-4BF1-BABC-9CBE40F949A8}">
+					<ChildrenList>
+						<Action Name="" ID="{F8E467DD-3529-4A05-AD27-79DCFB45D882}" ShortID="470185283">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ball In Hole SFX Container" ID="{8D178FCF-258E-467F-9916-BF8BFB6950ED}" WorkUnitID="{3254DDAA-A846-4DAA-89C0-EAD68BCFE527}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6DA590A4-F415-4CCB-9731-16963C92390C}" ShortID="118150404">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.75"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BallInHole_Correct" ID="{1FA565AC-DA78-4AE7-996B-14E2B04BA605}" WorkUnitID="{3254DDAA-A846-4DAA-89C0-EAD68BCFE527}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BallInHoleIncorrect" ID="{6BD8BC9B-17D3-4EF9-BAF0-BEB811B0A9B1}">
+					<ChildrenList>
+						<Action Name="" ID="{0E3E456A-1357-4F78-9441-BF5087BF3EDC}" ShortID="649093040">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ball In Hole SFX Container" ID="{8D178FCF-258E-467F-9916-BF8BFB6950ED}" WorkUnitID="{3254DDAA-A846-4DAA-89C0-EAD68BCFE527}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{35C9AFCE-1261-4861-81F7-2E2EC0F4FA6C}" ShortID="220250786">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.85"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BallInHold_Incorrect" ID="{36FCB189-3F3B-4EA8-916D-A1D9AEE0AE8F}" WorkUnitID="{3254DDAA-A846-4DAA-89C0-EAD68BCFE527}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
