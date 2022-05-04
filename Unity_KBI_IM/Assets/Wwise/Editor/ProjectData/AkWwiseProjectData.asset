@@ -170,8 +170,8 @@ MonoBehaviour:
         guid: 64c0eb799ef2a3489cc4fe9a027e54e3
       Path: Events\Default Work Unit\Ball_Putt
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.361817
+      minDuration: 0.278195
     - name: Ball_Roll
       guid: 446784ff7ebcdd4388648bd7bf9d8de9
       id: 1772485256
@@ -204,8 +204,8 @@ MonoBehaviour:
         guid: 2faa37c81b0ddc43ab6cdaadd43485e6
       Path: Events\Default Work Unit\Billboard_Break
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1.559482
+      minDuration: 1.559482
     - name: CorrectHole_SFX
       guid: 84da1bea4019e341a45d183e7c885df1
       id: 3644920467
@@ -221,8 +221,8 @@ MonoBehaviour:
         guid: 84da1bea4019e341a45d183e7c885df1
       Path: Events\Default Work Unit\CorrectHole_SFX
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1
+      minDuration: 1
     - name: LaserMonster_SFX
       guid: ce7d0c77ec84404fac7502a6e24bcc87
       id: 1090863072
@@ -238,8 +238,8 @@ MonoBehaviour:
         guid: ce7d0c77ec84404fac7502a6e24bcc87
       Path: Events\Default Work Unit\LaserMonster_SFX
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.49712
+      minDuration: 0.49712
     - name: Receive_Potato
       guid: 65b45f951e50f743a8e91bd3f31991b2
       id: 4025095850
@@ -491,6 +491,53 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+  - PhysicalPath: Events\Mini-Golf SFX Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Mini-Golf SFX Work Unit
+      ObjectType: 12
+      guid: cf00177c324abe479ef874bfb852fdae
+    ParentPath: Events\Mini-Golf SFX Work Unit
+    guid: cf00177c324abe479ef874bfb852fdae
+    GuidInternal: 
+    m_lastTime: -8585499095922761265
+    List:
+    - name: BallInHoleCorrect
+      guid: 673b13ee89d2f14bbabc9cbe40f949a8
+      id: 3142780549
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Mini-Golf SFX Work Unit
+        ObjectType: 12
+        guid: cf00177c324abe479ef874bfb852fdae
+      - ElementName: BallInHoleCorrect
+        ObjectType: 3
+        guid: 673b13ee89d2f14bbabc9cbe40f949a8
+      Path: Events\Mini-Golf SFX Work Unit\BallInHoleCorrect
+      maxAttenuation: 0
+      maxDuration: 4.887938
+      minDuration: 4.887938
+    - name: BallInHoleIncorrect
+      guid: 9bbcd86bd317f94ebaf0beb811b0a9b1
+      id: 3259823370
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Mini-Golf SFX Work Unit
+        ObjectType: 12
+        guid: cf00177c324abe479ef874bfb852fdae
+      - ElementName: BallInHoleIncorrect
+        ObjectType: 3
+        guid: 9bbcd86bd317f94ebaf0beb811b0a9b1
+      Path: Events\Mini-Golf SFX Work Unit\BallInHoleIncorrect
+      maxAttenuation: 0
+      maxDuration: 4.987916
+      minDuration: 4.987916
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -548,7 +595,7 @@ MonoBehaviour:
     m_lastTime: -8585513222324578236
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000001c0000001d000000
+  ExpandedWaapiItemIds: 010000000500000006000000070000001c0000001d0000002200000023000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

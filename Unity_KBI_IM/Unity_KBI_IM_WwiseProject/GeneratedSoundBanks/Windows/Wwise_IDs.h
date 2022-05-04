@@ -18,6 +18,8 @@ namespace AK
         static const AkUniqueID BALL_PUTT = 1254564840U;
         static const AkUniqueID BALL_ROLL = 1772485256U;
         static const AkUniqueID BALL_ROLLS_BACK = 3533229091U;
+        static const AkUniqueID BALLINHOLECORRECT = 3142780549U;
+        static const AkUniqueID BALLINHOLEINCORRECT = 3259823370U;
         static const AkUniqueID BILLBOARD_BREAK = 2335559398U;
         static const AkUniqueID CORRECTHOLE_SFX = 3644920467U;
         static const AkUniqueID HIT_OFF_RAMP = 2198782405U;
