@@ -440,11 +440,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 3
   maxForceMagnitude: 5
-  stopVelocity: 0.15
+  stopVelocity: 0.4
   aimCircleScale: 3
-  rb: {fileID: 0}
   ballHitFX: {fileID: 8658528489937041941, guid: ca30e64e5105b9246b74f89fefc53148, type: 3}
   waterFX: {fileID: 8490754084999600649, guid: 785c9f4a58dee5548905df91eec4d5b6, type: 3}
+  rb: {fileID: 0}
   wwiseGolfEvents:
     BallInWater:
       idInternal: 0

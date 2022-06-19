@@ -932,7 +932,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &111287392
 PrefabInstance:
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '     D.   PIZZA'
+  m_text: '     D.  HOUNDER'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
   m_sharedMaterial: {fileID: -3796449833624699862, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
@@ -1074,8 +1074,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285726834
-  m_fontColor: {r: 0.44545805, g: 0, b: 0.4528302, a: 1}
+    rgba: 2697151939
+  m_fontColor: {r: 0.7647059, g: 0.27058825, b: 0.7647059, a: 0.627451}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2779,7 +2779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '     C.   SLEEPING'
+  m_text: '     C.  SCHOOL'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
   m_sharedMaterial: {fileID: -3796449833624699862, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
@@ -2788,8 +2788,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285726834
-  m_fontColor: {r: 0.44545805, g: 0, b: 0.4528302, a: 1}
+    rgba: 2697151939
+  m_fontColor: {r: 0.7647059, g: 0.27058825, b: 0.7647059, a: 0.627451}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3981,9 +3981,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WHAT DOES GARFIELD
+  m_text: 'WHAT IS A GROUP
 
-    ABSOLUTELY HATE?'
+    OF LIONS CALLED?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
   m_sharedMaterial: {fileID: -3796449833624699862, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
@@ -3992,8 +3992,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292803278
-  m_fontColor: {r: 0.80897117, g: 0.9811321, b: 0.8713651, a: 1}
+    rgba: 4293654005
+  m_fontColor: {r: 0.9607728, g: 0.9622642, b: 0.9205056, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4758,7 +4758,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1d94ced658bc37e4398cdd4477b21368, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d94ced658bc37e4398cdd4477b21368, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5226,7 +5226,7 @@ Transform:
   - {fileID: 1682113020}
   - {fileID: 2045530543}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &524740015
 PrefabInstance:
@@ -10805,8 +10805,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294952825
-  m_fontColor: {r: 0.47547168, g: 0.77996016, b: 1, a: 1}
+    rgba: 4293132286
+  m_fontColor: {r: 0.99607843, g: 1, b: 0.8901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11340,8 +11340,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294952825
-  m_fontColor: {r: 0.47547168, g: 0.77996016, b: 1, a: 1}
+    rgba: 4293132030
+  m_fontColor: {r: 0.99607843, g: 0.9967677, b: 0.8901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11774,7 +11774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '     B.   MONDAYS'
+  m_text: '     B.  PRIDE'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
   m_sharedMaterial: {fileID: -3796449833624699862, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
@@ -11783,8 +11783,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285726834
-  m_fontColor: {r: 0.44545805, g: 0, b: 0.4528302, a: 1}
+    rgba: 2697151939
+  m_fontColor: {r: 0.7647059, g: 0.27058825, b: 0.7647059, a: 0.627451}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12317,7 +12317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1581215595
 GameObject:
@@ -13253,7 +13253,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 43054ecb15a16ea43a8b86ff08a52d2f, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 43054ecb15a16ea43a8b86ff08a52d2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15166,7 +15166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '     A.   LASAGNA'
+  m_text: '     A.  HERD'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
   m_sharedMaterial: {fileID: -3796449833624699862, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
@@ -15175,8 +15175,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285726834
-  m_fontColor: {r: 0.44545805, g: 0, b: 0.4528302, a: 1}
+    rgba: 2697151939
+  m_fontColor: {r: 0.764151, g: 0.26961553, b: 0.764151, a: 0.627451}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15572,7 +15572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Time elapsed!
+  m_text: Time Up!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
   m_sharedMaterial: {fileID: -3796449833624699862, guid: 533a2bfa254614049b355e4a02a2896f, type: 2}
@@ -21354,7 +21354,7 @@ Transform:
   - {fileID: 2356196510687302366}
   - {fileID: 4382926400929171047}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7501394288611821194
 Transform:
